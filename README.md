@@ -42,8 +42,8 @@ Things you may want to cover:
 
 ### Association
 - has_many :products
-- belongs_to :card
-- belongs_to :destination
+- has_one :card
+- has_one :destination
 
 ## productテーブル
 |column|Type|Options|
@@ -55,7 +55,7 @@ Things you may want to cover:
 |size|string|null: false|
 |cost|integer|null: false|
 |days||null: false|
-|category_id|text||
+|category_id|integer|null: false, foreign_key: true|
 |brand_id|integer|null: false, foreign_key: true|
 |user_id|integer|null: false, foreign_key: true|
 
@@ -72,7 +72,7 @@ Things you may want to cover:
 |card_id|integer|null: false|
 
 ### Association
-- belongs_to :card
+- belongs_to :user
 
 ## destinationテーブル
 |column|Type|Options|
