@@ -1,0 +1,39 @@
+* {
+  box-sizing: border-box;
+}
+
+.item-header {
+  -webkit-box-align: center;
+  align-items: center;
+  display: flex;
+  height: 128px;
+  width: 100%;
+  -webkit-box-pack: center;
+  justify-content: center;
+  background-color: red;
+}
+
+.item-main {
+  height: 100vh;
+  width: 55vw;
+  background-color: green;
+  margin: 0px auto;
+}
+
+.item-main__box {
+  height: 100%;
+  width: 100%;
+  background-color: blue;
+}
+
+.item-main__box__pic {
+  height: 300px;
+  width: 100%;
+  background-color: yellow;
+  padding: 40px;
+}
+
+.item-main__box__pic__hako__gazo {
+  height: 220px;
+  background-color: red;
+}
