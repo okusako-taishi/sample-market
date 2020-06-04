@@ -1,0 +1,13 @@
+* {
+  box-sizing: border-box;
+}
+
+.single-container {
+  padding: 0 0 220px;
+  .single-header {
+    height: 128px;
+  }
+  .single-main {
+    display: block;
+  }
+}
