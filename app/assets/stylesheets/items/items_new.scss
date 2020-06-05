@@ -33,7 +33,85 @@
   padding: 40px;
 }
 
+
+
+
 .item-main__box__pic__hako__gazo {
   height: 220px;
   background-color: red;
+}
+
+.item-main__box__pic__hako__gazo__picture{
+  height: 20px;
+  background-color: white;
+}
+
+.item-main__box__pic__hako__gazo__picture__photo{
+  height: 20px;
+}
+ 
+.item-main__box__pic__hako__gazo__picture__upload-text {
+  height: 20px;
+  margin-top: 15px;
+  background-color: green;
+}
+
+.item-main__box__pic__hako__gazo__picture__upload-form  {
+  height: 150px;
+  background-color: indianred;
+  margin-top: 15px;
+}
+
+.item-main__box__pic-2 {
+  height: 440px;
+  width: 100%;
+  background-color: black;
+  padding: 40px;
+}
+
+.item-main__box__pic-2-syouheimeinohako {
+  height: 80px;
+  background-color: ivory;
+}
+
+.item-main__box__pic-2-syouheimeinohako__name{
+  height: 24px;
+  background-color: lawngreen;
+}
+
+.item-main__box__pic-2-syouheimeinohako__text-box{
+  height: 48px;
+  background-color: lightcoral;
+  margin-top: 16px;
+}
+
+.syouhinmei {
+  height: 48px;
+  width: 100%;
+  background-color: white;
+  padding: 0px 16px;
+  
+}
+
+.item-main__box__pic-2-syouheimeinohako-setsumei {
+  height: 220px;
+  background-color: lightskyblue;
+  margin-top: 32px;
+}
+
+.item-main__box__pic-2-syouheimeinohako-setsumei__bun {
+  height: 21px;
+  background-color: white;
+}
+
+.item-main__box__pic-2-syouheimeinohako-setsumei__text  {
+  padding: 13px 16px;
+  margin-top: 16px;
+  height: 100%;
+  background-color: linen;
+}
+
+.syouhinsetumei {
+  height: 190px;
+  width: 100%;
 }
