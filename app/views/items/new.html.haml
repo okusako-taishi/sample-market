@@ -19,6 +19,103 @@
         .item-main__box__pic-2-syouheimeinohako-setsumei__bun 商品の説明
         .item-main__box__pic-2-syouheimeinohako-setsumei__text
           %textarea.syouhinsetumei{:name => "description", :placeholder => "商品の説明（必須 1,000文字以内）\n（色、素材、重さ、定価、注意点など）\n\n例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。\n          ", :rows => "7"}
+    .item-main__box__pic-4
+      .item-main__box__pic-4__syouhinosyousai 商品詳細
+      .item-main__box__pic-4__category
+        .item-main__box__pic-4__category__kategory カテゴリー
+        .selctbox 
+          %select.selection{:name => "categoryId"}
+            %option{"aria-selected" => "true", :label => "選択してください", :selected => "selected", :value => ""} 選択してください
+            %option{"aria-selected" => "false", :label => "レディース", :value => "1"} レディース
+            %option{"aria-selected" => "false", :label => "メンズ", :value => "2"} メンズ
+            %option{"aria-selected" => "false", :label => "ベビー・キッズ", :value => "3"} ベビー・キッズ
+            %option{"aria-selected" => "false", :label => "インテリア・住まい・小物", :value => "4"} インテリア・住まい・小物
+            %option{"aria-selected" => "false", :label => "本・音楽・ゲーム", :value => "5"} 本・音楽・ゲーム
+            %option{"aria-selected" => "false", :label => "おもちゃ・ホビー・グッズ", :value => "1328"} おもちゃ・ホビー・グッズ
+            %option{"aria-selected" => "false", :label => "コスメ・香水・美容", :value => "6"} コスメ・香水・美容
+            %option{"aria-selected" => "false", :label => "家電・スマホ・カメラ", :value => "7"} 家電・スマホ・カメラ
+            %option{"aria-selected" => "false", :label => "スポーツ・レジャー", :value => "8"} スポーツ・レジャー
+            %option{"aria-selected" => "false", :label => "ハンドメイド", :value => "9"} ハンドメイド
+            %option{"aria-selected" => "false", :label => "チケット", :value => "1027"} チケット
+            %option{"aria-selected" => "false", :label => "自動車・オートバイ", :value => "1318"} 自動車・オートバイ
+            %option{"aria-selected" => "false", :label => "その他", :value => "10"} その他
+      .item-main__box__pic-4__category
+        .item-main__box__pic-4__category__kategory 商品の状態
+        .selctbox 
+          %select.selection{:name => "itemCondition"}
+            %option{"aria-selected" => "true", :label => "選択してください", :selected => "selected", :value => ""} 選択してください
+            %option{"aria-selected" => "false", :label => "新品、未使用", :value => "1"} 新品、未使用
+            %option{"aria-selected" => "false", :label => "未使用に近い", :value => "2"} 未使用に近い
+            %option{"aria-selected" => "false", :label => "目立った傷や汚れなし", :value => "3"} 目立った傷や汚れなし
+            %option{"aria-selected" => "false", :label => "やや傷や汚れあり", :value => "4"} やや傷や汚れあり
+            %option{"aria-selected" => "false", :label => "傷や汚れあり", :value => "5"} 傷や汚れあり
+            %option{"aria-selected" => "false", :label => "全体的に状態が悪い", :value => "6"} 全体的に状態が悪い
+
+    .item-main__box__pic-3
+      .item-main__box__pic-3__haisounituite 配送料について
+      .item-main__box__pic-3__hutan  
+        .item-main__box__pic-3__hutan__bun 配送料に負担  
+        .selctbox 
+          %select.selection{:name => "shippingPayer"}
+            %option{"aria-selected" => "true", :label => "選択してください", :selected => "selected", :value => ""} 選択してください
+            %option{"aria-selected" => "false", :label => "送料込み(出品者負担)", :value => "2"} 送料込み(出品者負担)
+            %option{"aria-selected" => "false", :label => "着払い(購入者負担)", :value => "1"} 着払い(購入者負担)
+          -# %svg{"aria-hidden" => "true", :fill => "#888888", "fill-rule" => "evenodd", :height => "24", :viewbox => "0 0 24 24", :width => "24"} 矢印の位置を決める
+      .item-main__box__pic-3__hutannnado  
+        .item-main__box__pic-3__hutan__bun 発送元の地域 
+        .selctbox 
+          %select.selection{:name => "shippingFromArea"}
+            %option{"aria-selected" => "true", :label => "選択してください", :selected => "selected", :value => ""} 選択してください
+            %option{"aria-selected" => "false", :label => "北海道", :value => "1"} 北海道
+            %option{"aria-selected" => "false", :label => "青森県", :value => "2"} 青森県
+            %option{"aria-selected" => "false", :label => "岩手県", :value => "3"} 岩手県
+            %option{"aria-selected" => "false", :label => "宮城県", :value => "4"} 宮城県
+            %option{"aria-selected" => "false", :label => "秋田県", :value => "5"} 秋田県
+            %option{"aria-selected" => "false", :label => "山形県", :value => "6"} 山形県
+            %option{"aria-selected" => "false", :label => "福島県", :value => "7"} 福島県
+            %option{"aria-selected" => "false", :label => "茨城県", :value => "8"} 茨城県
+            %option{"aria-selected" => "false", :label => "栃木県", :value => "9"} 栃木県
+            %option{"aria-selected" => "false", :label => "群馬県", :value => "10"} 群馬県
+            %option{"aria-selected" => "false", :label => "埼玉県", :value => "11"} 埼玉県
+            %option{"aria-selected" => "false", :label => "千葉県", :value => "12"} 千葉県
+            %option{"aria-selected" => "false", :label => "東京都", :value => "13"} 東京都
+            %option{"aria-selected" => "false", :label => "神奈川県", :value => "14"} 神奈川県
+            %option{"aria-selected" => "false", :label => "新潟県", :value => "15"} 新潟県
+            %option{"aria-selected" => "false", :label => "富山県", :value => "16"} 富山県
+            %option{"aria-selected" => "false", :label => "石川県", :value => "17"} 石川県
+            %option{"aria-selected" => "false", :label => "福井県", :value => "18"} 福井県
+            %option{"aria-selected" => "false", :label => "山梨県", :value => "19"} 山梨県
+            %option{"aria-selected" => "false", :label => "長野県", :value => "20"} 長野県
+            %option{"aria-selected" => "false", :label => "岐阜県", :value => "21"} 岐阜県
+            %option{"aria-selected" => "false", :label => "静岡県", :value => "22"} 静岡県
+            %option{"aria-selected" => "false", :label => "愛知県", :value => "23"} 愛知県
+            %option{"aria-selected" => "false", :label => "三重県", :value => "24"} 三重県
+            %option{"aria-selected" => "false", :label => "滋賀県", :value => "25"} 滋賀県
+            %option{"aria-selected" => "false", :label => "京都府", :value => "26"} 京都府
+            %option{"aria-selected" => "false", :label => "大阪府", :value => "27"} 大阪府
+            %option{"aria-selected" => "false", :label => "兵庫県", :value => "28"} 兵庫県
+            %option{"aria-selected" => "false", :label => "奈良県", :value => "29"} 奈良県
+            %option{"aria-selected" => "false", :label => "和歌山県", :value => "30"} 和歌山県
+            %option{"aria-selected" => "false", :label => "鳥取県", :value => "31"} 鳥取県
+            %option{"aria-selected" => "false", :label => "島根県", :value => "32"} 島根県
+            %option{"aria-selected" => "false", :label => "岡山県", :value => "33"} 岡山県
+            %option{"aria-selected" => "false", :label => "広島県", :value => "34"} 広島県
+            %option{"aria-selected" => "false", :label => "山口県", :value => "35"} 山口県
+            %option{"aria-selected" => "false", :label => "徳島県", :value => "36"} 徳島県
+            %option{"aria-selected" => "false", :label => "香川県", :value => "37"} 香川県
+            %option{"aria-selected" => "false", :label => "愛媛県", :value => "38"} 愛媛県
+            %option{"aria-selected" => "false", :label => "高知県", :value => "39"} 高知県
+            %option{"aria-selected" => "false", :label => "福岡県", :value => "40"} 福岡県
+            %option{"aria-selected" => "false", :label => "佐賀県", :value => "41"} 佐賀県
+            %option{"aria-selected" => "false", :label => "長崎県", :value => "42"} 長崎県
+            %option{"aria-selected" => "false", :label => "熊本県", :value => "43"} 熊本県
+            %option{"aria-selected" => "false", :label => "大分県", :value => "44"} 大分県
+            %option{"aria-selected" => "false", :label => "宮崎県", :value => "45"} 宮崎県
+            %option{"aria-selected" => "false", :label => "鹿児島県", :value => "46"} 鹿児島県
+            %option{"aria-selected" => "false", :label => "沖縄県", :value => "47"} 沖縄県
+            %option{"aria-selected" => "false", :label => "未定", :value => "99"} 未定
+
+          -# %svg{"aria-hidden" => "true", :fill => "#888888", "fill-rule" => "evenodd", :height => "24", :viewbox => "0 0 24 24", :width => "24"} 矢印の位置を決める
     .item-main__box__name
     .item-main__box__detail
     .item-main__box__postage
