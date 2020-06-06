@@ -14,7 +14,7 @@
 }
 
 .item-main {
-  height: 100vh;
+  height: 2350px;
   width: 55vw;
   background-color: green;
   margin: 0px auto;
@@ -182,4 +182,86 @@
   height: 120px;
   width: 100%;
   background-color: darkcyan;
+}
+
+.item-main__box__pic_kakaku {
+  height: 20px;
+  width: 100%;
+  margin-bottom: 24px;
+  background-color: blue;
+}
+
+.item-main__box__pic_price {
+  height: 58px;
+  width: 100%;
+  background-color: orange;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.item-main__box__pic_price__hanbaikakaku {
+  height: 100%;
+  width: 120px;
+  background-color: palegreen;
+
+}
+
+.item-main__box__pic_price__nyuryoku {
+  height: 100%;
+  width: 251px;
+  padding: 0 16px;
+  background-color: rgb(161, 161, 161);
+  // position: relative;
+}
+
+.bbw::placeholder {
+ // position: relative;
+  text-align: right;
+}
+
+.bbw {
+  height: 100%;
+  width: 100%;
+  text-align: right;
+}
+
+.item-main__box__pic_kakaku {
+  height: 42px;
+  width: 100%;
+  padding: 12px 0px;
+}
+
+.item-main__box__pic-5 {
+  height: 300px;
+  width: 100%;
+  text-align: center;
+  background-color: whitesmoke;
+  padding: 0 170px;
+  padding-top:40px;
+}
+
+.item-main__box__pic-5__syuppin {
+  height: 100px;
+  width: 100%;
+  padding-top: 20px;
+  font-size: 40px;
+  background-color: red;
+}
+
+.item-main__box__pic-5__sitagaki {
+  height: 80px;
+  width: 100%;
+  font-size: 40px;
+}
+
+.footer {
+  height: 200px;
+  width: 100vw;
+  background-color: black;
+}
+
+.item-main__box__pic-5__modoru {
+  height: 40px;
+  width: 100%;
 }

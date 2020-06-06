@@ -1,4 +1,5 @@
 .item-header
+  = image_tag "/material/logo/logo-white.png"  , size: "270x60"
 .item-main
   .item-main__box
     .item-main__box__pic
@@ -39,6 +40,10 @@
             %option{"aria-selected" => "false", :label => "チケット", :value => "1027"} チケット
             %option{"aria-selected" => "false", :label => "自動車・オートバイ", :value => "1318"} 自動車・オートバイ
             %option{"aria-selected" => "false", :label => "その他", :value => "10"} その他
+      .item-main__box__pic-4__category 
+        .item-main__box__pic-4__category__kategory ブランド 任意
+        .selctbox 
+          %input.syouhinmei{:autocomplete => "off", :name => "name", :placeholder => "例 （シャネル）", :type => "text", :value => ""}/ 
       .item-main__box__pic-4__category
         .item-main__box__pic-4__category__kategory 商品の状態
         .selctbox 
@@ -114,10 +119,24 @@
             %option{"aria-selected" => "false", :label => "鹿児島県", :value => "46"} 鹿児島県
             %option{"aria-selected" => "false", :label => "沖縄県", :value => "47"} 沖縄県
             %option{"aria-selected" => "false", :label => "未定", :value => "99"} 未定
-
-          -# %svg{"aria-hidden" => "true", :fill => "#888888", "fill-rule" => "evenodd", :height => "24", :viewbox => "0 0 24 24", :width => "24"} 矢印の位置を決める
-    .item-main__box__name
-    .item-main__box__detail
-    .item-main__box__postage
-    .item-main__box__price
-    .item-main__box__Exhibition
+      .item-main__box__pic-3__hutannnado  
+        .item-main__box__pic-3__hutan__bun 発送までの日数 必須
+        .selctbox 
+          %select.selection{:name => "shippingDuration"}
+            %option{"aria-selected" => "true", :label => "選択してください", :selected => "selected", :value => ""} 選択してください
+            %option{"aria-selected" => "false", :label => "1~2日で発送", :value => "1"} 1~2日で発送
+            %option{"aria-selected" => "false", :label => "2~3日で発送", :value => "2"} 2~3日で発送
+            %option{"aria-selected" => "false", :label => "4~7日で発送", :value => "3"} 4~7日で発送
+    .item-main__box__pic-4
+      .item-main__box__pic_kakaku 価格（¥300〜9,999,999）
+      .item-main__box__pic_price
+        .item-main__box__pic_price__hanbaikakaku 販売価格 必須
+        .item-main__box__pic_price__nyuryoku 
+          %input.bbw{:autocomplete => "off", :name => "price", :placeholder => "0", :type => "number", :value => ""}/
+      .item-main__box__pic_kakaku 販売手数料 (10%)
+      .item-main__box__pic_kakaku 販売利益
+    .item-main__box__pic-5
+      .item-main__box__pic-5__syuppin 出品する
+      .item-main__box__pic-5__sitagaki 下書きに保存
+      .item-main__box__pic-5__modoru 戻る
+.footer
