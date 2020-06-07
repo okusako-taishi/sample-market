@@ -14,75 +14,64 @@
 }
 
 .item-main {
-  height: 2350px;
+  height: 2600px;
   width: 55vw;
-  background-color: green;
   margin: 0px auto;
+  &__box {
+    height: 100%;
+    width: 100%;
+    &__pic {
+      height: 300px;
+      width: 100%;
+      border-bottom: solid 1px #eee;
+      padding: 40px;
+      &__picture{
+        height: 20px;
+        background-color: white;
+        &__upload-text {
+          height: 20px;
+          margin-top: 15px;
+        }
+        &__upload-form  {
+            height: 150px;
+            margin-top: 15px;
+            border: dashed 2px #5b8bd0;/*点線*/
+        }
+      }
+    }
+  }
 }
 
-.item-main__box {
-  height: 100%;
-  width: 100%;
-  background-color: blue;
-}
 
-.item-main__box__pic {
-  height: 300px;
-  width: 100%;
-  background-color: yellow;
-  padding: 40px;
-}
-
-
-
-
-.item-main__box__pic__hako__gazo {
-  height: 220px;
-  background-color: red;
-}
-
-.item-main__box__pic__hako__gazo__picture{
-  height: 20px;
-  background-color: white;
-}
-
-.item-main__box__pic__hako__gazo__picture__photo{
-  height: 20px;
-}
- 
-.item-main__box__pic__hako__gazo__picture__upload-text {
-  height: 20px;
-  margin-top: 15px;
-  background-color: green;
-}
-
-.item-main__box__pic__hako__gazo__picture__upload-form  {
-  height: 150px;
-  background-color: indianred;
-  margin-top: 15px;
-}
 
 .item-main__box__pic-2 {
   height: 440px;
   width: 100%;
-  background-color: black;
   padding: 40px;
-}
-
-.item-main__box__pic-2-syouheimeinohako {
-  height: 80px;
-  background-color: ivory;
-}
-
-.item-main__box__pic-2-syouheimeinohako__name{
-  height: 24px;
-  background-color: lawngreen;
-}
-
-.item-main__box__pic-2-syouheimeinohako__text-box{
-  height: 48px;
-  background-color: lightcoral;
-  margin-top: 16px;
+  border-bottom: solid 1px #eee;
+  &__syouheimeinohako {
+    height: 90px;
+    &__name{
+      height: 24px;
+    }
+    &__text-box{
+      height: 48px;
+      margin-top: 16px;
+    }
+  }
+  &__setsumei {
+    height: 220px;
+    margin-top: 32px;
+    &__bun {
+      height: 21px;
+      background-color: white;
+    }
+    &__text  {
+      padding: 13px 16px;
+      margin-top: 16px;
+      height: 100%;
+    }
+  }
 }
 
 .syouhinmei {
@@ -93,56 +82,56 @@
   
 }
 
-.item-main__box__pic-2-syouheimeinohako-setsumei {
-  height: 220px;
-  background-color: lightskyblue;
-  margin-top: 32px;
-}
-
-.item-main__box__pic-2-syouheimeinohako-setsumei__bun {
-  height: 21px;
-  background-color: white;
-}
-
-.item-main__box__pic-2-syouheimeinohako-setsumei__text  {
-  padding: 13px 16px;
-  margin-top: 16px;
-  height: 100%;
-  background-color: linen;
-}
 
 .syouhinsetumei {
   height: 190px;
   width: 100%;
 }
 
+
 .item-main__box__pic-3 {
+  height: 500px;
+  width: 100%;
+  padding: 40px;
+  border-bottom: solid 1px #eee;
+  &__syouhinosyousai {
+    height: 20px;
+    width: 100%;
+    margin-bottom: 23px;
+  }
+  &__category {
+      height: 120px;
+      width: 100%;
+      margin-top: 10px;
+  }
+}
+
+.item-main__box__pic-4 {
   height: 440px;
   width: 100%;
-  background-color: yellow;
   padding: 40px;
-
+  border-bottom: solid 1px #eee;
+  &__haisounituite  {
+    height: 2opx;
+    width: 100%;
+    font-size: 14px;
+    margin-bottom: 24px;
+  }
+  &__hutannnado {
+    height: 83px;
+    width: 100%;
+    margin-top: 24px;
+  }
+  &__hutan  {
+    height: 83px;
+    width: 100%;
+    &__bun {
+      height: 20px;
+      width: 100%;
+    }
+  }
 }
 
-.item-main__box__pic-3__haisounituite  {
-  height: 2opx;
-  width: 100%;
-  font-size: 14px;
-  background-color: aqua;
-  margin-bottom: 24px;
-}
-
-.item-main__box__pic-3__hutan  {
-  height: 83px;
-  width: 100%;
-  background-color: blue;
-}
-
-.item-main__box__pic-3__hutan__bun {
-  height: 20px;
-  width: 100%;
-  background-color: cornsilk;
-}
 
 .selctbox {
   height: 48px;
@@ -153,67 +142,46 @@
 
 .selection {
   height: 48px;
-  width: 600px;
+  width: 500px;
   margin: 0 12px;
   font-size: 16px;
 }
 
-.item-main__box__pic-3__hutannnado {
-  height: 83px;
-  width: 100%;
-  background-color: blue;
-  margin-top: 24px;
-}
-
-.item-main__box__pic-4 {
+.item-main__box__pic-5 {
   height: 440px;
   width: 100%;
-  background-color: red;
   padding: 40px;
+  border-bottom: solid 1px #eee;
+  &__tesuuryou {
+    height: 42px;
+    width: 100%;
+    padding: 12px 0px;
+  }
+  &__kakaku {
+    height: 20px;
+    width: 100%;
+    margin-bottom: 24px;
+  }
+  &__price {
+    height: 58px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    &__hanbaikakaku {
+    height: 100%;
+    width: 120px;
+      &__nyuryoku {
+        height: 100%;
+        width: 251px;
+        padding: 0 16px;
+        background-color: rgb(161, 161, 161);
+        // position: relative;
+      }
+    }
+  }
 }
 
-.item-main__box__pic-4__syouhinosyousai {
-  height: 20px;
-  width: 100%;
-  margin-bottom: 23px;
-}
-
-.item-main__box__pic-4__category {
-  height: 120px;
-  width: 100%;
-  background-color: darkcyan;
-}
-
-.item-main__box__pic_kakaku {
-  height: 20px;
-  width: 100%;
-  margin-bottom: 24px;
-  background-color: blue;
-}
-
-.item-main__box__pic_price {
-  height: 58px;
-  width: 100%;
-  background-color: orange;
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 20px;
-}
-
-.item-main__box__pic_price__hanbaikakaku {
-  height: 100%;
-  width: 120px;
-  background-color: palegreen;
-
-}
-
-.item-main__box__pic_price__nyuryoku {
-  height: 100%;
-  width: 251px;
-  padding: 0 16px;
-  background-color: rgb(161, 161, 161);
-  // position: relative;
-}
 
 .bbw::placeholder {
  // position: relative;
@@ -226,33 +194,29 @@
   text-align: right;
 }
 
-.item-main__box__pic_kakaku {
-  height: 42px;
-  width: 100%;
-  padding: 12px 0px;
-}
 
-.item-main__box__pic-5 {
-  height: 300px;
+.item-main__box__pic-6 {
+  height: 400px;
   width: 100%;
   text-align: center;
-  background-color: whitesmoke;
   padding: 0 170px;
   padding-top:40px;
-}
-
-.item-main__box__pic-5__syuppin {
-  height: 100px;
-  width: 100%;
-  padding-top: 20px;
-  font-size: 40px;
-  background-color: red;
-}
-
-.item-main__box__pic-5__sitagaki {
-  height: 80px;
-  width: 100%;
-  font-size: 40px;
+  &__syuppin {
+    height: 100px;
+    width: 100%;
+    padding-top: 20px;
+    font-size: 40px;
+    background-color: red;
+  }
+  &__sitagaki {
+    height: 80px;
+    width: 100%;
+    font-size: 40px;
+  }
+  &__modoru {
+    height: 40px;
+    width: 100%;
+  }
 }
 
 .footer {
@@ -261,7 +225,7 @@
   background-color: black;
 }
 
-.item-main__box__pic-5__modoru {
-  height: 40px;
-  width: 100%;
+.gazoutoukou {
+  height: 150px;
+  width: 624px;
 }
