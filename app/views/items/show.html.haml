@@ -1,0 +1,325 @@
+
+.header
+  .header__inner
+    .header__inner__main
+      .header__inner__main--logo
+        = link_to '#' do
+          = image_tag "/material/logo/logo.png"
+      .header__inner__main--search
+        %form.header__inner__main--search--box
+          %input.header__inner__main--search--box--text{type: "text", placeholder: "キーワードから探す"}
+          %button.header__inner__main--search--box--btn{type: "submit"}
+            = image_tag "/material/icon/icon-search 1.png"
+    .header__inner__sub
+      %ul.list--left
+       %li.list--left
+      %ul.list--right
+
+
+.items
+  .items-main
+    .items-main__name
+      ユニクロ タンクTシャツ綿グレー
+    .items-main__description
+      『ユニクロ タンクTシャツ綿グレー』は、1343回の取引実績を持つかば 底値saleさんから出品され
+      ました。ユニクロ（Tシャツ/カットソー(半袖/袖なし)/レディース）の商品で、沖縄県から2~3日で
+      発送されます。
+    .items-main__image
+      = image_tag "/material/icon/icon-01.png", class: "imagesample"
+    %table.items-main__detail
+      %tbody
+        %tr
+          %th
+            出品者
+          %td
+            name
+        %tr
+          %th
+            カテゴリー
+          %td
+            categori
+        %tr
+          %th
+            ブランド
+          %td
+            ユニクロ
+        %tr
+          %th
+            商品のサイズ
+          %td
+            M        
+        %tr
+          %th
+            商品の状態
+          %td
+            やや傷や汚れあり        
+        %tr
+          %th
+            配送料の負担
+          %td
+            送料込み
+        %tr
+          %th
+            配送の方法
+          %td
+            クリックポスト
+        %tr
+          %th
+            配送元地域
+          %td
+            沖縄県
+        %tr
+          %th
+            発送日の目安
+          %td
+            2〜3日で発送
+    .items-main__select                                    
+    .items-main__price
+      %span.items-main__price--realmoney
+        ¥400
+      %span.items-main__price--tax
+        (税込み)
+      %span.items-main__price--shipping-fee
+        送料込み
+
+    .items-main__buy--btn
+      購入画面に進む
+      
+    .items-main__description-inner
+      丈夫で良く伸びる綿素材
+      %br
+      表面凸凹素材感
+      %br
+      袖口が着るとかわいいデザイン
+      %br
+      シンプルであわせやすい
+      %br
+      娘クローゼット整理します
+      %br
+      良かったらどなたか活用して下さい( ^o^)ノ
+    .items-main__button
+      .items-main__button--left
+        .items-main__button--left--left
+          %i.fas.fa-heart
+          いいね！
+        .items-main__button--left--right  
+          不適切な商品報告
+      .items-main__button--right
+        安心・安全への取り組み
+%form.items-comment
+  %input.items-comment--text{type: "textarea"}
+  .realmessage
+    相手のことを考え丁寧なコメントを心がけましょう。
+    %br
+    不快な言葉遣いなどは利用制限や退会処分となる事があります。
+  %button.items-comment--btn{type: "submit"}
+    %i.fa.fa-comment
+    コメントする
+.items-social-media
+  %ul.items-social-media__box
+    %li
+      = link_to "https://www.facebook.com/", class: "link--facebook" do
+        %i.fab.fa-facebook-square
+    %li
+      = link_to "https://twitter.com/", class: "link--twitter" do
+        %i.fab.fa-twitter-square
+    %li
+      = link_to "#", class: "link--line" do
+        %i.fab.fa-line
+    %li
+      = link_to "#", class: "link--pinterest" do
+        %i.fab.fa-pinterest-square
+.items-sub
+  .items-sub--main
+    .items-sub--main__header
+      sampleさんのその他の出品
+    .items-sub--main__production
+      .items-sub--main__production--box
+        .items-sub--main__production--box--contents
+          = image_tag "/material/icon/icon-01.png", class: "imagesample2"
+        .items-sub--main__production--box--body
+          .items-sub--main__production--box--body--name
+            Tシャツ
+          .items-sub--main__production--box--body--price
+            .items-sub--main__production--box--body--price--money
+              ¥400
+            %i.fas.fa-heart
+      .items-sub--main__production--box
+        .items-sub--main__production--box--contents
+          = image_tag "/material/icon/icon-01.png", class: "imagesample2"
+        .items-sub--main__production--box--body
+          .items-sub--main__production--box--body--name
+            Tシャツ
+          .items-sub--main__production--box--body--price
+            .items-sub--main__production--box--body--price--money
+              ¥400
+            %i.fas.fa-heart
+      .items-sub--main__production--box
+        .items-sub--main__production--box--contents
+          = image_tag "/material/icon/icon-01.png", class: "imagesample2"
+        .items-sub--main__production--box--body
+          .items-sub--main__production--box--body--name
+            Tシャツ
+          .items-sub--main__production--box--body--price
+            .items-sub--main__production--box--body--price--money
+              ¥400
+            %i.fas.fa-heart
+    .items-sub--main__production
+      .items-sub--main__production--box
+        .items-sub--main__production--box--contents
+          = image_tag "/material/icon/icon-01.png", class: "imagesample2"
+        .items-sub--main__production--box--body
+          .items-sub--main__production--box--body--name
+            Tシャツ
+          .items-sub--main__production--box--body--price
+            .items-sub--main__production--box--body--price--money
+              ¥400
+            %i.fas.fa-heart
+      .items-sub--main__production--box
+        .items-sub--main__production--box--contents
+          = image_tag "/material/icon/icon-01.png", class: "imagesample2"
+        .items-sub--main__production--box--body
+          .items-sub--main__production--box--body--name
+            Tシャツ
+          .items-sub--main__production--box--body--price
+            .items-sub--main__production--box--body--price--money
+              ¥400
+            %i.fas.fa-heart
+      .items-sub--main__production--box
+        .items-sub--main__production--box--contents
+          = image_tag "/material/icon/icon-01.png", class: "imagesample2"
+        .items-sub--main__production--box--body
+          .items-sub--main__production--box--body--name
+            Tシャツ
+          .items-sub--main__production--box--body--price
+            .items-sub--main__production--box--body--price--money
+              ¥400
+            %i.fas.fa-heart
+  .items-sub--main
+    .items-sub--main__header
+      ユニクロのTシャツ/カットソー(半袖/袖なし) その他の商品
+    .items-sub--main__production
+      .items-sub--main__production--box
+        .items-sub--main__production--box--contents
+          = image_tag "/material/icon/icon-01.png", class: "imagesample2"
+        .items-sub--main__production--box--body
+          .items-sub--main__production--box--body--name
+            Tシャツ
+          .items-sub--main__production--box--body--price
+            .items-sub--main__production--box--body--price--money
+              ¥400
+            %i.fas.fa-heart
+      .items-sub--main__production--box
+        .items-sub--main__production--box--contents
+          = image_tag "/material/icon/icon-01.png", class: "imagesample2"
+        .items-sub--main__production--box--body
+          .items-sub--main__production--box--body--name
+            Tシャツ
+          .items-sub--main__production--box--body--price
+            .items-sub--main__production--box--body--price--money
+              ¥400
+            %i.fas.fa-heart
+      .items-sub--main__production--box
+        .items-sub--main__production--box--contents
+          = image_tag "/material/icon/icon-01.png", class: "imagesample2"
+        .items-sub--main__production--box--body
+          .items-sub--main__production--box--body--name
+            Tシャツ
+          .items-sub--main__production--box--body--price
+            .items-sub--main__production--box--body--price--money
+              ¥400
+            %i.fas.fa-heart
+    .items-sub--main__production
+      .items-sub--main__production--box
+        .items-sub--main__production--box--contents
+          = image_tag "/material/icon/icon-01.png", class: "imagesample2"
+        .items-sub--main__production--box--body
+          .items-sub--main__production--box--body--name
+            Tシャツ
+          .items-sub--main__production--box--body--price
+            .items-sub--main__production--box--body--price--money
+              ¥400
+            %i.fas.fa-heart
+      .items-sub--main__production--box
+        .items-sub--main__production--box--contents
+          = image_tag "/material/icon/icon-01.png", class: "imagesample2"
+        .items-sub--main__production--box--body
+          .items-sub--main__production--box--body--name
+            Tシャツ
+          .items-sub--main__production--box--body--price
+            .items-sub--main__production--box--body--price--money
+              ¥400
+            %i.fas.fa-heart
+      .items-sub--main__production--box
+        .items-sub--main__production--box--contents
+          = image_tag "/material/icon/icon-01.png", class: "imagesample2"
+        .items-sub--main__production--box--body
+          .items-sub--main__production--box--body--name
+            Tシャツ
+          .items-sub--main__production--box--body--price
+            .items-sub--main__production--box--body--price--money
+              ¥400
+            %i.fas.fa-heart
+
+.items-link
+  = link_to '#', class: "items-link--page" do
+    sample-marketをもっとみる
+%aside.appBanner
+  .inner
+    .inner__title
+      誰でも簡単、人生を変えるフリマアプリ
+    .inner__text
+      今すぐ無料ダウンロード
+    .inner__icon
+      = link_to '#' do
+        = image_tag "/material/download-on-app-store-png-open-2000.png", class: "abtn"
+      = link_to '#' do
+        = image_tag "/material/google-play-badge.png", class: "gbtn"
+.footer
+  %ul.contents
+    %li.content
+      .content__head
+        FURIMAについて
+      %ul
+        %li
+          = link_to '#' do
+            会社概要（運営会社）
+        %li
+          = link_to '#' do
+            プライバシーポリシー
+        %li
+          = link_to '#' do
+            FURIMA利用規約
+        %li
+          = link_to '#' do
+            ポイントに関する規約
+    %li.content
+      .content__head
+        FURIMAを見る
+      %ul
+        %li
+          = link_to '#' do
+            カテゴリー一覧
+        %li
+          = link_to '#' do
+            ブランド一覧
+    %li.content
+      .content__head
+        ヘルプ＆ガイド
+      %ul
+        %li
+          = link_to '#' do
+            FURIMAガイド
+        %li
+          = link_to '#' do
+            FURIMAロゴ利用ガイドライン
+        %li
+          = link_to '#' do
+            お知らせ
+  .footer__logo
+    = link_to '#' do
+      = image_tag "/material/logo/logo-white.png", class: "furima-image"
+  .footer__name
+    ©︎ FURIMA
+    
+  
