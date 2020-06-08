@@ -1,0 +1,41 @@
+= render "layouts/header"
+.items
+  = render "items-main"
+%form.items-comment
+  %input.items-comment--text{type: "textarea"}
+  .realmessage
+    相手のことを考え丁寧なコメントを心がけましょう。
+    %br
+    不快な言葉遣いなどは利用制限や退会処分となる事があります。
+  %button.items-comment--btn{type: "submit"}
+    %i.fa.fa-comment
+    コメントする
+= render "items-social-media"
+.items-sub
+  .items-sub--main
+    .items-sub--main__header
+      sampleさんのその他の出品
+    .items-sub--main__production
+      = render "items-sub"
+      = render "items-sub"
+      = render "items-sub"
+    .items-sub--main__production
+      = render "items-sub"
+      = render "items-sub"
+      = render "items-sub"
+  .items-sub--main
+    .items-sub--main__header
+      ユニクロのTシャツ/カットソー(半袖/袖なし) その他の商品
+    .items-sub--main__production
+      = render "items-sub"
+      = render "items-sub"
+      = render "items-sub"
+    .items-sub--main__production
+      = render "items-sub"
+      = render "items-sub"
+      = render "items-sub"
+= render "items-link"
+= render "layouts/footer"
+
+    
+  
