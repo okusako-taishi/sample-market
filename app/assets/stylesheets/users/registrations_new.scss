@@ -3,11 +3,103 @@
 }
 
 .single-container {
-  padding: 0 0 220px;
   .single-header {
     height: 128px;
+    width: 100%;
+    background-color: rgba(214, 214, 214, 0.712);
+    display: flex;
   }
   .single-main {
     display: block;
+    background-color: rgba(214, 214, 214, 0.712);
+    &__box {
+      background-color: white;
+      width: 800px;
+      margin:0 auto;
+    }
+      &__header {
+        background-color: white;
+        width: 800px;
+        height: 97px;
+        background-color: white;
+        border-bottom: 1px solid;
+
+      h2 {
+        text-align: center;
+        line-height: 97px;
+        font-size: 20px;
+        font-weight: bold;
+      }
+    }
+    &__form {
+      padding: 40px 40px 64px;
+    }
+    &__content {
+      margin:0 auto;
+      max-width: 343px;
+      .input-default {
+        width: 300px;
+        height: 50px;
+        padding-left: 10px;
+      }
+      .field {
+        margin-top: 32px;
+        .form-text {
+          color: grey;
+          .checkbox-id {
+            font-size: 20px;
+          }
+        }
+        span {
+          background: #ea352d;
+          color: white;
+          font-size: 15px;
+        }
+        .text-box {
+          margin:8px 0 0;
+        }
+        .input-left {
+          width: calc(50% - 6px);
+          position: relative;
+          height: 50px;
+          padding-left: 10px;
+        }
+        .input-right {
+          position: absolute;
+          height: 50px;
+          padding-left: 10px;
+          margin-left: 5px;
+        }
+        .input-birthday {
+          height: 50px;
+          padding-left: 10px;
+        }
+        .form-info-text {
+          color: grey;
+          margin-top: 8px;
+          font-size: 13px;
+        }
+        .single-content {
+          width: 300px;
+          margin:0 auto;
+          .single-inner {
+            margin-top: 38px;
+            text-align: center;
+            color: white;
+            background-color: red;
+            height: 50px;
+            width: 343px;
+            line-height: 50px;
+          }
+        }
+      }
+    }
+  }
+  .single-footer {
+    width: 456px;
+    height: 220px;
+    margin: 0 auto;
   }
 }
+
+
