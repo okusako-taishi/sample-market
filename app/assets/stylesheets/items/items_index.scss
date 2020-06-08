@@ -2,6 +2,36 @@
   box-sizing: border-box;
 }
 
+$white-shadow-color:  0 0 5px rgba(0,0,0,0.4);
+
+@mixin btn-style() {
+  img{
+    width: 180px;
+  }
+  a{
+    &:hover{
+      opacity: 0.5;
+    }
+  }
+  .a-btn{
+    margin-right: 10px;
+  }
+}
+
+@mixin decoration-line() {
+  &:after{
+    content: "";
+    width: 70px;
+    height: 4px;
+    background-color: #3CCACE;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+
 .item__index--main{
   width: 100%;
   background-color: #f8f8f8;
@@ -25,18 +55,18 @@
       padding: 35px 0 0 0;
 
       &__title{
-        text-shadow: 0 0 5px rgba(0,0,0,0.4);
+        text-shadow: $white-shadow-color;
         font-size: 60px;
         line-height: 1.2;
         color: #fff;
       }
 
       &__text{
-        text-shadow: 0 0 5px rgba(0,0,0,0.4);
+        text-shadow: $white-shadow-color;
         font-size: 18px;
         color: #fff;
-        line-height: 1.77778;
-        margin: 16px 0 0 0;
+        line-height: 1.8;
+        margin-top: 16px;
       }
 
       &__btn{
@@ -44,24 +74,7 @@
         display: flex;
         justify-content: left;
         margin: 20px auto 0;
-
-        img{
-          width: 180px;
-        }
-
-        .a-btn{
-          margin-right: 10px;
-          &:hover{
-            opacity: 0.5;
-          }
-        }
-
-        .g-btn{
-          &:hover{
-            opacity: 0.5;
-          }
-        }
-
+        @include btn-style();
       }
     }
   }
@@ -77,16 +90,7 @@
       margin-bottom: 25px;
       padding-bottom: 15px;
       position: relative;
-      &:after{
-        content: "";
-        width: 70px;
-        height: 4px;
-        background-color: #3CCACE;
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
-      }
+      @include decoration-line();
     }
 
     &__lists{
@@ -157,14 +161,14 @@
   .middle-download{
     background-image: url(/material/pict/bg-topMiddleDl-pict.jpg);
     background-position: bottom right;
-    height: 400px;
     background-size: cover;
+    height: 400px;
     display: flex;
     align-items: center;
 
     &__inner{
       color: #fff;
-      text-shadow: 0 0 5px rgba(0,0,0,0.4);
+      text-shadow: $white-shadow-color;
       text-align: left;
       max-width: 1040px;
       width: 100%;
@@ -181,28 +185,13 @@
         margin: 20px 0 30px;
         line-height: 1.5;
       }
+
       &__btn{
         width: 100%;
         display: flex;
         justify-content: left;
         margin: 20px auto 0;
-
-        img{
-          width: 180px;
-        }
-
-        .a-btn{
-          margin-right: 10px;
-          &:hover{
-            opacity: 0.5;
-          }
-        }
-
-        .g-btn{
-          &:hover{
-            opacity: 0.5;
-          }
-        }
+        @include btn-style();
       }
     }
   }
@@ -219,18 +208,9 @@
       margin-bottom: 25px;
       padding-bottom: 15px;
       position: relative;
-
-      &:after{
-        content: "";
-        width: 70px;
-        height: 4px;
-        background-color: #3CCACE;
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
-      }
+      @include decoration-line();
     }
+
     &__items{
       max-width: calc(1040px + 20px);
       width: 100%;
@@ -273,7 +253,7 @@
   }
 
   .pickup{
-    padding: 80px 0 0;
+    padding-top: 80px;
     background-color: #f8f8f8;
     height: 100%;
 
@@ -379,7 +359,7 @@
       text-align: center;
 
       &__title{
-        text-shadow: 0 0 5px rgba(0,0,0,0.4);
+        text-shadow: $white-shadow-color;
         font-size: 24px;
         font-weight: bold;
         line-height: 1.4;
@@ -387,7 +367,7 @@
 
       &__text{
         font-size: 35px;
-        text-shadow: 0 0 5px rgba(0,0,0,0.4);
+        text-shadow: $white-shadow-color;
       }
 
       &__icon{
@@ -395,23 +375,7 @@
         display: flex;
         justify-content: center;
         margin: 20px auto 0;
-
-        img{
-          width: 180px;
-        }
-
-        .a-btn{
-          margin-right: 10px;
-          &:hover{
-            opacity: 0.5;
-          }
-        }
-
-        .g-btn{
-          &:hover{
-            opacity: 0.5;
-          }
-        }
+        @include btn-style();
       }
     }
   }
@@ -439,3 +403,102 @@
     width: 60%;
   }
 }
+
+
+
+
+
+header.pc-header{
+  .header--inner{
+    max-width: 1040px;
+    width: 100%;
+    min-height: 82px;
+    margin: 0 auto;
+    padding: 15px 0 0;
+    &__main{
+      position: relative;
+      display: flex;
+      align-items: center;
+      h1.header--inner__main__icon{
+        padding-bottom: 10px;
+        margin-right: 30px;
+        a{
+          width: 140px;
+          display: block;
+          img{
+            width: 100%;
+          }
+        }
+      }
+      .header--inner__main__search-box{
+        margin-left: auto;
+        width: 100%;
+
+        form{
+          width: 100%;
+          display: flex;
+          margin-bottom: 5px;
+          input{
+            width: calc(100% - 26px);
+            height: 36px;
+            padding: 0 0 0 5px;
+          }
+
+          button{
+            width: 36px;
+            border: 0;
+            cursor: pointer;
+            background-color: #3CCACE;
+            padding: 8px;
+            .search-box__icon{
+              img{
+                width: 100%;
+                vertical-align: bottom;
+              }
+            }
+          }
+        }
+      }
+    }
+    &__nav{
+      display: flex;
+      justify-content: space-between;
+      color: black;
+      font-size: 14px;
+      line-height: 32px;
+      cursor: pointer;
+      margin-bottom: 10px;
+
+      &__left{
+        display: flex;
+
+        &--category{
+          padding-right: 30px;
+        }
+      
+        &--brand{
+        
+        }
+      }
+      &__right{
+        display: flex;
+
+        &--login{
+          a{
+            color: black;
+            text-decoration: none;
+          }
+          padding-right: 30px;
+        }
+          
+        &--registration{
+          a{
+            color: black;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+  }
+}
+
