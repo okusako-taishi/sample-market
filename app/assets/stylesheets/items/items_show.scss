@@ -3,17 +3,45 @@
 }
 
 body {
-  background-color: yellow;
+  background-color: whitesmoke;
 }
 
 .header {
-  padding: 0 60px;
-  &__inner {
-    max-width: 1040px;
-    width: 100%;
-    min-height: 82px;
-    margin: 0 auto;
-  }
+  height: 100px;
+  background-color: black;
+  // padding: 0 60px;
+  // height: 100px;
+  // &__inner {
+  //   max-width: 1040px;
+  //   width: 100%;
+  //   min-height: 82px;
+  //   margin: 0 auto;
+  //   padding:15px 0 0;
+  //   &__main {
+  //     display: flex;
+  //     &--logo {
+
+  //       .furima-head {
+  //         height: 50px;
+  //         width: 140px;
+  //       }
+  //     }
+
+  //     &--search {
+  //       &--box {
+  //         &--text {
+
+  //         }
+  //         &--btn {
+  //           .search-icon {
+  //             height: 20px;
+  //             width: 20px;
+  //           }
+  //         }
+  //       }
+  //     }
+  //   }
+  // }
 
 }
 
