@@ -42,7 +42,6 @@ ActiveRecord::Schema.define(version: 2020_06_08_121233) do
     t.string "size", null: false
     t.integer "cost", null: false
     t.string "days", null: false
-    t.integer "places"
     t.integer "prefecture_code"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

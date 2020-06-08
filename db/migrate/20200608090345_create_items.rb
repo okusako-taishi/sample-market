@@ -9,7 +9,6 @@ class CreateItems < ActiveRecord::Migration[5.2]
       t.string :size, null: false
       t.integer :cost,null: false
       t.string :days,null: false
-      t.integer :places 
       t.integer :prefecture_code
       t.timestamps
     end
