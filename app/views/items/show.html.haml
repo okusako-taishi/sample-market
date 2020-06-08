@@ -1,0 +1,66 @@
+
+.header
+  -# .header__inner
+  -#   .header__inner__main
+  -#     .header__inner__main--logo
+  -#       = link_to '#' do
+  -#         = image_tag "/material/logo/logo.png", class: "furima-head"
+  -#     .header__inner__main--search
+  -#       %form.header__inner__main--search--box
+  -#         %input.header__inner__main--search--box--text{type: "text", placeholder: "キーワードから探す"}
+  -#         %button.header__inner__main--search--box--btn{type: "submit"}
+  -#           = image_tag "/material/icon/icon-search 1.png", class: "search-icon"
+  -#   .header__inner__sub
+  -#     %ul.list--left
+  -#       %li.list--left--left
+  -#         カテゴリー
+  -#       %li.list--left--right
+  -#         ブランド
+  -#     %ul.list--right
+  -#       %li.list--left--left--login
+  -#         ログイン
+  -#       %li.list--left--right--new
+  -#         新規登録
+        
+
+
+.items
+  = render "items-main"
+%form.items-comment
+  %input.items-comment--text{type: "textarea"}
+  .realmessage
+    相手のことを考え丁寧なコメントを心がけましょう。
+    %br
+    不快な言葉遣いなどは利用制限や退会処分となる事があります。
+  %button.items-comment--btn{type: "submit"}
+    %i.fa.fa-comment
+    コメントする
+= render "items-social-media"
+.items-sub
+  .items-sub--main
+    .items-sub--main__header
+      sampleさんのその他の出品
+    .items-sub--main__production
+      = render "items-sub"
+      = render "items-sub"
+      = render "items-sub"
+    .items-sub--main__production
+      = render "items-sub"
+      = render "items-sub"
+      = render "items-sub"
+  .items-sub--main
+    .items-sub--main__header
+      ユニクロのTシャツ/カットソー(半袖/袖なし) その他の商品
+    .items-sub--main__production
+      = render "items-sub"
+      = render "items-sub"
+      = render "items-sub"
+    .items-sub--main__production
+      = render "items-sub"
+      = render "items-sub"
+      = render "items-sub"
+= render "items-link"
+= render "footer"
+
+    
+  
