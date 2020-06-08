@@ -1,0 +1,67 @@
+* {
+  box-sizing: border-box;
+}
+
+.kounyu-all {
+  height: 2000px;
+  width: 100vw;
+  background-color: #b3d4fc;
+}
+
+.kounyu-header {
+  height: 128px;
+  width: 100%;
+  background-color: darkkhaki;
+}
+
+.kounyu-main {
+  height: 945px;
+  width: 700px;
+  margin: 0 auto;
+  background-color: darkgrey;
+  &__box-1{
+    height: 100px;
+    width: 100%;
+    background-color: yellowgreen;
+    font-size: 22px;
+    padding: 32px;
+    text-align: center;
+    border-bottom: solid 1px #eee;
+  }
+  &__box-2{
+    height: 145px;
+    width: 100%;
+    background-color: white;
+    padding: 32px 16px;
+    &__item-box{
+      height: 80px;
+      background-color: #b3d4fc;
+      display: flex;
+      &__pic{
+        height: 80px;
+        width: 80px;
+        margin-left: 200px;
+        background-color: white;
+      }
+      &__text{
+        height: 80px;
+        width: 195px;
+        background-color: red;
+        margin-left: 10px ;
+      }
+    }
+  }
+}
+
+.kounyu-main__box-v2  {
+  height: 515px;
+  width: 345px;
+  margin: auto;
+  background-color: #b3d4fc;
+  &__box-3 {
+    height: 150px;
+    width: 100%;
+    background-color: white;
+    border-bottom: solid 1px #eee;
+  }
+}
