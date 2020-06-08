@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
-  root 'items#buy'
+  root 'items#index'
   resources :users, only: :show
   resources :items, only: [:show, :new] do
-    member do
+    collection do
       get 'buy'
     end
   end
