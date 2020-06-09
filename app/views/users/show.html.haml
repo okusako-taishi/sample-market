@@ -1,0 +1,40 @@
+= render "layouts/header"
+.show-users-wrapper
+  .show-users-wrapper__center
+    = render "layouts/content"
+    .show-users-wrapper__center__right-content
+      = image_tag "/material/pict/結構いい感じの背景.jpg", class:"show-users-wrapper__center__right-content__image"
+      = image_tag  "/material/icon/ユーザーアイコン.png", class:"show-users-wrapper__center__right-content__user-image"
+      .show-users-wrapper__center__right-content__user-name
+        山田太郎
+        %div
+          評価2
+          出品0
+      .show-users-wrapper__center__right-content__title-wrapper
+        .show-users-wrapper__center__right-content__title-wrapper__title.active
+          お知らせ
+        .show-users-wrapper__center__right-content__title-wrapper__title
+          やることリスト
+      .show-users-wrapper__center__right-content__contents
+        《これからもおうち時間をもっと楽しく》参加はこちらから！
+      .show-users-wrapper__center__right-content__contents
+        《モノガタリ》あなたのモノにまつわるモノガタリを投稿しよう！キャンペーン第２弾
+      .show-users-wrapper__center__right-content__contents
+        ３日後、５%還元クーポンの有効期限が切れます！タップして詳細を確認しましょう。
+      .show-users-wrapper__center__right-content__contents
+        事務局から個別メッセージ「ログイン通知」
+      .show-users-wrapper__center__right-content__contents
+        事務局から個別メッセージ「ログイン通知」
+      .show-users-wrapper__center__right-content__view-list
+        .show-users-wrapper__center__right-content__view-list__go-list
+          一覧を見る
+      .show-users-wrapper__center__right-content__purchase
+        購入した商品
+      .show-users-wrapper__center__right-content__purchase-wrapper
+        .show-users-wrapper__center__right-content__purchase-wrapper__pc.active
+          取引中
+        .show-users-wrapper__center__right-content__purchase-wrapper__pc
+          過去の取引
+      .show-users-wrapper__center__right-content__item-list
+        取引中の商品がありません
+= render "layouts/footer"
