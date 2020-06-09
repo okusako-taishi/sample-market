@@ -1,27 +1,10 @@
-- contents1 ['マイページ', 'お知らせ', 'いいね！一覧', '出品する', '下書き一覧', '出品した商品-出品中', '出品した商品-取引中', '出品した商品-売却済み', '購入した商品-取引中', '購入した商品-過去の取引', 'ニュース一覧', '評価一覧', 'ガイド', 'お問い合わせ']
-- mypagelinks [user_path(1), '',new_item_path, '', '', '', '', '', '', '', '', '', '', '', '',]
-- method1 [get, '', get]
-
-メルペイ
-- contents2 ['売上', 'ポイント']
-- merpaylinks2['', '']
-- method2 ['', '']
-
-設定
-- contents3 ['プロフィール', '発送元・お届け先住所変更', '支払い方法', 'メール/パスワード', '本人情報', '電話番号の確認', 'ログアウト']
-- setteilinks3['', '' '', '', '', '',]
-- method3 ['', '' '', '', '', '',]
-
 = render "layouts/header"
 .show-users-wrapper
   .show-users-wrapper__center
-    .show-users-wrapper__center__left-content
-      - contents.each.with_index(0) do |content, i|
-        = link_to links[i], method:method1[i],class: "show-users-wrapper__center__left-content__box" do
-          = %content
+    = render "layouts/content"
     .show-users-wrapper__center__right-content
-      = image_tag ".jpg", class:"show-users-wrapper__center__right-content__image"
-      = image_tag ".jpg", class:"show-users-wrapper__center__right-tontent__user-image"
+      = image_tag "/material/pict/結構いい感じの背景.jpg", class:"show-users-wrapper__center__right-content__image"
+      = image_tag  "/material/icon/ユーザーアイコン.png", class:"show-users-wrapper__center__right-content__user-image"
       .show-users-wrapper__center__right-content__user-name
         山田太郎
         %div
@@ -43,5 +26,15 @@
       .show-users-wrapper__center__right-content__contents
         事務局から個別メッセージ「ログイン通知」
       .show-users-wrapper__center__right-content__view-list
-        一覧を見る
+        .show-users-wrapper__center__right-content__view-list__go-list
+          一覧を見る
+      .show-users-wrapper__center__right-content__purchase
+        購入した商品
+      .show-users-wrapper__center__right-content__purchase-wrapper
+        .show-users-wrapper__center__right-content__purchase-wrapper__pc.active
+          取引中
+        .show-users-wrapper__center__right-content__purchase-wrapper__pc
+          過去の取引
+      .show-users-wrapper__center__right-content__item-list
+        取引中の商品がありません
 = render "layouts/footer"
