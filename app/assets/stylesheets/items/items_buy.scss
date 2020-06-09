@@ -125,10 +125,20 @@
     padding: 40px 0;
     background-color: coral;
     &__haisou {
-      height: 16px;
+      height: 20px;
       width: 100%;
       display: flex;
+      background-color: cyan;
       justify-content: space-between;
+      &__haisousaki {
+        height: 100%;
+        width: 100%;
+      }
+      &__henkou {
+        height: 100%;
+        width: 100%;
+        text-align: right;
+      }
     }
   }
 }
