@@ -1,0 +1,47 @@
+- contents1 ['マイページ', 'お知らせ', 'いいね！一覧', '出品する', '下書き一覧', '出品した商品-出品中', '出品した商品-取引中', '出品した商品-売却済み', '購入した商品-取引中', '購入した商品-過去の取引', 'ニュース一覧', '評価一覧', 'ガイド', 'お問い合わせ']
+- mypagelinks [user_path(1), '',new_item_path, '', '', '', '', '', '', '', '', '', '', '', '',]
+- method1 [get, '', get]
+
+メルペイ
+- contents2 ['売上', 'ポイント']
+- merpaylinks2['', '']
+- method2 ['', '']
+
+設定
+- contents3 ['プロフィール', '発送元・お届け先住所変更', '支払い方法', 'メール/パスワード', '本人情報', '電話番号の確認', 'ログアウト']
+- setteilinks3['', '' '', '', '', '',]
+- method3 ['', '' '', '', '', '',]
+
+= render "layouts/header"
+.show-users-wrapper
+  .show-users-wrapper__center
+    .show-users-wrapper__center__left-content
+      - contents.each.with_index(0) do |content, i|
+        = link_to links[i], method:method1[i],class: "show-users-wrapper__center__left-content__box" do
+          = %content
+    .show-users-wrapper__center__right-content
+      = image_tag ".jpg", class:"show-users-wrapper__center__right-content__image"
+      = image_tag ".jpg", class:"show-users-wrapper__center__right-tontent__user-image"
+      .show-users-wrapper__center__right-content__user-name
+        山田太郎
+        %div
+          評価2
+          出品0
+      .show-users-wrapper__center__right-content__title-wrapper
+        .show-users-wrapper__center__right-content__title-wrapper__title.active
+          お知らせ
+        .show-users-wrapper__center__right-content__title-wrapper__title
+          やることリスト
+      .show-users-wrapper__center__right-content__contents
+        《これからもおうち時間をもっと楽しく》参加はこちらから！
+      .show-users-wrapper__center__right-content__contents
+        《モノガタリ》あなたのモノにまつわるモノガタリを投稿しよう！キャンペーン第２弾
+      .show-users-wrapper__center__right-content__contents
+        ３日後、５%還元クーポンの有効期限が切れます！タップして詳細を確認しましょう。
+      .show-users-wrapper__center__right-content__contents
+        事務局から個別メッセージ「ログイン通知」
+      .show-users-wrapper__center__right-content__contents
+        事務局から個別メッセージ「ログイン通知」
+      .show-users-wrapper__center__right-content__view-list
+        一覧を見る
+= render "layouts/footer"
