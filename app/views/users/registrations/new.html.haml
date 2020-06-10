@@ -54,7 +54,6 @@
               = f.label :生年月日
               .form-require
                 %span 必須
-              -# = f.text_field :birth_day, autocomplete: "birth_day", placeholder: '年/月/日', class: 'input-birthday'
               = f.date_select :birth_day,  prompt:"--", use_month_numbers: true,start_year: 1930, end_year: (Time.now.year - 10), default: Date.new(1989, 1, 1), class:"input-birthday"
               .form-info-text
                 ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
