@@ -1,6 +1,8 @@
--# .single-container
--#   %heder.single-header
-    
+
+
+.single-container
+  = render partial: 'items/items-header'
+
     
 -#   %main.single-main
 -#     .single-main__box
@@ -82,6 +84,7 @@
 -#                 = f.submit '次へ進む', class: 'single-inner'
 
 
+
 -#   %footer.single-footer
 
 
@@ -114,3 +117,7 @@
   .actions
     = f.submit "Next"
 = render "devise/shared/links"
+
+  = render partial: 'items/items-footer'
+
+

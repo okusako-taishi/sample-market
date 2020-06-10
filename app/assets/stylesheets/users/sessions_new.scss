@@ -81,6 +81,7 @@
           a {
             text-decoration: none;
             color: black;
+            width: 328px;
       
           span {
             color: white;
@@ -149,3 +150,21 @@
     margin: 0 auto;
   }
 }
+
+ul{ 	
+  font-size: 12px;
+  li {
+    display: inline;
+  }
+  .footer-logo {
+    height: 100px;
+    width: 300px;
+    
+    .furima-image {
+      width: 200px;
+      height: 60px;
+      margin-left: 120px;
+    }
+  }
+} 
+
