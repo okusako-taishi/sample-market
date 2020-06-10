@@ -12,11 +12,6 @@ class CreateDestinations < ActiveRecord::Migration[5.2]
       t.string :building_name
       t.integer :phone_number
       t.references :user
-
-
-
-
-
       t.timestamps
     end
   end

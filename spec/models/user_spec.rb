@@ -105,9 +105,5 @@ describe User do
       expect(user.errors[:first_name_kana]).to include("全角カタカナで入力して下さい")
     end
 
-
-
-
-    
   end
 end
