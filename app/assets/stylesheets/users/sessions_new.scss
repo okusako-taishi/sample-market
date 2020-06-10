@@ -27,7 +27,7 @@
       }
       .acount-new {
         height: 40px;
-        width: 300px;
+        width: 100%;
         background-color: rgb(0, 174, 255);
         margin: 0 auto;
         margin-top: 35px;
@@ -134,8 +134,9 @@
     color: white;
     background-color: red;
     height: 50px;
-    width: 343px;
+    width: 100%;
     line-height: 50px;
+    border: none;
   }
   a {
     text-decoration: none;

@@ -4,6 +4,5 @@
     = render "layouts/content"
     .show-users-wrapper__center__contain-content
       .show-users-wrapper__center__contain-content__item-list
-        %button.btn{type:"submit"}
-          = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'btn'
+        = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'logout-btn'
 = render "layouts/footer"
