@@ -80,3 +80,4 @@ gem 'haml-rails'
 gem 'devise'
 gem "font-awesome-sass"
 gem "jp_prefecture"
+gem 'rails-i18n'
