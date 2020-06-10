@@ -34,6 +34,23 @@ ActiveRecord::Schema.define(version: 2020_06_09_052518) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "destinations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "family_name", null: false
+    t.string "first_name", null: false
+    t.string "family_name_kana", null: false
+    t.string "first_name_kana", null: false
+    t.integer "post_code", null: false
+    t.integer "prefecture_id", null: false
+    t.string "city", null: false
+    t.string "block", null: false
+    t.string "building_name"
+    t.integer "phone_number"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_destinations_on_user_id"
+  end
+
   create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "url", null: false
     t.bigint "item_id"
