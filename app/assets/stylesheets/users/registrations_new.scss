@@ -6,12 +6,10 @@
   .single-header {
     height: 128px;
     width: 100%;
-    background-color: rgba(214, 214, 214, 0.712);
     display: flex;
   }
   .single-main {
     display: block;
-    background-color: rgba(214, 214, 214, 0.712);
     &__box {
       background-color: white;
       width: 800px;
@@ -97,9 +95,23 @@
   }
   .single-footer {
     width: 456px;
-    height: 220px;
+    
     margin: 0 auto;
+    line-height: 100px;
+    text-align: center;
+    background-color: gba(214, 214, 214, 0.712);
   }
 }
 
+ul{ 	
+  font-size: 12px;
+  li {
+    display: inline;
+  }
+  a {
+    text-decoration: none;
+    color: black;
+    margin: 10px;
+  }
+} 
 

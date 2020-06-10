@@ -1,5 +1,5 @@
 .single-container
-  %heder.single-header
+  = render partial: 'items/items-header'
     
     
   %main.single-main
@@ -82,4 +82,5 @@
                 = f.submit '次へ進む', class: 'single-inner'
 
 
-  %footer.single-footer
+  = render partial: 'items/items-footer'
+
