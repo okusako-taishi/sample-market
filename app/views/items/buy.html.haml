@@ -1,11 +1,16 @@
 .kounyu-all
-  .kounyu-header 
+  .kounyu-header ヘッダーは部分テンプレートにします。
   .kounyu-main
     .kounyu-main__box-1 商品購入の確認
     .kounyu-main__box-2
       .kounyu-main__box-2__item-box
         .kounyu-main__box-2__item-box__pic
+          = image_tag "/material/pict/pict-reason-02.jpg" ,  size: "80x80"
         .kounyu-main__box-2__item-box__text
+          .kounyu-main__box-2__item-box__text__name 謎の物体
+          .kounyu-main__box-2__item-box__text__price
+            .kounyu-main__box-2__item-box__text__price__nedan ￥99999 (税込み)
+            .kounyu-main__box-2__item-box__text__price__souryou 送料込み
     -# これより下の記述はフォーム      
     .kounyu-main__box-v2
       .kounyu-main__box-v2__box-3 
@@ -13,7 +18,8 @@
         .kounyu-main__box-v2__box-3__price  ¥3,000
       .kounyu-main__box-v2__box-4
         .kounyu-main__box-v2__box-4__siharaihouhou 支払い方法
-        .kounyu-main__box-v2__box-4__henkousuru 変更する
+        = link_to "#", class: "kounyu-main__box-v2__box-4__henkousuru" do 
+          .kounyu-main__box-v2__box-4__henkousuru 変更する
       .kounyu-main__box-v2__box-5
         .kounyu-main__box-v2__box-5__kureka クレジットカード
         .kounyu-main__box-v2__box-5__number **********4321
@@ -23,6 +29,13 @@
           .kounyu-main__box-v2__box-6__haisou__haisousaki 配送先
           .kounyu-main__box-v2__box-6__haisou__henkou  変更する
         .kounyu-main__box-v2__box-6__adress
-          %br.aaaaa
-  .kounyu-footer
-      
+          %div.bababa 〒787-7435
+          %div.bababa 大阪府山田市ウエフォン町
+          %div.bababa 鈴木一郎
+      .kounyu-main__box-v2__box-7
+        .kounyu-main__box-v2__box-7__tyuui 郵便局/コンビニ受取をご希望の方は、購入後に取引画面から受取場所を変更をすることが可能です。出品者が発送作業を開始した後は受取場所の変更ができませんので、早めに変更を行ってください。
+        .kounyu-main__box-v2__box-7__bottun
+          .kounyuusuru 購入する
+          -# = f.submit '購入する', class: "kounyuusuru"
+         
+.kounyu-footer

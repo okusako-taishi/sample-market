@@ -3,7 +3,7 @@
 }
 
 .kounyu-all {
-  height: 2000px;
+  height: 1129px;
   width: 100vw;
   background-color: #b3d4fc;
 }
@@ -15,7 +15,7 @@
 }
 
 .kounyu-main {
-  height: 945px;
+  height: 1000px;
   width: 700px;
   margin: 0 auto;
   background-color: darkgrey;
@@ -48,13 +48,31 @@
         width: 195px;
         background-color: red;
         margin-left: 10px ;
+        &__name {
+          font-size: 15px;
+          height:15px ;
+        }
+        &__price {
+          height: 20px;
+          font-size: 15px;
+          margin-top: 30px;
+          display: flex;
+          &__nedan {
+            height: 20px;
+            font-size: 13px;
+          }
+          &__souryou {
+            height: 20px;
+            font-size: 13px;
+          }
+        }
       }
     }
   }
 }
 
 .kounyu-main__box-v2  {
-  height: 700px;
+  height: 800px;
   width: 345px;
   margin: auto;
   background-color: #b3d4fc;
@@ -98,6 +116,7 @@
       width: 100px;
       font-size: 15px;
       background-color: blue;
+      text-align: right;
     }
   }
   &__box-5 {
@@ -124,6 +143,7 @@
     width: 100%;
     padding: 40px 0;
     background-color: coral;
+    border-bottom: solid 1px #eee;
     &__haisou {
       height: 20px;
       width: 100%;
@@ -141,4 +161,43 @@
       }
     }
   }
+  &__box-7 {
+    height: 340px;
+    width: 100%;
+    background-color: white;
+    &__tyuui {
+      height: 200px;
+      width: 100%;
+      padding-top: 60px;
+      font-size: 13px;
+    }
+    &__bottun{
+      height: 100px;
+      width: 100%;
+      margin-top: 40px;
+      background-color: darkblue;
+      padding-top: 50px;
+    }
+  }
+}
+
+.kounyuusuru {
+  height: 50px;
+  width: 100%;
+  text-align: center;
+  background-color: red;
+  color: white;
+  padding-top: 10px;
+}
+
+.kounyu-footer {
+  height: 100px;
+  width: 100%;
+  background-color: white;
+}
+
+.bababa {
+  height: 20px;
+  font-size: 15px;
+  margin-top: 8px;
 }
