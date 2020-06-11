@@ -1,0 +1,170 @@
+* {
+  box-sizing: border-box;
+}
+
+
+.single-container {
+  height: 100%;
+  width: 100%;
+  .single-header {
+    height: 100px;
+  }
+  .single-main {
+  
+    .login-panel{
+      max-width: none;
+      width: 456px;
+      margin: 0 auto; 
+      background-color: white;
+      &__no-account {
+        text-align: center;
+        padding: 40px 64px;
+        border-bottom: solid 1px gray;
+      }
+      p {
+        font-size: 14px;
+
+      }
+      .acount-new {
+        height: 40px;
+        width: 100%;
+        background-color: rgb(0, 174, 255);
+        margin: 0 auto;
+        margin-top: 35px;
+        line-height: 40px;
+      }
+
+      .btn-new {
+        color: white;
+        text-decoration: none;
+        height: 20px;
+        width: 60px;
+      }
+      
+      .login-form-inner {
+        padding: 32px 64px;
+        &__google {
+          height: 50px;
+          width: 328px;
+          border: solid 1px;
+          
+          i {
+            line-height: 50px;
+          }
+          .fab {
+            padding-right: 60px;
+            padding-left: 15px;
+            font-size: 25px;
+          }
+          a {
+            text-decoration: none;
+            color: black;
+          }
+        }
+        &__facebook {
+          height: 50px;
+          width: 328px;
+          border: solid 1px;
+          margin-top: 30px;
+          line-height: 50px;
+          background-color: rgb(38, 122, 248);
+          color: white;
+          i {
+            line-height: 50px;
+          }
+          .fab {
+            color: white;
+            padding-right: 80px;
+            padding-left: 15px;
+            font-size: 25px;
+          }
+          a {
+            text-decoration: none;
+            color: black;
+            width: 328px;
+      
+          span {
+            color: white;
+          }
+        }
+      }
+        &__apple {
+          height: 50px;
+          width: 328px;
+          border: solid 1px;
+          margin-top: 30px;
+          line-height: 50px;
+          background-color: black;
+          i {
+            line-height: 50px;
+            color: white;
+          }
+          .fab {
+            padding-right: 105px;
+            padding-left: 15px;
+            font-size: 25px;
+          }
+          a {
+            text-decoration: none;
+            color: black;
+          }
+          span {
+            color: white;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+.input-default {
+  height: 50px;
+  width: 328px;
+  padding-left: 10px;
+  margin-top: 30px;
+}
+
+
+.single-content {
+  width: 328px;
+  margin: 0 auto;
+  .single-inner {
+    margin-top: 38px;
+    text-align: center;
+    color: white;
+    background-color: red;
+    height: 50px;
+    width: 100%;
+    line-height: 50px;
+    border: none;
+  }
+  a {
+    text-decoration: none;
+    color: rgb(79, 176, 255);
+    margin-left:150px;
+  }
+  .single-footer {
+    width: 456px;
+    height: 220px;
+    margin: 0 auto;
+  }
+}
+
+ul{ 	
+  font-size: 12px;
+  li {
+    display: inline;
+  }
+  .footer-logo {
+    height: 100px;
+    width: 300px;
+    
+    .furima-image {
+      width: 200px;
+      height: 60px;
+      margin-left: 120px;
+    }
+  }
+} 
+

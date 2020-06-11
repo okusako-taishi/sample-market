@@ -1,0 +1,8 @@
+= render "layouts/header"
+.show-users-wrapper
+  .show-users-wrapper__center
+    = render "layouts/content"
+    .show-users-wrapper__center__contain-content
+      .show-users-wrapper__center__contain-content__item-list
+        = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'logout-btn'
+= render "layouts/footer"

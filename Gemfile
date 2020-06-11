@@ -46,6 +46,10 @@ group :development, :test do
   gem 'capistrano-rails'
   gem 'capistrano3-unicorn'
   gem 'capistrano-rails-console'
+  gem 'rspec-rails', '~> 3.5'
+  gem 'rails-controller-testing'
+  gem 'factory_bot_rails'
+  gem 'faker'
 end
 
 group :development do
@@ -78,3 +82,6 @@ gem "font-awesome-sass"
 gem "jp_prefecture"
 gem 'carrierwave'
 gem 'mini_magick'
+gem "payjp"
+gem "jquery-rails"
+gem 'rails-i18n'

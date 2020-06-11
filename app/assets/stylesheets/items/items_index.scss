@@ -477,25 +477,23 @@ header.pc-header{
         }
       
         &--brand{
-        
         }
       }
       &__right{
         display: flex;
 
-        &--login{
+        li{
           a{
             color: black;
             text-decoration: none;
           }
+        }
+
+        &--login{
           padding-right: 30px;
         }
           
         &--registration{
-          a{
-            color: black;
-            text-decoration: none;
-          }
         }
       }
     }
