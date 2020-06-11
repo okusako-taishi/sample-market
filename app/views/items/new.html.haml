@@ -59,15 +59,16 @@
             .item-main__box__pic-5__price__hanbaikakaku 販売価格 必須
             .item-main__box__pic-5__price__nyuryoku 
               = f.number_field :price
-          .item-main__box__pic-5__tesuuryou 販売手数料 (10%)
-          .item-main__box__pic-5__tesuuryou 販売利益
-        .item-main__box__pic-6
-          .item-main__box__pic-6__syuppin 出品する
-          .item-main__box__pic-6__sitagaki 下書きに保存
-          .item-main__box__pic-6__modoru 戻る
-            = f.fields_for :images do |i|
-              = i.file_field :url
-            = f.submit
+              = f.fields_for :images do |i|
+                = i.file_field :url
+              = f.submit
+        -#   .item-main__box__pic-5__tesuuryou 販売手数料 (10%)
+        -#   .item-main__box__pic-5__tesuuryou 販売利益
+        -# .item-main__box__pic-6
+        -#   .item-main__box__pic-6__syuppin 出品する
+        -#   .item-main__box__pic-6__sitagaki 下書きに保存
+        -#   .item-main__box__pic-6__modoru 戻る
+
 -# .item-header
 -#   = image_tag "/material/logo/logo-white.png"  , size: "270x60"
 -# .item-main
