@@ -1,12 +1,15 @@
 class ItemsController < ApplicationController
   def index
-    @parents = Category.all.order("id ASC").limit(13)
+    # @parents = Category.all.order("id ASC").limit(13)
+    @items = Item.all
+
   end
 
   def new
     @item = Item.new 
     @item.build_brand
     @item.images.new
+    @item = Item.find(params[:id])
   end
 
   def show

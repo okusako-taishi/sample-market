@@ -87,9 +87,7 @@
           様々な支払いに対応
         %p.feature__items__item__detail
           お支払いは、クレジットカードだけでなく、ポイントや売上金など多彩な方法があります。
-
   %section.pickup
-    - @items.each do |items|
     %h2.pickup__header
       ピックアップカテゴリー
     .pickup__box
@@ -98,21 +96,22 @@
           %h3
             新規投稿商品
       .pickup__box__lists
-        .pickup__box__lists__list
-          = link_to '#' do
-            %figure.pickup__box__lists__list__img
-              = image_tag "/material/pict/pict-reason-02.jpg" ,  size: "220x150"
-            .pickup__box__lists__list__body
-              %h3.pickup__box__lists__list__body__name
-                さんま
-              .pickup__box__lists__list__body__details
-                %ul
-                  %li
-                    300円
-                  %li
-                    ★0
-                %p 
-                  (税込)
+        - @items.each do |item|
+          .pickup__box__lists__list
+            = link_to '#' do
+              %figure.pickup__box__lists__list__img
+                = image_tag "/material/pict/pict-reason-02.jpg" ,  size: "220x150"
+              .pickup__box__lists__list__body
+                %h3.pickup__box__lists__list__body__name
+                  = item.name
+                .pickup__box__lists__list__body__details
+                  %ul
+                    %li
+                      300円
+                    %li
+                      ★0
+                  %p 
+                    (税込)
 
         .pickup__box__lists__list
           = link_to '#' do
@@ -222,5 +221,3 @@
   =image_tag "/material/icon/icon_camera.png" 
 
 
-= render partial: 'layouts/footer'
--# フッターは他のメンバーが担当しています
