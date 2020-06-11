@@ -45,16 +45,17 @@ Things you may want to cover:
 - has_one :card
 - has_one :destination
 
-## productテーブル
+## itemsテーブル
 |column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
 |price|integer|null: false|
 |description|text|null: false|
 |status|string|null: false|
+|judgment|string|null: false|
 |size|string|null: false|
 |cost|integer|null: false|
-|days||null: false|
+|days|string|null: false|
 |category_id|integer|null: false, foreign_key: true|
 |brand_id|integer|null: false, foreign_key: true|
 |user_id|integer|null: false, foreign_key: true|
@@ -99,7 +100,7 @@ Things you may want to cover:
 |product_id|integer|null: false, foreign_key: true|
 
 ### Association
-- belongs_to :product
+- belongs_to :item
 
 ## categoryテーブル
 |column|Type|Options|
@@ -108,7 +109,7 @@ Things you may want to cover:
 |ancestry|string|null: false|
 
 ### Association
-- has_many :products
+- has_many :items
 
 ## brandテーブル
 |column|Type|Options|
@@ -116,7 +117,7 @@ Things you may want to cover:
 |name|string|null: false|
 
 ### Association
-- has_many :products
+- has_many :items
 
 
 

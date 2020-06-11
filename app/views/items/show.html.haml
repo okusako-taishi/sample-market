@@ -1,30 +1,4 @@
-
-.header
-  ヘッダーは他の方が担当しているので実装していません
-  -# .header__inner
-  -#   .header__inner__main
-  -#     .header__inner__main--logo
-  -#       = link_to '#' do
-  -#         = image_tag "/material/logo/logo.png", class: "furima-head"
-  -#     .header__inner__main--search
-  -#       %form.header__inner__main--search--box
-  -#         %input.header__inner__main--search--box--text{type: "text", placeholder: "キーワードから探す"}
-  -#         %button.header__inner__main--search--box--btn{type: "submit"}
-  -#           = image_tag "/material/icon/icon-search 1.png", class: "search-icon"
-  -#   .header__inner__sub
-  -#     %ul.list--left
-  -#       %li.list--left--left
-  -#         カテゴリー
-  -#       %li.list--left--right
-  -#         ブランド
-  -#     %ul.list--right
-  -#       %li.list--left--left--login
-  -#         ログイン
-  -#       %li.list--left--right--new
-  -#         新規登録
-        
-
-
+= render "layouts/header"
 .items
   = render "items-main"
 %form.items-comment
