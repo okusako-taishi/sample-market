@@ -47,7 +47,8 @@
           .item-main__box__pic-4__hutannnado  
             .item-main__box__pic-4__hutan__bun 発送元の地域 必須
             .selctbox 
-              = f.collection_select :prefecture_code, JpPrefecture::Prefecture.all, :name, :name, include_blank: "選択してください"
+              = f.collection_select :prefecture_id, Prefecture.all, :id, :name, {prompt:"選択してください"}, {class:""}
+              -# = f.collection_select :prefecture_code, JpPrefecture::Prefecture.all, :name, :name, include_blank: "選択してください"
           .item-main__box__pic-4__hutannnado  
             .item-main__box__pic-4__hutan__bun 発送までの日数 必須
             .selctbox 
@@ -67,6 +68,9 @@
           = f.fields_for :images do |i|
             = i.file_field :url
           = f.submit
+
+
+
 
 -# .item-header
 -#   = image_tag "/material/logo/logo-white.png"  , size: "270x60"
