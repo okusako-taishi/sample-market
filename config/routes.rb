@@ -10,13 +10,16 @@ Rails.application.routes.draw do
 
   
   root 'items#index'
-  resources :items, only: [:show, :new]
-  resources :users do
 
-
-  collection do
-  get 'card'
-  get 'logout'
+  resources :users, only: :show do
+    collection do
+      get 'card'
+      get 'logout'
+    end
   end
+  resources :items, only: [:show, :new] do
+    collection do
+      get 'buy'
+    end
   end
 end
