@@ -10,8 +10,9 @@ Rails.application.routes.draw do
 
   
   root 'items#index'
-  resources :users do
   resources :items, only: [:show, :new]
+  resources :users do
+
 
   collection do
   get 'card'

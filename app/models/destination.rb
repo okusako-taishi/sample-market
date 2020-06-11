@@ -1,6 +1,6 @@
 class Destination < ApplicationRecord
 
-  belongs_to :user  ,optional: true
+  belongs_to :user  ,optional: true 
 
   validates :family_name, presence: true,
                  format: {
