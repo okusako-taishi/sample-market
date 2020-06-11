@@ -16,6 +16,7 @@
         line-height: 50px;
         margin-bottom: 1px;
         background-color: #fff;
+        text-decoration: none;
       }
     }
     &__right-content{
@@ -167,7 +168,10 @@
     }
   }
 }
-.btn{
+.logout-btn{
+  display: inline-block;
+  text-decoration: none;
+  font-weight: bold;
   list-style: none;
   width: 320px;
   height: 50px;

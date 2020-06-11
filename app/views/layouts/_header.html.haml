@@ -2,7 +2,7 @@
   .header--inner
     .header--inner__main
       %h1.header--inner__main__icon
-        = link_to '#' do
+        = link_to root_path do
           = image_tag "/material/logo/logo.png" 
       .header--inner__main__search-box
         %form
@@ -17,9 +17,14 @@
         %li.header--inner__nav__left--brand
           ブランド
       %ul.header--inner__nav__right
-        %li.header--inner__nav__right--login
-          = link_to '#' do
-            ログイン
-        %li.header--inner__nav__right--registration
-          = link_to '#' do
-            新規会員登録
+        -if user_signed_in?
+          %li
+            = link_to  user_path(current_user.id) do
+              マイページ
+        -else
+          %li.header--inner__nav__right--login
+            = link_to  new_user_session_path do
+              ログイン
+          %li.header--inner__nav__right--registration
+            = link_to new_user_registration_path do
+              新規会員登録

@@ -1,0 +1,23 @@
+ja:
+  activerecord:
+    models:
+      user: ユーザー
+      destination: お届け住所
+    attributes:
+      user:
+        email: メールアドレス
+        nickname: ニックネーム
+        first_name: 名
+        family_name: 姓
+        first_name_kana: 名 カナ
+        family_name_kana: 姓 カナ
+        birth_day: 生年月日
+      destination:
+        first_name: 名
+        family_name: 姓
+        first_name_kana: 名 カナ
+        family_name_kana: 姓 カナ
+        post_code: 郵便番号
+        prefecture_id: 都道府県
+        city: 市町村
+        
