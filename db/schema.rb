@@ -13,7 +13,7 @@
 ActiveRecord::Schema.define(version: 2020_06_10_051929) do
 
   create_table "brands", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name"
+    t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 2020_06_10_051929) do
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
-    t.string "ancestry"
+    t.string "ancestry", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -91,7 +91,7 @@ ActiveRecord::Schema.define(version: 2020_06_10_051929) do
     t.text "introduction"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_u"
+    t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "encrypted_password"
