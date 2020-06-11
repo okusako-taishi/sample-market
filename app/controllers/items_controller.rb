@@ -1,11 +1,12 @@
 class ItemsController < ApplicationController
   def index
+    @parents = Category.all.order("id ASC").limit(13)
   end
 
   def new
-   @item = Item.new 
-   @item.build_brand
-   @item.images.new
+    @item = Item.new 
+    @item.build_brand
+    @item.images.new
   end
 
   def show
@@ -24,7 +25,9 @@ class ItemsController < ApplicationController
   private
 
   def item_params
+
     params.require(:item).permit(:name, :description, :category_id, :status, :cost, :prefecture_id, :days, :price, images_attributes: [:url], brand_attributes: [:name])
+
   end
 
 end
