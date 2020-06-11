@@ -1,11 +1,12 @@
 class ItemsController < ApplicationController
   def index
+    @parents = Category.all.order("id ASC").limit(13)
   end
 
   def new
-   @item = Item.new 
-   @item.build_brand
-   @item.images.new
+    @item = Item.new 
+    @item.build_brand
+    @item.images.new
   end
 
   def create
