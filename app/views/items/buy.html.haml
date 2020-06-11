@@ -27,7 +27,8 @@
       .kounyu-main__box-v2__box-6
         .kounyu-main__box-v2__box-6__haisou
           .kounyu-main__box-v2__box-6__haisou__haisousaki 配送先
-          .kounyu-main__box-v2__box-6__haisou__henkou  変更する
+          = link_to "#", class: "kounyu-main__box-v2__box-4__henkousuru" do 
+            .kounyu-main__box-v2__box-6__haisou__henkou  変更する
         .kounyu-main__box-v2__box-6__adress
           %div.bababa 〒787-7435
           %div.bababa 大阪府山田市ウエフォン町
@@ -38,4 +39,4 @@
           .kounyuusuru 購入する
           -# = f.submit '購入する', class: "kounyuusuru"
          
-.kounyu-footer
+.kounyu-footer 部分テンプレートかしてるので後に直します
