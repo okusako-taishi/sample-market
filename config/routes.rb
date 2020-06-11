@@ -16,7 +16,7 @@ Rails.application.routes.draw do
       get 'logout'
     end
   end
-  resources :items, only: [:show, :new, :create] do
+  resources :items, only: [:show, :new, :create, :edit, :update, :destroy] do
     collection do
       get 'buy'
     end
