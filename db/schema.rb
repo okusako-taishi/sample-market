@@ -10,10 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_09_052518) do
+ActiveRecord::Schema.define(version: 2020_06_10_051929) do
 
   create_table "brands", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name", null: false
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 2020_06_09_052518) do
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
-    t.string "ancestry", null: false
+    t.string "ancestry"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -64,8 +64,8 @@ ActiveRecord::Schema.define(version: 2020_06_09_052518) do
     t.integer "price", null: false
     t.text "description", null: false
     t.string "status", null: false
-    t.string "judgment", null: false
-    t.string "size", null: false
+    t.string "judgment"
+    t.string "size"
     t.integer "cost", null: false
     t.string "days", null: false
     t.integer "prefecture_code"
