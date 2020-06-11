@@ -58,8 +58,13 @@
             .item-main__box__pic-5__price__hanbaikakaku 販売価格 必須
             .item-main__box__pic-5__price__nyuryoku 
               = f.number_field :price
+            #image-box
               = f.fields_for :images do |i|
-                = i.file_field :url
+                .js-file_group{"data-index": "#{i.index}"}
+                  = i.file_field :url, class: 'js-file'
+                  %br
+                  %span.js-remove
+                    削除
               = f.submit
         -#   .item-main__box__pic-5__tesuuryou 販売手数料 (10%)
         -#   .item-main__box__pic-5__tesuuryou 販売利益
