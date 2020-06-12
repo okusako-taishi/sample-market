@@ -1,15 +1,15 @@
 class ItemsController < ApplicationController
-  def index
-    # @parents = Category.all.order("id ASC").limit(13)
-    @items = Item.all
+  before_action :set_item, except: [:index, :new, :create]
 
+  def index
+    # @parents = Category.all.order(“id ASC”).limit(13)
+    @items = Item.all
   end
 
   def new
-    @item = Item.new 
+    @item = Item.new
     @item.build_brand
     @item.images.new
-    @item = Item.find(params[:id])
   end
 
   def show
@@ -25,13 +25,29 @@ class ItemsController < ApplicationController
     end
   end
 
-  private
+  def edit
+    
+  end
 
-  def item_params
+  def update
+    if @item.update(item_params)
+      redirect_to root_path
+    else
+      render :edit
+    end
+  end
 
-    params.require(:item).permit(:name, :description, :category_id, :status, :cost, :prefecture_id, :days, :price, images_attributes: [:url], brand_attributes: [:name])
+  def destroy
 
   end
 
-end
+  private
 
+  def item_params
+    params.require(:item).permit(:name, :description, :category_id, :status, :cost, :prefecture_id, :days, :price, images_attributes: [:url, :_destroy, :id], brand_attributes: [:name])
+  end
+
+  def set_item
+    @item = Item.find(params[:id])
+  end
+end
