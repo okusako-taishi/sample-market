@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :set_item, except: [:index, :new, :create]
+  before_action :set_item, except: [:index, :new, :create,]
 
   def index
     @parents = Category.all.order("id ASC").limit(13)
@@ -25,7 +25,7 @@ class ItemsController < ApplicationController
   end
 
   def edit
-
+    @item = Item.find(params[:id])
   end
 
   def update
@@ -37,7 +37,8 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-
+    @item.destroy
+    redirect_to root_path
   end
 
   private
