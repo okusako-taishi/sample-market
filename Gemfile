@@ -85,3 +85,5 @@ gem "jquery-rails"
 gem 'rails-i18n'
 gem 'active_hash'
 gem "fog-aws"
+gem 'carrierwave'
+gem 'mini_magick'
