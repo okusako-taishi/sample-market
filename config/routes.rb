@@ -10,15 +10,16 @@ Rails.application.routes.draw do
 
   
   root 'items#index'
-
   resources :users, only: :show do
     collection do
       get 'card'
       get 'logout'
     end
   end
-  resources :items, only: [:show, :new] do
+  resources :items, only: [:show, :new, :create] do
     collection do
+      get 'get_category_children', defaults: { format: 'json' }
+      get 'get_category_grandchildren', defaults: { format: 'json' }
       get 'buy'
     end
   end
