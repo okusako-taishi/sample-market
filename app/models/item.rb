@@ -1,9 +1,11 @@
 class Item < ApplicationRecord
+ 
   belongs_to :user
-
-  has_many :images
+  belongs_to :saler, class_name: "User"
+  belongs_to :buyer, class_name: "User", optional: true
+  
+  has_many :images, dependent: :destroy
   accepts_nested_attributes_for :images, allow_destroy: true
-
   validates_associated :images
   validates :images, presence: true , length: { maximum: 10 }
 
@@ -23,4 +25,5 @@ class Item < ApplicationRecord
 
   validates :price, presence: true,
   numericality: { only_integer: true, greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999 ,allow_blank: true}
+
 end
