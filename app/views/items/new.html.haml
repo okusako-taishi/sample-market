@@ -5,6 +5,7 @@
       .item-main__box__pic__picture
         %label.label 出品画像 必須
       .item-main__box__pic__picture__upload-text 最大10枚までアップロードできます。
+<<<<<<< HEAD
       .item-main__box__pic__picture__upload-form 
         %input.gazoutoukou{:accept => "image/png,image/jpeg", :autocomplete => "off", :multiple => "multiple", :style => "display:none", :tabindex => "-1", :type => "file"}/
         %svg.sc-hkbPbT.lodtkW{"aria-hidden" => "true", :fill => "#222222", "fill-rule" => "evenodd", :height => "24", :viewbox => "0 0 24 24", :width => "24"}
@@ -143,3 +144,82 @@
       .item-main__box__pic-6__sitagaki 下書きに保存
       .item-main__box__pic-6__modoru 戻る
 .item-new-footer
+=======
+      = form_for @item do |f|
+        .item-main__box__pic__picture__upload-form 
+          %input.gazoutoukou{:accept => "image/png,image/jpeg", :autocomplete => "off", :multiple => "multiple", :style => "display:none", :tabindex => "-1", :type => "file"}/
+          %svg.sc-hkbPbT.lodtkW{"aria-hidden" => "true", :fill => "#222222", "fill-rule" => "evenodd", :height => "24", :viewbox => "0 0 24 24", :width => "24"}
+          %path{:d => "M19.3,5H16.73l-.8-1.61A.7.7,0,0,0,15.3,3H8.7a.7.7,0,0,0-.63.39L7.27,5H4.7A2.7,2.7,0,0,0,2,7.7V18.3A2.7,2.7,0,0,0,4.7,21H19.3A2.7,2.7,0,0,0,22,18.3V7.7A2.7,2.7,0,0,0,19.3,5ZM12,17.3A4.3,4.3,0,1,1,16.3,13,4.31,4.31,0,0,1,12,17.3Z"}
+          %p.sc-hcnlBt.kuVoVA
+          ドラッグアンドドロップ
+          %br>/
+          またはクリックしてファイルをアップロード                 
+        #image-box
+          #previews
+            - if @item.persisted?
+              = @item.images.each_with_index do |image, i|
+                = image_tag image.url.url, data: { index: i }, width: "100", height: "100"
+          = f.fields_for :images do |image|
+            .js-file_group{"data-index": "#{image.index}"}
+              = image.file_field :url, class: 'js-file'
+              %span.js-remove
+                削除
+            - if @item.persisted?
+              = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
+          - if @item.persisted?
+            .js-file_group{"data-index": "#{@item.images.count}"}
+              = file_field_tag :url, name: "item[images_attributes][#{@item.images.count}][url]", class: 'js-file'
+              .js-remove
+                削除
+        .item-main__box__pic-2
+          .item-main__box__pic-2__syouheimeinohako
+            .item-main__box__pic-2__syouheimeinohako__name 商品名 必須
+            .item-main__box__pic-2__syouheimeinohako__text-box
+              = f.text_field :name, class: "syouhinmei", placeholder: "40文字まで"
+              .item-main__box__pic-2__setsumei
+                .item-main__box__pic-2__setsumei__bun 商品の説明 必須
+                .item-main__box__pic-2__setsumei__text
+                  = f.text_area :description, class:"syouhinsetumei", placeholder: "商品の説明（必須 1,000文字以内）\n（色、素材、重さ、定価、注意点など）\n\n例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。\n          ", rows: "7"
+        .item-main__box__pic-3
+          .item-main__box__pic-3__syouhinosyousai 商品詳細 必須
+          .item-main__box__pic-3__category
+            .item-main__box__pic-3__category__kategory カテゴリー 必須
+            .selctbox
+              = f.collection_select :category_id, Category.all, :id, :name, include_blank: "選択してください"
+          .item-main__box__pic-3__category 
+            .item-main__box__pic-3__category__kategory ブランド 任意
+            .selctbox 
+              = f.fields_for :brand do |brand|
+                = brand.text_field :name, placeholder: "例 （シャネル）"
+          .item-main__box__pic-3__category
+            .item-main__box__pic-3__category__kategory 商品の状態 
+            .selctbox 
+              = f.select :status,[["新品、未使用", 1],["未使用に近い", 2],["目立った傷や汚れなし", 3],["やや傷や汚れあり", 4],["傷や汚れあり", 5],["全体的に状態が悪い", 6]], { include_blank: "選択してください"}
+        .item-main__box__pic-4
+          .item-main__box__pic-4__haisounituite 配送料について
+          .item-main__box__pic-4__hutan  
+            .item-main__box__pic-4__hutan__bun 配送料に負担  
+            .selctbox 
+              = f.select :cost,[["着払い(購入者負担)", 1],["送料込み(出品者負担)", 2]], { include_blank: "選択してください"}
+          .item-main__box__pic-4__hutannnado  
+            .item-main__box__pic-4__hutan__bun 発送元の地域 必須
+            .selctbox 
+              = f.collection_select :prefecture_id, Prefecture.all, :id, :name, {prompt:"選択してください"}, {class:""}
+          .item-main__box__pic-4__hutannnado  
+            .item-main__box__pic-4__hutan__bun 発送までの日数 必須
+            .selctbox 
+              = f.select :days,[["1~2日で発送", 1],["2~3日で発送", 2],["4~7日で発送", 3]], { include_blank: "選択してください"}
+        .item-main__box__pic-5
+          .item-main__box__pic-5__kakaku 価格（¥300〜9,999,999）
+          .item-main__box__pic-5__price
+            .item-main__box__pic-5__price__hanbaikakaku 販売価格 必須
+            .item-main__box__pic-5__price__nyuryoku 
+              = f.number_field :price
+              = f.submit
+        -#   .item-main__box__pic-5__tesuuryou 販売手数料 (10%)
+        -#   .item-main__box__pic-5__tesuuryou 販売利益
+        -# .item-main__box__pic-6
+        -#   .item-main__box__pic-6__syuppin 出品する
+        -#   .item-main__box__pic-6__sitagaki 下書きに保存
+        -#   .item-main__box__pic-6__modoru 戻る
+>>>>>>> サーバーサイド商品出品-奥迫

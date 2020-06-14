@@ -17,7 +17,11 @@ Rails.application.routes.draw do
       get 'logout'
     end
   end
+<<<<<<< HEAD
   resources :items, only: [:show, :new] do
+=======
+  resources :items, only: [:show, :new, :create, :edit, :update, :destroy] do
+>>>>>>> サーバーサイド商品出品-奥迫
     collection do
       get 'buy'
     end
