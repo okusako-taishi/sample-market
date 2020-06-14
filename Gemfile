@@ -79,10 +79,12 @@ end
 gem 'haml-rails'
 gem 'devise'
 gem "font-awesome-sass"
-gem 'carrierwave'
-gem 'mini_magick'
+gem "jp_prefecture"
 gem "payjp"
 gem "jquery-rails"
 gem 'rails-i18n'
+<<<<<<< HEAD
+=======
 gem 'active_hash'
 gem "fog-aws"
+>>>>>>> サーバーサイド商品出品-奥迫

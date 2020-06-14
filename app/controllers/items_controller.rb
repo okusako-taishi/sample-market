@@ -2,8 +2,9 @@ class ItemsController < ApplicationController
   before_action :set_item, except: [:index, :new, :create,]
 
   def index
-    @parents = Category.all.order("id ASC").limit(13)
   end
+<<<<<<< HEAD
+=======
 
   def new
     @item = Item.new 
@@ -51,5 +52,5 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
   end
 
+>>>>>>> サーバーサイド商品出品-奥迫
 end
-
