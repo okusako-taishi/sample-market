@@ -30,6 +30,7 @@ class ItemsController < ApplicationController
 
   def show
     @item = Item.find(params[:id])
+    @items = Item.all
   end
 
   def create
@@ -71,5 +72,6 @@ class ItemsController < ApplicationController
 
   def set_item
     @item = Item.find(params[:id])
+    @items = Item.all
   end
 end
