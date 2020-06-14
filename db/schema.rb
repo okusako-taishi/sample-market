@@ -10,11 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 2020_06_09_052518) do
-=======
+
 ActiveRecord::Schema.define(version: 2020_06_13_084901) do
->>>>>>> サーバーサイド商品出品-奥迫
+
 
   create_table "brands", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
