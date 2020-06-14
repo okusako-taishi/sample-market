@@ -1,6 +1,13 @@
 = render partial: 'items/items-header'
+
+
 .item-main
   .item-main__box
+    - if @item.errors.any?
+      %ul.item-errors
+        - @item.errors.full_messages.each do |message|
+          %li= message
+
     .item-main__box__pic
       .item-main__box__pic__picture
         %label.label 出品画像 必須
@@ -75,6 +82,21 @@
             .item-main__box__pic-5__price__hanbaikakaku 販売価格 必須
             .item-main__box__pic-5__price__nyuryoku 
               = f.number_field :price
+
+            #image-box
+              = f.fields_for :images do |i|
+                .js-file_group{"data-index": "#{i.index}"}
+                  = i.file_field :url, class: 'js-file'
+                  %br
+                  %span.js-remove
+                    削除
+                - if @item.persisted?
+                  = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
+              - if @item.persisted?
+                .js-file_group{"data-index": "#{i.index}"}
+                  = file_field_tag :url, name: "item[images_attributes][#{@product.images.count}][url]", class: 'js-file'
+                  .js-remove
+                    削除
               = f.submit
         -#   .item-main__box__pic-5__tesuuryou 販売手数料 (10%)
         -#   .item-main__box__pic-5__tesuuryou 販売利益

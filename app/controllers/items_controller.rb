@@ -2,7 +2,7 @@ class ItemsController < ApplicationController
   before_action :set_item, except: [:index, :new, :create,]
 
   def index
-    @parents = Category.all.order("id ASC").limit(13)
+    @items = Item.all
   end
 
   def new
@@ -10,6 +10,8 @@ class ItemsController < ApplicationController
     @item.build_brand
     @item.images.new
   end
+
+
 
   def show
     @item = Item.find(params[:id])
@@ -44,11 +46,12 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:name, :description, :category_id, :status, :cost, :prefecture_id, :days, :price, images_attributes: [:url, :_destroy, :id], brand_attributes: [:name],).merge(saler_id: current_user.id)
+    params.require(:item).permit(:name, :description, :category_id, :status, :cost, :prefecture_id, :days, :price, images_attributes: [:url, :_destroy, :id], brand_attributes: [:name],).merge(user_id: current_user.id).merge(saler_id: current_user.id)
   end
 
   def set_item
     @item = Item.find(params[:id])
+
   end
 
 end
