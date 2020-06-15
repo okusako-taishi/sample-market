@@ -280,6 +280,7 @@ $white-shadow-color:  0 0 5px rgba(0,0,0,0.4);
         margin: 26px auto;
         display: flex;
         justify-content: space-around;
+        overflow: scroll;
 
         &__list{
           width: 220px;
