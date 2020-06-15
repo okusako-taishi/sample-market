@@ -87,3 +87,6 @@
         不適切な商品報告
     .items-main__button--right
       安心・安全への取り組み
+  - if user_signed_in? && current_user.id == @item.user_id
+    =link_to item_path , method: :delete , class:"items-main__button__destroy-btm" do
+      削除する
