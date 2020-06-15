@@ -36,7 +36,7 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
-    if @item.save!
+    if @item.save
       redirect_to root_path
     else
       #セレクトボックスの初期値設定
@@ -50,7 +50,7 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    @item = Item.find(params[:id])
+    
   end
 
   def update

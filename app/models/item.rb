@@ -1,7 +1,7 @@
 class Item < ApplicationRecord
 
-  belongs_to :user, optional: true
-  belongs_to :saler, class_name: "User"
+  belongs_to :user
+  belongs_to :saler, class_name: "User", optional: true
   belongs_to :buyer, class_name: "User", optional: true
   
   has_many :images, dependent: :destroy
