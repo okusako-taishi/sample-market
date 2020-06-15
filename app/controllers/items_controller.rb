@@ -2,7 +2,6 @@ class ItemsController < ApplicationController
   before_action :set_item, except: [:index, :new, :create,:get_category_children,:get_category_grandchildren]
 
   def index
-    # @parents = Category.all.order(“id ASC”).limit(13)
     @items = Item.all
   end
 
@@ -27,6 +26,8 @@ class ItemsController < ApplicationController
     #選択された子カテゴリーに紐付く孫カテゴリーの配列を取得
     @category_grandchildren = Category.find("#{params[:child_id]}").children
   end
+
+
 
   def show
     @item = Item.find(params[:id])
@@ -61,13 +62,14 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-
+    @item.destroy
+    redirect_to root_path
   end
 
   private
 
   def item_params
-    params.require(:item).permit(:name, :description, :category_id, :status, :cost, :prefecture_id, :days, :price, images_attributes: [:url, :_destroy, :id], brand_attributes: [:name])
+    params.require(:item).permit(:name, :description, :category_id, :status, :cost, :prefecture_id, :days, :price, images_attributes: [:url, :_destroy, :id], brand_attributes: [:name],).merge(user_id: current_user.id).merge(saler_id: current_user.id)
   end
 
   def set_item
