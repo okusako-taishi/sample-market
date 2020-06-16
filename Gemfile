@@ -79,7 +79,6 @@ end
 gem 'haml-rails'
 gem 'devise'
 gem "font-awesome-sass"
-gem "jp_prefecture"
 gem 'carrierwave'
 gem 'mini_magick'
 gem "payjp"
@@ -88,3 +87,4 @@ gem 'rails-i18n'
 gem 'active_hash'
 gem 'ancestry'
 gem 'gretel'
+gem "fog-aws"
