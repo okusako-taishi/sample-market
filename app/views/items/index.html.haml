@@ -98,8 +98,6 @@
       .pickup__box__lists
         - @items.each do |item|
           -if item.buyer_id.present? 
-
-          -else
             .pickup__box__lists__list
               = link_to item_path(item.id) do
                 %figure.pickup__box__lists__list__img
