@@ -14,19 +14,14 @@ body {
   background-clip: padding-box;
 
   .items-main {
- 
-  
+
     &__name {
       font-size: 24px;
       text-align: center;
-   
-
     }
     
     &__description {
       font-size: 14px;
-
-
     }
 
     &__image {
@@ -77,18 +72,14 @@ body {
       text-align: center;
 
       &--realmoney {
-
         font-size: 50px;
       }
       &--tax {
         font-size: 10px;
-
       }
 
       &--shipping-fee {
         font-size: 16px;
-
-
       }
 
     }
@@ -96,6 +87,7 @@ body {
     &__buy--btn {
       text-align: center;
       line-height: 60px;
+
       .buy-box {
         color: white;
         font-weight: bolder;
@@ -110,7 +102,6 @@ body {
 
     &__description-inner {
       padding-top: 32px;
-
     }
 
     &__button {
@@ -120,28 +111,31 @@ body {
  
       &--left {
         display: flex;
- 
 
         &--left {
-
-
         }
 
         &--right {
           margin-left: 16px;
-
-
         }
       }
       &--right {
+      }
 
-
-
+      &__destroy-btm{
+        display: block;
+        background-color: #3CCACE;
+        text-align: center;
+        height: 50px;
+        line-height: 50px;
+        margin-top: 20px;
+        width: 80%;
+        margin: 20px auto 0;
+        color: white;
+        text-decoration: none;
       }
     }
-
   }
-
 }
 
 .edit-box {
@@ -180,7 +174,6 @@ body {
   .realmessage {
     margin: 0 50px;
     background-color: whitesmoke;
-
   }
   &--btn {
     width: 200px;
@@ -214,7 +207,6 @@ body {
     li {
       margin: 0 10px;
       font-size: 40px;
-
     }
   }
 
@@ -229,8 +221,6 @@ body {
 
     &__header {
       font-size: 22px;
-
-
     }
 
     &__production {
@@ -251,7 +241,6 @@ body {
           padding: 15px;
 
           &--name {
-            
           }
     
           &--price {
@@ -260,15 +249,11 @@ body {
             justify-content: space-between;
             align-items: center;
           }
-    
+
         }
-
       }
-
     }
-
   }
-
 }
 
 .appBanner {
@@ -283,7 +268,7 @@ body {
       font-size: 24px;
       font-weight: bold;
       text-shadow: 0 0 5px rgba(0,0,0,0.4);
-    }  
+    }
 
     &__text {
       font-size: 35px;
@@ -293,7 +278,6 @@ body {
     &__icon {
       .abtn {
         width: 180px;
-
       }
 
       .gbtn {

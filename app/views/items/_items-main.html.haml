@@ -81,4 +81,5 @@
 
 - if user_signed_in? && current_user.id == @item.user_id
   = link_to "編集", edit_item_path , class: "edit-box"
-  = link_to "削除", item_path, method: :delete , class: "delete-box"
+  = link_to item_path , method: :delete , class:"items-main__button__destroy-btm" do
+      削除する
