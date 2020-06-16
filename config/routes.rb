@@ -22,5 +22,8 @@ Rails.application.routes.draw do
       get 'get_category_grandchildren', defaults: { format: 'json' }
       get 'buy'
     end
+    member do
+      get 'buy'
+    end
   end
 end
