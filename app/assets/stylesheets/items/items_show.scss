@@ -95,16 +95,15 @@ body {
 
     &__buy--btn {
       text-align: center;
-      font-size: 24px;
       line-height: 60px;
       .buy-box {
         color: white;
         font-weight: bolder;
+        font-size: 24px;
         width: 400px;
         text-decoration: none;
         background-color: red;
         display: inline-block;
-  
     }
 
   }
