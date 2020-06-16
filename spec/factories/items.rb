@@ -11,6 +11,7 @@ FactoryBot.define do
     prefecture_id      {"1"}
     category_id        {"1"}
     user_id            {"1"}
+    saler_id           {"1"}
     user
     category
     after(:build) do |item|
@@ -28,6 +29,7 @@ FactoryBot.define do
     days               {"aaa"}
     prefecture_id      {"1"}
     category_id        {"1"}
+    saler_id           {"1"}
     user
     category
 
@@ -43,6 +45,7 @@ FactoryBot.define do
     days               {"aaa"}
     prefecture_id      {"1"}
     category_id        {"1"}
+    saler_id           {"1"}
     user
     category
 
@@ -61,6 +64,7 @@ FactoryBot.define do
     days               {"aaa"}
     prefecture_id      {"1"}
     category_id        {"1"}
+    saler_id           {"1"}
     user
     category
 
