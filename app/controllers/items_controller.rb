@@ -1,6 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :set_item, except: [:index, :new, :create,]
-
+  before_action :set_item, except: [:index, :new, :create, :buy]
   def index
     @items = Item.all
   end
@@ -30,6 +29,14 @@ class ItemsController < ApplicationController
   def edit
     @item = Item.find(params[:id])
   end
+  
+  def buy
+
+  end
+
+  def edit
+    @item = Item.find(params[:id])
+  end
 
   def update
     if @item.update(item_params)
@@ -54,7 +61,6 @@ class ItemsController < ApplicationController
 
   def set_item
     @item = Item.find(params[:id])
-
+    @items = Item.includes(:images, :brands)
   end
-
 end
