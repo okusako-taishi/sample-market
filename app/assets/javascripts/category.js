@@ -55,7 +55,7 @@ $(function(){
         appendChidrenBox(insertHTML);
       })
       .fail(function(){
-        alert('ここや');
+        alert('');
       })
     }else{
       $('#children_wrapper').remove(); //親カテゴリーが初期値になった時、子以下を削除するする

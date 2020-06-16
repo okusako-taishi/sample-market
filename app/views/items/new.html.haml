@@ -24,7 +24,7 @@
         #image-box
           #previews
             - if @item.persisted?
-              = @item.images.each_with_index do |image, i|
+              - @item.images.each_with_index do |image, i|
                 = image_tag image.url.url, data: { index: i }, width: "100", height: "100"
           = f.fields_for :images do |image|
             .js-file_group{"data-index": "#{image.index}"}
@@ -56,12 +56,6 @@
               .listing-select-wrapper
                 .listing-select-wrapper__box
                   = f.select :category_id, @category_parent_array, {}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
-                  -# %i.fas.fa-chevron-down.listing-select-wrapper__box--arrow-down
-          -# .item-main__box__pic-3__category
-          -#   .item-main__box__pic-3__category__kategory カテゴリー 必須
-          -#   .selctbox
-          -#     = f.select :category, @category_parent_array, {}, {class: 'selectbox', id: 'parent_category'}
-          -#     -# = f.collection_select :category_id, Category.all, :id, :name, include_blank: "選択してください"
           .item-main__box__pic-3__category 
             .item-main__box__pic-3__category__kategory ブランド 任意
             .selctbox 
@@ -91,21 +85,6 @@
             .item-main__box__pic-5__price__hanbaikakaku 販売価格 必須
             .item-main__box__pic-5__price__nyuryoku 
               = f.number_field :price
-
-            #image-box
-              = f.fields_for :images do |i|
-                .js-file_group{"data-index": "#{i.index}"}
-                  = i.file_field :url, class: 'js-file'
-                  %br
-                  %span.js-remove
-                    削除
-                - if @item.persisted?
-                  = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
-              - if @item.persisted?
-                .js-file_group{"data-index": "#{i.index}"}
-                  = file_field_tag :url, name: "item[images_attributes][#{@product.images.count}][url]", class: 'js-file'
-                  .js-remove
-                    削除
               = f.submit
         -#   .item-main__box__pic-5__tesuuryou 販売手数料 (10%)
         -#   .item-main__box__pic-5__tesuuryou 販売利益
