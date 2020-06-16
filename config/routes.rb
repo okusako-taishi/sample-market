@@ -17,8 +17,14 @@ Rails.application.routes.draw do
     end
   end
   resources :items, only: [:show, :new, :create] do
-    collection do
+    member do
       get 'buy'
+      get 'pay'
+    end
+  end
+  resources :cards, only: [:new, :create, :show, :destroy] do
+    collection do
+      post 'pay', to: 'cards#pay'
     end
   end
 end
