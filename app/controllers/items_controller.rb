@@ -75,5 +75,6 @@ class ItemsController < ApplicationController
   def set_item
     @item = Item.find(params[:id])
     @items = Item.all
+    @items = Item.includes(:images, :brands)
   end
 end
