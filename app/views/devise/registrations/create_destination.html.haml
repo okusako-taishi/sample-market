@@ -1,11 +1,3 @@
-.single-container
-  = render partial: 'items/items-header'
-  
-  %main.single-main
-    .single-main__box
-      .single-main__header
-        %h2 登録が完了しました
-      .toppage
-        = link_to 'トップページへ' ,root_path, class:"btm-to-toppage"
+登録が完了しました
+= link_to 'トップページへ' ,root_path
 
-  = render partial: 'items/items-footer'

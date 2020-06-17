@@ -1,9 +1,13 @@
 .show-users-wrapper{
   background-color: rgb(245,245,245);
+  text-align: center;
   &__center{
+    background-color: #ffffff;
     display: flex;
+    width: 931px;
+    text-align: center;
+    
     &__left-content{
-      margin-left: 250px;
       padding: 20px 10px;
       display: flex;
       flex-direction: column;
