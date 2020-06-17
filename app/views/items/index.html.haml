@@ -2,6 +2,7 @@
 
 
 .item__index--main
+
   %section.first-view
     .first-view__content
       %h2.first-view__content__title
@@ -96,7 +97,8 @@
             新規投稿商品
       .pickup__box__lists
         - @items.each do |item|
-          -if item.buyer_id.present? 
+          -if item.buyer_id.nil? 
+
             .pickup__box__lists__list
               = link_to item_path(item.id) do
                 %figure.pickup__box__lists__list__img
