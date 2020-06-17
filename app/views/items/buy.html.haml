@@ -1,5 +1,5 @@
 .kounyu-all
-  .kounyu-header ヘッダーは部分テンプレートにします。
+  = render "layouts/header"
   .kounyu-main
     .kounyu-main__box-1 商品購入の確認
     .kounyu-main__box-2
@@ -37,6 +37,6 @@
         .kounyu-main__box-v2__box-7__tyuui 郵便局/コンビニ受取をご希望の方は、購入後に取引画面から受取場所を変更をすることが可能です。出品者が発送作業を開始した後は受取場所の変更ができませんので、早めに変更を行ってください。
         .kounyu-main__box-v2__box-7__bottun
           .kounyuusuru 購入する
-          -# = f.submit '購入する', class: "kounyuusuru"
-         
-.kounyu-footer 部分テンプレートかしてるので後に直します
+          -# = f.submit '購入する', class: "kounyuusuru"        
+= render "items-link"
+= render "layouts/footer"

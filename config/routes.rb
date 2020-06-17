@@ -25,5 +25,8 @@ Rails.application.routes.draw do
     member do
       get 'buy'
     end
+    member do
+      get 'buy'
+    end
   end
 end
