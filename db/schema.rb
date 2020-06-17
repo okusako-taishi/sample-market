@@ -24,7 +24,6 @@ ActiveRecord::Schema.define(version: 2020_06_13_084901) do
     t.string "customer_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_cards_on_user_id"
   end
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -64,11 +63,11 @@ ActiveRecord::Schema.define(version: 2020_06_13_084901) do
     t.integer "price", null: false
     t.text "description", null: false
     t.string "status", null: false
-    t.string "judgment"
-    t.string "size"
+    t.string "judgment", null: false
+    t.string "size", null: false
     t.integer "cost", null: false
     t.string "days", null: false
-    t.integer "prefecture_id"
+    t.integer "prefecture_code"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "category_id"

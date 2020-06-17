@@ -1,7 +1,7 @@
 class Item < ApplicationRecord
-
+ 
   belongs_to :user
-  belongs_to :saler, class_name: "User", optional: true
+  belongs_to :saler, class_name: "User"
   belongs_to :buyer, class_name: "User", optional: true
   
   has_many :images, dependent: :destroy
@@ -25,4 +25,5 @@ class Item < ApplicationRecord
 
   validates :price, presence: true,
   numericality: { only_integer: true, greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999 ,allow_blank: true}
+
 end
