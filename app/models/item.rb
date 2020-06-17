@@ -9,7 +9,7 @@ class Item < ApplicationRecord
   validates_associated :images
   validates :images, presence: true , length: { maximum: 10 }
 
-  belongs_to :category, optional: true
+  belongs_to :category
 
   belongs_to :brand ,optional: true 
   accepts_nested_attributes_for :brand
