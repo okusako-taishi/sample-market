@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only: [:show, :edit]
+  before_action :set_item, only: [:show, :edit, :update, :destroy, :buy, :pay]
   before_action :item_params, only: :create
   before_action :set_item, except: [:index, :new, :create,:get_category_children,:get_category_grandchildren]
 
@@ -52,22 +52,24 @@ class ItemsController < ApplicationController
     end
   end
 
-  def show
+  def buy
+    if card.exists?
+      @card     = Card.find_by(user_id: current_user.id)
+      Payjp.api_key = Rails.application.credentials.dig(:payjp, :PAYJP_PRIVATE_KEY)
+      customer = Payjp::Customer.retrieve(@card.customer_id)
+      @default_card_information = Payjp::Customer.retrieve(@card.customer_id).cards.data[0]
+    end
   end
 
-  def buy
-    card = Card.where(user_id: current_user.id).first
-    #Cardテーブルは前回記事で作成、テーブルからpayjpの顧客IDを検索
-    if card.blank?
-      #登録された情報がない場合にカード登録画面に移動
-      redirect_to new_card_path
-    else
-      Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
-      #保管した顧客IDでpayjpから情報取得
-      customer = Payjp::Customer.retrieve(card.customer_id)
-      #保管したカードIDでpayjpから情報取得、カード情報表示のためインスタンス変数に代入
-      @default_card_information = customer.cards.retrieve(card.card_id)
-    end
+  def pay
+    @card = Card.find_by(user_id: current_user.id)
+    @item.save!
+    Payjp.api_key = Rails.application.credentials.dig(:payjp, :PAYJP_PRIVATE_KEY)
+    @charge = Payjp::Charge.create(
+    amount: @product.price,
+    customer: @card.customer_id,
+    currency: 'jpy'
+    )
   end
 
   def edit
