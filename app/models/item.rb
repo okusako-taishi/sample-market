@@ -11,6 +11,9 @@ class Item < ApplicationRecord
 
   belongs_to :category
 
+  has_many :favorites
+  has_many :users, through: :favorites
+
   belongs_to :brand ,optional: true 
   accepts_nested_attributes_for :brand
 

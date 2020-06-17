@@ -12,6 +12,9 @@ class User < ApplicationRecord
 
   has_one :destination , dependent: :destroy
 
+  has_many :favorites
+  has_many :items, through: :favorites
+
   validates :nickname,  presence: true
 
   validates :family_name,presence: true,
