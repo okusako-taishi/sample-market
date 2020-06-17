@@ -1,8 +1,18 @@
+---
 ja:
+  errors:
+    messages:
+      blank: を入力してください
+      taken: はすでに存在します
+      invalid: を入力してください
+    full_messages:
+      format: "%{attribute}%{message}"
   activerecord:
     models:
       user: ユーザー
       destination: お届け住所
+      images: イメージ
+      category: カテゴリー
     attributes:
       user:
         email: メールアドレス
@@ -20,4 +30,15 @@ ja:
         post_code: 郵便番号
         prefecture_id: 都道府県
         city: 市町村
-        
+      item:
+        name: 商品名
+        price: 価格
+        description: 説明文
+        status: 商品の状態
+        size: 商品のサイズ
+        cost: 配送料
+        days: 発送までの日数
+        prefecture_id: 発送元の地域
+        category_id: カテゴリー
+        images: 商品の画像
+        category: カテゴリー

@@ -2,6 +2,12 @@
   box-sizing: border-box;
 }
 
+.item-errors{
+  li{
+    display: block;
+  }
+}
+
 .item-header {
   -webkit-box-align: center;
   align-items: center;
@@ -13,156 +19,151 @@
   background-color: red;
 }
 
-.item-main {
-  height: 2600px;
-  width: 55vw;
-  margin: 0px auto;
-  &__box {
-    height: 100%;
-    width: 100%;
-    &__pic {
-      height: 300px;
-      width: 100%;
-      border-bottom: solid 1px #eee;
-      padding: 40px;
-      &__picture{
-        height: 20px;
-        background-color: white;
-        &__upload-text {
-          height: 20px;
-          margin-top: 15px;
-        }
-        &__upload-form  {
-            height: 150px;
-            margin-top: 15px;
-            border: dashed 2px #5b8bd0;/*点線*/
-        }
-      }
-    }
-  }
-}
-
-
-
-.item-main__box__pic-2 {
-  height: 440px;
-  width: 100%;
-  padding: 40px;
-  border-bottom: solid 1px #eee;
-  &__syouheimeinohako {
-    height: 90px;
-    &__name{
-      height: 24px;
-    }
-    &__text-box{
-      height: 48px;
-      margin-top: 16px;
-    }
-  }
-  &__setsumei {
-    height: 220px;
-    margin-top: 32px;
-    &__bun {
-      height: 21px;
-      background-color: white;
-    }
-    &__text  {
-      padding: 13px 16px;
-      margin-top: 16px;
-      height: 100%;
-    }
-  }
-}
-
-.item-main__box__pic-3 {
-  height: 500px;
-  width: 100%;
-  padding: 40px;
-  border-bottom: solid 1px #eee;
-  &__syouhinosyousai {
-    height: 20px;
-    width: 100%;
-    margin-bottom: 23px;
-  }
-  &__category {
-      height: 120px;
-      width: 100%;
-      margin-top: 10px;
-  }
-}
-
-.item-main__box__pic-4 {
-  height: 440px;
-  width: 100%;
-  padding: 40px;
-  border-bottom: solid 1px #eee;
-  &__haisounituite  {
-    height: 2opx;
-    width: 100%;
+.item-main{
+  background-color: #eee;
+  padding: 40px 0;
+  &__box{
+    width: 720px;
+    padding: 20px;
+    margin: 0 auto;
     font-size: 14px;
-    margin-bottom: 24px;
-  }
-  &__hutannnado {
-    height: 83px;
-    width: 100%;
-    margin-top: 24px;
-  }
-  &__hutan  {
-    height: 83px;
-    width: 100%;
-    &__bun {
-      height: 20px;
-      width: 100%;
-    }
-  }
-}
-
-
-.selctbox {
-  height: 48px;
-  width: 100%;
-  background-color: white;
-  margin-top: 15px;
-}
-
-.selection {
-  height: 48px;
-  width: 500px;
-  margin: 0 12px;
-  font-size: 16px;
-}
-
-.item-main__box__pic-5 {
-  height: 440px;
-  width: 100%;
-  padding: 40px;
-  border-bottom: solid 1px #eee;
-  &__tesuuryou {
-    height: 42px;
-    width: 100%;
-    padding: 12px 0px;
-  }
-  &__kakaku {
-    height: 20px;
-    width: 100%;
-    margin-bottom: 24px;
-  }
-  &__price {
-    height: 58px;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
-    &__hanbaikakaku {
-    height: 100%;
-    width: 120px;
-      &__nyuryoku {
-        height: 100%;
-        width: 251px;
-        padding: 0 16px;
-        background-color: rgb(161, 161, 161);
-        // position: relative;
+    margin-bottom: 2px;
+    background-color: white;
+    &__flexbox{
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0 auto;
+      width: 660px;
+      .file-field{
+        display: none;
       }
+      .item-main__box__preview,.item-main__box__preview-first{
+        margin: 16px 0;
+        display: flex;
+        flex-wrap: wrap;
+        &__image{
+          position: relative;
+          &__img{
+            width: 131px;
+            margin-right: 1px;
+            height: 160px;
+            object-fit: cover;
+          }
+          &__delete-btn{
+            text-shadow: 0 0 2px white;
+            cursor: pointer;
+            position: absolute;
+            top: 0px;
+          }
+        }
+      }
+    }
+    .spacing{
+      padding-top: 20px;
+    }
+    .require{
+      padding: 3px;
+      color: white;
+      font-size: 13px;
+      border-radius: 4px;
+      background-color: red;
+    }
+    .any{
+      padding: 3px;
+      color: white;
+      font-size: 12px;
+      border-radius: 4px;
+      background-color: #ddd;
+    }
+    &__title{
+      font-weight: bold;
+      padding: 0 12px;
+      font-weight: bold;
+      padding-bottom: 20px;
+    }
+    &__text{
+      padding: 0 12px;
+    }
+    &__image-field{
+      width: 660px;
+      height: 160px;
+      margin: 16px auto;
+      background-color: #eee;
+      border: 1px dashed #ccc;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 12px;
+      text-align: center;
+      position: relative;
+      .fa-camera{
+        position: absolute;
+        top:40px;
+        font-size: 29px;
+      }
+      &__text{
+        padding-top: 20px;
+      }
+    }
+    &__input-text{
+      height: 44px;
+      line-height: 44px;
+      font-size: 16px;
+      padding: 0 16px;
+      width: 660px;
+      margin-left: 10px;
+      border-radius: 4px;
+    }
+    &__input-textarea{
+      height: 160px;
+      font-size: 16px;
+      padding: 16px;
+      width: 660px;
+      margin-left: 10px;
+      border-radius: 4px;
+    }
+    &__input-select{
+      height: 44px;
+      line-height: 44px;
+      font-size: 16px;
+      padding: 0 16px;
+      width: 660px;
+      margin-left: 10px;
+      border-radius: 4px;
+    }
+    &__input-price{
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      &__input{
+        text-align: end;
+        height: 44px;
+        line-height: 44px;
+        font-size: 16px;
+        padding: 0 16px;
+        width: 300px;
+        margin-left: 10px;
+        border-radius: 4px;
+      }
+    }
+    .float-left{
+      float: left;
+    }
+    .float-right{
+      float: right;
+    }
+    &__submit{
+      border-radius: 4px;
+      display: block;
+      margin: 0 auto;
+      margin-top: 40px;
+      width: 400px;
+      height: 44px;
+      background-color: red;
+      color: white;
+      font-weight: bold;
+      font-size: 16px;
+      border: 0px solid #000;
     }
   }
 }
@@ -241,11 +242,3 @@
    width: 100%;
    text-align: right;
  }
-
-
-
-
-
-
-
- 

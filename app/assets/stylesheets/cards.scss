@@ -1,3 +1,140 @@
-// Place all the styles related to the cards controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.show-users-wrapper{
+  background-color: #fff;
+  width: 700px;
+  margin: 0 auto;
+  position: relative;
+  .card-wrapper{
+    width: 700px;
+    padding-bottom: 50px;
+    margin: 0 auto;
+    text-align: center;
+    &__title{
+      font-size: 24px;
+      text-align: center;
+      font-weight: bold;
+    }
+    &__content-number{
+      margin-top: 20px;
+      .required{
+        padding: 3px;
+        color: white;
+        font-size: 12px;
+        border-radius: 4px;
+        background-color: #3ccace;
+      }
+    }
+    &__input{
+      width: 500px;
+      height: 44px;
+      line-height: 44px;
+      font-size: 16px;
+      padding: 0 16px;
+      margin-top: 10px;
+      border-radius: 4px;
+      &__input-num{
+        width: 200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        .month{
+          display: flex;
+        }
+        .month-details{
+          font-weight: bold;
+        }
+        .year{
+          display: flex;
+        }
+        .year-details{
+          font-weight: bold;
+        }
+      }
+    }
+    &__cardsecurity{
+      &__form{
+        width: 250px;
+      }
+    }
+    
+    .submit-btn{
+      color: whitesmoke;
+      font-weight: bold;
+      width: 90px;
+      height: auto;
+      margin-top: 30px;
+      background-color: #3ccace;
+      border: 1px solid #000;
+    }
+    .disabled{
+      background-color: #f0f0f0;
+    }
+    &__image{
+      margin-top: 20px;
+      display: flex;
+      margin-left: 215px;
+    }
+    .visa{
+      width: 50px;
+      height: auto;
+    }
+    .master{
+      width: 50px;
+      height: auto;
+    }
+    .jcb{
+      width: 50px;
+      height: auto;
+    }
+    .amex{
+      width: 50px;
+      height: auto;
+    }
+    .diners{
+      width: 50px;
+      height: auto;
+    }
+    .discover{
+      width: 50px;
+      height: auto;
+    }
+ 
+  }
+}
+
+.show-card-wrapper{
+  height: 400px;
+  width: 700px;
+  vertical-align: middle;
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  .card-wrapper2{
+    background-color: #fff;
+    height: 350px;
+    width: 500px;
+    text-align: center;
+    position: relative;
+    margin: 0 auto;
+    border-radius: 10px;
+    &__title{
+      font-size: 30px;
+      font-weight: bold;
+  }
+    &__list{
+      font-size: 20px;
+  }
+  .expiration-date__title{
+    font-weight: bold;
+  }
+  .destroy__btn{
+    color: whitesmoke;
+    width: 90px;
+    height: auto;
+    margin-top: 30px;
+    background-color: #3ccace;
+  }
+  .payment-details__btn{
+    font-size: 8px;
+  }
+  }
+}
