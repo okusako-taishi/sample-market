@@ -1,11 +1,10 @@
 = render partial: 'items/items-header'
 .item-main
   .item-main__box
-    - if @item.errors.any?
+    - if session[:error].present?
       %ul.item-errors
-        - @item.errors.full_messages.each do |message|
-          %li= message
-
+        - session[:error].each do |e|
+          %li= e
     .item-main__box__pic
       .item-main__box__pic__picture
         %label.label 出品画像 必須
@@ -78,7 +77,7 @@
           .item-main__box__pic-4__hutannnado  
             .item-main__box__pic-4__hutan__bun 発送元の地域 必須
             .selctbox 
-              = f.collection_select :prefecture_id, Prefecture.all, :id, :name, {prompt:"選択してください"}, {class:""}
+              = f.collection_select :prefecture_id, Prefecture.all, :id, :name, { include_blank: "選択してください", prompt:"選択してください"}, {class:""}
           .item-main__box__pic-4__hutannnado  
             .item-main__box__pic-4__hutan__bun 発送までの日数 必須
             .selctbox 

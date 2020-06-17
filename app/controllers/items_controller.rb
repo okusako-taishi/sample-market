@@ -75,25 +75,11 @@ class ItemsController < ApplicationController
 
   def update
     if @item.update(item_params)
+      session.delete(:error)
       redirect_to root_path
     else
-      grandchild_category = @item.category
-      child_category = grandchild_category.parent
-      @category_parent_array = []
-      Category.where(ancestry: nil).each do |parent|
-        @category_parent_array << parent.name
-      end
-
-      @category_children_array = []
-      Category.where(ancestry: child_category.ancestry).each do |children|
-        @category_children_array << children
-      end
-
-      @category_grandchildren_array = []
-      Category.where(ancestry: grandchild_category.ancestry).each do |grandchildren|
-        @category_grandchildren_array << grandchildren
-      end
-      render :edit
+      session[:error] = @item.errors.full_messages
+      redirect_to action: :edit
     end
   end
 
