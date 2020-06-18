@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :set_item, except: [:index, :new, :create,:get_category_children,:get_category_grandchildren]
+  before_action :set_item, except: [:index, :new, :show, :create,:get_category_children,:get_category_grandchildren]
 
   def index
     @items = Item.includes(:images)
@@ -32,6 +32,8 @@ class ItemsController < ApplicationController
   def show
     @item = Item.find(params[:id])
     @items = Item.all
+    @comment = Comment.new
+    @comments = @item.comments.includes(:user)
   end
 
   def create

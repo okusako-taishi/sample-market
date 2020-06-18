@@ -18,6 +18,10 @@ class Item < ApplicationRecord
   belongs_to :brand ,optional: true 
   accepts_nested_attributes_for :brand
 
+  validates :text, presence: true
+  belongs_to :user
+  has_many :comments
+
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :prefecture
 
