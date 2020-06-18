@@ -24,6 +24,7 @@ crumb :category do |category|
 
 end
 
+
 # crumb :projects do
 #   link "Projects", projects_path
 # end
