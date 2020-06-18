@@ -1,0 +1,59 @@
+.kounyu-all
+  .kounyu-header ヘッダーは部分テンプレートにします。
+  .kounyu-main
+    .kounyu-main__box-1 商品購入の確認
+    .kounyu-main__box-2
+      .kounyu-main__box-2__item-box
+        .kounyu-main__box-2__item-box__pic
+          = image_tag @item.images.first.url.url, size: "80x80"
+        .kounyu-main__box-2__item-box__text
+          .kounyu-main__box-2__item-box__text__name
+            = "#{@item.name}"
+          .kounyu-main__box-2__item-box__text__price
+            .kounyu-main__box-2__item-box__text__price__nedan 
+              = "#{@item.price}" + "円(税込み)"
+            .kounyu-main__box-2__item-box__text__price__souryou 送料込み
+    - if @user.card.present?
+      .kounyu-main__box-v2
+        .kounyu-main__box-v2__box-3 
+          .kounyu-main__box-v2__box-3__kingaku  支払い金額
+          .kounyu-main__box-v2__box-3__price
+            = "#{@item.price}" + "円"
+        .kounyu-main__box-v2__box-4
+          .kounyu-main__box-v2__box-4__siharaihouhou 支払い方法
+          = link_to card_path, method: :get, class: "kounyu-main__box-v2__box-4__henkousuru" do
+            変更する
+        .kounyu-main__box-v2__box-5
+          .kounyu-main__box-v2__box-5__kureka クレジットカード
+          .kounyu-main__box-v2__box-5__number
+            = "**** **** **** " + "#{@customer_card.last4}"
+          .kounyu-main__box-v2__box-5__yuukoukigen 
+            有効期限  
+          .kounyu-main__box-v2__box-5__info
+            = @exp_month + "/" + @exp_year
+        .kounyu-main__box-v2__box-6
+          .kounyu-main__box-v2__box-6__haisou
+            .kounyu-main__box-v2__box-6__haisou__haisousaki 配送先
+            = link_to user_path, class: "kounyu-main__box-v2__box-4__henkousuru" do 
+              .kounyu-main__box-v2__box-6__haisou__henkou  変更する
+          .kounyu-main__box-v2__box-6__adress
+            = "〒#{Destination.find_by(user: current_user).post_code}"
+            %br
+            = Destination.find_by(user: current_user).prefecture_id
+            = Destination.find_by(user: current_user).city
+            = Destination.find_by(user: current_user).block
+            - unless Destination.find_by(user: current_user).building_name == nil
+              = Destination.find_by(user: current_user).building_name
+            %br
+            = Destination.find_by(user: current_user).family_name
+            = Destination.find_by(user: current_user).first_name
+        .kounyu-main__box-v2__box-7
+          .kounyu-main__box-v2__box-7__tyuui 郵便局/コンビニ受取をご希望の方は、購入後に取引画面から受取場所を変更をすることが可能です。出品者が発送作業を開始した後は受取場所の変更ができませんので、早めに変更を行ってください。
+          .kounyu-main__box-v2__box-7__bottun
+            .kounyuusuru
+              = link_to "登録クレジットカードで購入する", pay_item_purchase_path(item_id: @item.id), method: :post
+    - else
+      .purchase_none_btn
+        = form_tag(action: :pay, method: :post) do
+          %script.payjp-button{src: "https://checkout.pay.jp", type: "text/javascript" ,"data-text": "購入する" ,"data-key": "pk_test_fd131483f6fd624848a9c8ef",}
+.kounyu-footer 部分テンプレートかしてるので後に直します
