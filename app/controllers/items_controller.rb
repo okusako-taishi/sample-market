@@ -82,6 +82,7 @@ class ItemsController < ApplicationController
 
       @category_grandchildren_array = Category.where(ancestry: grandchild_category.ancestry).pluck(:name)
     else 
+      @items = Item.all
       render :index
     end
   end
