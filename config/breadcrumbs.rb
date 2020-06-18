@@ -13,6 +13,17 @@ crumb :logout do |user|
   parent :mypage ,user
 end
 
+# カテゴリー
+crumb :categories do |category|
+  link "カテゴリー 一覧", categories_path
+end
+
+crumb :category do |category|
+  link "#{category.name}", category_path(category.id)
+  parent :categories ,category
+
+end
+
 # crumb :projects do
 #   link "Projects", projects_path
 # end
