@@ -5,10 +5,10 @@
     .kounyu-main__box-2
       .kounyu-main__box-2__item-box
         .kounyu-main__box-2__item-box__pic
-          - @item.images.each do |image|
-            = image_tag image.url.url.first, size: "80x80"
+          = image_tag @item.images.first.url.url, size: "80x80"
         .kounyu-main__box-2__item-box__text
-          .kounyu-main__box-2__item-box__text__name 謎の物体
+          .kounyu-main__box-2__item-box__text__name
+            = "#{@item.name}"
           .kounyu-main__box-2__item-box__text__price
             .kounyu-main__box-2__item-box__text__price__nedan 
               = "#{@item.price}" + "円(税込み)"
@@ -47,7 +47,6 @@
             %br
             = Destination.find_by(user: current_user).family_name
             = Destination.find_by(user: current_user).first_name
-
         .kounyu-main__box-v2__box-7
           .kounyu-main__box-v2__box-7__tyuui 郵便局/コンビニ受取をご希望の方は、購入後に取引画面から受取場所を変更をすることが可能です。出品者が発送作業を開始した後は受取場所の変更ができませんので、早めに変更を行ってください。
           .kounyu-main__box-v2__box-7__bottun
@@ -55,7 +54,6 @@
               = link_to "登録クレジットカードで購入する", pay_item_purchase_path(item_id: @item.id), method: :post
     - else
       .purchase_none_btn
-        //Checkoutのフォームを開くための記述
         = form_tag(action: :pay, method: :post) do
           %script.payjp-button{src: "https://checkout.pay.jp", type: "text/javascript" ,"data-text": "購入する" ,"data-key": "pk_test_fd131483f6fd624848a9c8ef",}
 .kounyu-footer 部分テンプレートかしてるので後に直します

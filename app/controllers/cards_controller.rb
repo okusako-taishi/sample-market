@@ -3,10 +3,10 @@ class CardsController < ApplicationController
 
   def new
     card = Card.where(user_id: current_user.id)
-    #redirect_to card_path(current_user.id) if card.exists?
+    redirect_to card_path(current_user.id) if card.exists?
   end
 
-  def create #payjpとCardのデータベース作成を実施します。
+  def create
     Payjp.api_key = Rails.application.credentials.dig(:payjp, :PAYJP_PRIVATE_KEY)
     if params['payjp-token'].blank?
       redirect_to new_card_path
@@ -15,7 +15,7 @@ class CardsController < ApplicationController
         email: current_user.email,
         card: params['payjp-token'],
         metadata: {user_id: current_user.id}
-      ) #念の為metadataにuser_idを入れましたがなくてもOK
+      )
       @card = Card.new(user_id: current_user.id, customer_id: customer.id, card_id: customer.default_card)
       if @card.save
         redirect_to card_path(current_user.id)
@@ -25,7 +25,7 @@ class CardsController < ApplicationController
     end
   end
 
-  def destroy #PayjpとCardデータベースを削除します
+  def destroy
     @card = Card.find_by(user_id: current_user.id)
     if @card.blank?
       redirect_to action: "new"
@@ -35,14 +35,13 @@ class CardsController < ApplicationController
       customer.delete
       @card.delete
       if @card.destroy
-
       else
         redirect_to card_path(current_user.id), alert: "削除できませんでした。"
       end
     end
   end
 
-  def show #Cardのデータpayjpに送り情報を取り出します
+  def show
     @card = Card.find_by(user_id: current_user.id)
     if @card.blank?
       redirect_to new_card_path
@@ -50,7 +49,7 @@ class CardsController < ApplicationController
       Payjp.api_key = Rails.application.credentials.dig(:payjp, :PAYJP_PRIVATE_KEY)
       customer = Payjp::Customer.retrieve(@card.customer_id)
       @customer_card = customer.cards.retrieve(@card.card_id)
-      #@default_card_information = customer.cards.retrieve(@card.card_id)
+      @default_card_information = customer.cards.retrieve(@card.card_id)
       @card_brand = @customer_card.brand
       case @card_brand
       when "Visa"
@@ -70,6 +69,4 @@ class CardsController < ApplicationController
       @exp_year = @customer_card.exp_year.to_s.slice(2,3)
     end
   end
-
-  
 end
