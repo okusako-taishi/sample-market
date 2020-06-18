@@ -50,14 +50,27 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    
+    if user_signed_in? && current_user.id == @item.saler_id
+      grandchild_category = @item.category
+      child_category = grandchild_category.parent
+
+      @category_parent_array = Category.where(ancestry: nil).pluck(:name)
+
+      @category_children_array = Category.where(ancestry: child_category.ancestry).pluck(:name)
+
+      @category_grandchildren_array = Category.where(ancestry: grandchild_category.ancestry).pluck(:name)
+    else 
+      render :index
+    end
   end
 
   def update
     if @item.update(item_params)
+      session.delete(:error)
       redirect_to root_path
     else
-      render :edit
+      session[:error] = @item.errors.full_messages
+      redirect_to action: :edit
     end
   end
 
