@@ -1,0 +1,147 @@
+// Place all the styles related to the categories controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.category{
+  max-width: 1020px;
+  width: 100%;
+  margin: 20px auto 0;
+  background-color: white;
+  text-align: cente;
+  padding: 30px;
+  min-height: 400px;
+
+  &__header{
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  &__main{
+
+    .parent{
+      font-size: 25px;
+      font-weight: bold;
+      margin-bottom: 30px;
+      padding: 10px 0 10px 15px;
+      background-color: #3CCACE;
+      a{
+        text-decoration: none;
+        color: white;
+      }
+    }
+    .child-wrapper{
+      display: flex;
+      flex-wrap: wrap;
+      padding: 0 15px;
+      margin-bottom: 10px;
+
+      .child-granchild-wrapper{
+        width: 50%;
+
+        .child{
+          // width: 50%;
+          font-size: 15px;
+          font-weight: bold;
+          margin-bottom: 20px;
+          a{
+            background-color: rgb(202, 253, 255);
+            text-decoration: none;
+            color: black;
+            display: inline-block;
+            padding: 10px;
+          }
+
+        }
+
+        .grandchild-wrapper{
+          font-size: 15px;
+          display: flex;
+          flex-wrap: wrap;
+          font-weight: normal;
+          margin-bottom: 20px;
+          padding-right: 10px;
+          a{
+            text-decoration: none;
+            color: black;
+            margin-right: 20px;
+          }
+        }
+      }
+    }
+  }
+  &__items{
+    margin: 26px auto;
+    display: flex;
+    overflow: scroll;
+
+    .no-item{
+      margin: 0 auto;
+    }
+
+    &__item{
+      width: 25%;
+      display: inline-block;
+
+      &:hover{
+        opacity: 0.5;
+      }
+
+      a{
+        background-color: #fff;
+        display: inline-block;
+        text-decoration: none;
+
+        figure{
+          width: 220px;
+          height: 150px;
+          position: relative;
+          overflow: hidden;
+          margin: 0;
+          z-index: auto;
+
+          img{
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            z-index: auto;
+            height: 150px;
+            object-fit: cover;
+          }
+        }
+      }
+
+      &__body{
+        background-color: white;
+        color: #333;
+        padding: 16px;
+
+        &__name{
+          overflow: hidden;
+          line-height: 1.5;
+          font-size: 16px;
+          text-align: left;
+        }
+        &__details{
+          font-size: 16px;
+
+          ul{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+          }
+
+          p{
+            font-size: 10px;
+            text-align: left;
+          }
+        }
+      }
+    }
+  }
+}

@@ -29,4 +29,5 @@ Rails.application.routes.draw do
       get 'buy'
     end
   end
+  resources :categories ,only: [:show, :index]
 end

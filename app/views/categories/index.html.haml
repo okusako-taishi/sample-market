@@ -1,0 +1,23 @@
+= render "layouts/header"
+
+.category
+  .category__header
+    カテゴリー 一覧
+  .category__main
+    -@parents.each do |parent|
+      .parent
+        = link_to category_path(parent.id) do
+          = parent.name
+      .child-wrapper
+        - parent.children.each do |child|
+          .child-granchild-wrapper
+            .child
+              = link_to category_path(child.id) do
+                =child.name 
+            .grandchild-wrapper
+              - child.children.each do |grandchild|
+                .grandchild
+                  = link_to category_path(grandchild.id) do
+                    =grandchild.name
+= render "layouts/footer"
+
