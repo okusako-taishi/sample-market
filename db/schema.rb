@@ -35,14 +35,11 @@ ActiveRecord::Schema.define(version: 2020_06_18_015220) do
   end
 
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "item_id", null: false
-    t.bigint "user_id", null: false
-    t.integer "delete_check", default: 0
-    t.string "comment"
+    t.integer "user_id"
+    t.integer "tweet_id"
+    t.text "text"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["item_id"], name: "index_comments_on_item_id"
-    t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
   create_table "destinations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -114,8 +111,6 @@ ActiveRecord::Schema.define(version: 2020_06_18_015220) do
   end
 
   add_foreign_key "cards", "users"
-  add_foreign_key "comments", "items"
-  add_foreign_key "comments", "users"
   add_foreign_key "items", "brands"
   add_foreign_key "items", "categories"
   add_foreign_key "items", "users"
