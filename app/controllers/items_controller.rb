@@ -1,5 +1,4 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only: [:show, :edit, :update, :destroy, :buy, :pay]
   before_action :item_params, only: :create
   before_action :set_item, except: [:index, :new, :create,:get_category_children,:get_category_grandchildren]
 

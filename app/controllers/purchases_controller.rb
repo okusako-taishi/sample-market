@@ -1,5 +1,6 @@
 class PurchasesController < ApplicationController
-  before_action :set_card, :set_item
+  before_action :set_card
+  before_action :set_item
   require 'payjp'
 
   def index
@@ -13,9 +14,7 @@ class PurchasesController < ApplicationController
   end
 
   def buy
-    @item = Item.find(params[:item_id])
     @images = @item.images.all
-
     if user_signed_in?
       @user = current_user
       if @user.card.present?
@@ -48,9 +47,7 @@ class PurchasesController < ApplicationController
   end
 
   def pay
-    @item = Item.find(params[:item_id])
     @images = @item.images.all
-
     @item.with_lock do
       if current_user.card.present?
         @card = Card.find_by(user_id: current_user.id)
