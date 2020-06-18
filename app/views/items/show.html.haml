@@ -1,8 +1,14 @@
 = render "layouts/header"
+
+- if @comment.errors.any?
+  - @comment.errors.full_messages.each do |message|
+    = message
+
 .items
   = render "items-main"
 
   = form_with(model: [@item, @comment], local: true) do |form|
+    -# = render "devise/shared/error_messages", resource: resource
 
     = form.text_area :text ,class: "items-comment--text" 
     .realmessage
@@ -49,6 +55,3 @@
       = render "items-sub"
 = render "items-link"
 = render "layouts/footer"
-
-    
-  
