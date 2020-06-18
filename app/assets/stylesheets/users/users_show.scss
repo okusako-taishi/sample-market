@@ -1,12 +1,11 @@
 .show-users-wrapper{
   background-color: rgb(245,245,245);
-  text-align: center;
+  width: 100%;
   &__center{
     background-color: #ffffff;
     display: flex;
-    width: 931px;
-    text-align: center;
-    
+    width: 1000px;
+    margin: 0 auto;
     &__left-content{
       padding: 20px 10px;
       display: flex;

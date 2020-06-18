@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  get 'purchase/index'
-  get 'purchase/done'
   devise_for :users, controllers: {
     registrations: 'users/registrations',
   }
@@ -14,7 +12,6 @@ Rails.application.routes.draw do
   root 'items#index'
   resources :users, only: :show do
     collection do
-      get 'card'
       get 'logout'
     end
   end
@@ -24,7 +21,7 @@ Rails.application.routes.draw do
       get 'get_category_children', defaults: { format: 'json' }
       get 'get_category_grandchildren', defaults: { format: 'json' }
     end
-    resources :purchases do
+    resources :purchases, only: :index do
       member do
         get 'buy'
         post 'pay'

@@ -1,5 +1,16 @@
 class PurchasesController < ApplicationController
+  before_action :set_card, :set_item
   require 'payjp'
+
+  def index
+    if @card.blank?
+      redirect_to controller: "cards", action: "new"
+    else
+      Payjp.api_key = Rails.application.credentials.dig(:payjp, :PAYJP_PRIVATE_KEY)
+      customer = Payjp::Customer.retrieve(@card.customer_id)
+      @default_card_information = customer.cards.retrieve(@card.card_id)
+    end
+  end
 
   def buy
     @item = Item.find(params[:item_id])
@@ -57,5 +68,13 @@ class PurchasesController < ApplicationController
         )
       end
     end
+  end
+
+  private
+  def set_card
+    @card = Card.where(user_id: current_user).first
+  end
+  def set_item
+    @item = Item.find(params[:item_id])
   end
 end
