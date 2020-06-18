@@ -1,8 +1,12 @@
 class Item < ApplicationRecord
+  has_many :comments, dependent: :destroy
+
+  belongs_to :seller, class_name: "User" , optional: true,foreign_key: "seller_id"
+  belongs_to :buyer, class_name: "User", optional: true,foreign_key: "buyer_id"
 
   belongs_to :user
   belongs_to :saler, class_name: "User", optional: true
-  belongs_to :buyer, class_name: "User", optional: true
+  belongs_to :buyer, class_name: "User", optional: true, foreign_key: "auction_id"
   
   has_many :images, dependent: :destroy
   accepts_nested_attributes_for :images, allow_destroy: true
