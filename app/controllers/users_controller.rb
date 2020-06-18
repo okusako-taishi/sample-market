@@ -11,7 +11,6 @@ class UsersController < ApplicationController
   end
 
   def logout
-    @user = current_user
   end
   
 end
