@@ -1,5 +1,5 @@
 # config valid for current version and patch releases of Capistrano
-lock "3.14.0"
+lock "3.14.1"
 
 set :application, "sample-market"
 set :repo_url, "git@github.com:okusako-taishi/sample-market.git"
