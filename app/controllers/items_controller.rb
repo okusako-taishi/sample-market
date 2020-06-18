@@ -1,8 +1,9 @@
 class ItemsController < ApplicationController
+  before_action :item_params, only: :create
   before_action :set_item, except: [:index, :new, :create,:get_category_children,:get_category_grandchildren]
 
   def index
-    @items = Item.includes(:images)
+    @items = Item.all
   end
 
   def new
@@ -36,7 +37,8 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
-    if @item.save
+    if @item.valid?
+      @item.save
       redirect_to root_path
     else
       #セレクトボックスの初期値設定
@@ -47,6 +49,26 @@ class ItemsController < ApplicationController
     end
       render :new
     end
+  end
+
+  def buy
+    if card.exists?
+      @card     = Card.find_by(user_id: current_user.id)
+      Payjp.api_key = Rails.application.credentials.dig(:payjp, :PAYJP_PRIVATE_KEY)
+      customer = Payjp::Customer.retrieve(@card.customer_id)
+      @default_card_information = Payjp::Customer.retrieve(@card.customer_id).cards.data[0]
+    end
+  end
+
+  def pay
+    @card = Card.find_by(user_id: current_user.id)
+    @item.save!
+    Payjp.api_key = Rails.application.credentials.dig(:payjp, :PAYJP_PRIVATE_KEY)
+    @charge = Payjp::Charge.create(
+    amount: @product.price,
+    customer: @card.customer_id,
+    currency: 'jpy'
+    )
   end
 
   def edit
