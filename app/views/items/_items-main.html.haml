@@ -63,9 +63,12 @@
       送料込み
 
 - if !Favorite.exists?(user_id:current_user.id,item_id:@item.id)
-  = link_to "★",item_add_path(@item),method: :post
+  = link_to item_add_path(@item),method: :post ,class: "wassyoi"do
+    = icon('fas', 'heart', class:'icon-edit')
 - else
-  = link_to "お気に入り解除",item_add_path(@item),method: :delete
+  = link_to item_add_path(@item),method: :delete ,class: "wassyoi" do
+    = icon('far', 'heart', class:'icon-edit')
+
 - if user_signed_in? && current_user.id == @item.user_id
 
 - else
@@ -76,8 +79,12 @@
     .items-main__button
       .items-main__button--left
         .items-main__button--left--left
-          %i.fas.fa-heart
-          いいね！
+          - if !Favorite.exists?(user_id:current_user.id,item_id:@item.id)
+            = link_to item_add_path(@item),method: :post ,class: "wassyoi"do 
+              = icon('fas', 'heart', class:'icon-edit')
+          - else
+            = link_to item_add_path(@item),method: :delete ,class: "wassyoi" do 
+              = icon('far', 'heart', class:'icon-edit')
         .items-main__button--left--right  
           不適切な商品報告
       .items-main__button--right

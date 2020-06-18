@@ -112,9 +112,11 @@
                         = item.price
                       %li
                         - if !Favorite.exists?(user_id:current_user.id,item_id:item.id)
-                          = link_to "★",item_add_path(item),method: :post
+                          = link_to item_add_path(item),method: :post do 
+                            = icon('fas', 'heart', class:'icon-edit')
                         - else
-                          = link_to "お気に入り解除",item_add_path(item),method: :delete
+                          = link_to item_add_path(item),method: :delete do
+                            = icon('far', 'heart', class:'icon-edit')
                     %p 
                       (税込)
 
