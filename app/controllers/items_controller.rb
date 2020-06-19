@@ -36,12 +36,14 @@ class ItemsController < ApplicationController
     if @comment.save
       render item_path(comment.item.id)
     else
+      
   end
 end
 
   def create
     @item = Item.new(item_params)
-    if @item.save
+    if @item.valid?
+    @item.save
       redirect_to root_path
     else
       #セレクトボックスの初期値設定
