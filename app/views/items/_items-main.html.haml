@@ -60,13 +60,17 @@
       (税込み)
     %span.items-main__price--shipping-fee
       送料込み
-
-- if !Favorite.exists?(user_id:current_user.id,item_id:@item.id)
-  = link_to item_add_path(@item),method: :post ,class: "wassyoi"do
+- if user_signed_in?
+  - if !Favorite.exists?(user_id:current_user.id,item_id:@item.id)
+    = link_to item_add_path(@item),method: :post ,class: "wassyoi"do
+      = icon('far', 'heart', class:'icon-edit')
+  - else
+    = link_to item_add_path(@item),method: :delete ,class: "wassyoi" do
+      = icon('fas', 'heart', class:'icon-edit')
+- else 
+  = link_to new_user_registration_path ,class: "wassyoi" do
     = icon('fas', 'heart', class:'icon-edit')
-- else
-  = link_to item_add_path(@item),method: :delete ,class: "wassyoi" do
-    = icon('far', 'heart', class:'icon-edit')
+= @item.favorites.count
 
 - if user_signed_in? && current_user.id == @item.user_id
 
@@ -78,12 +82,6 @@
     .items-main__button
       .items-main__button--left
         .items-main__button--left--left
-          - if !Favorite.exists?(user_id:current_user.id,item_id:@item.id)
-            = link_to item_add_path(@item),method: :post ,class: "wassyoi"do 
-              = icon('fas', 'heart', class:'icon-edit')
-          - else
-            = link_to item_add_path(@item),method: :delete ,class: "wassyoi" do 
-              = icon('far', 'heart', class:'icon-edit')
         .items-main__button--left--right  
           不適切な商品報告
       .items-main__button--right
