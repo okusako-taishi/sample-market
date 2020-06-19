@@ -38,6 +38,8 @@ class Destination < ApplicationRecord
 
   validates :prefecture_id ,:city,:block, presence: true
 
+  extend ActiveHash::Associations::ActiveRecordExtensions
+  belongs_to_active_hash :prefecture
 
 end
 
