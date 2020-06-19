@@ -1,5 +1,6 @@
 window.addEventListener('DOMContentLoaded', function(){
     let submit = document.getElementById("payment_card_submit-button");
+    if (submit){
     Payjp.setPublicKey('pk_test_fd131483f6fd624848a9c8ef');
       submit.addEventListener('click', function(e){
       e.preventDefault();
@@ -25,4 +26,5 @@ window.addEventListener('DOMContentLoaded', function(){
         }
       });
     });
+  }
   });
