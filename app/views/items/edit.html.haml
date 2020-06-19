@@ -48,17 +48,17 @@
           .item-main__box__pic-3__syouhinosyousai 商品詳細 必須
           .listing-form-box
             .listing-product-detail__category
-              = f.label "カテゴリー" , class: 'listing-default__label' do
-                %span.listing-default--require 必須              
-                .listing-select-wrapper
-                  .listing-select-wrapper__box
-                    = f.select :category_id, @category_parent_array, {selected:@item.category.parent.parent.name}, { class: 'listing-select-wrapper__box--select', id: 'parent_category'}
-                .listing-select-wrapper__added#children_wrapper
-                  .listing-select-wrapper__box
-                    = f.select :category_id, @category_children_array, {selected:@item.category.parent.id}, { class: 'listing-select-wrapper__box--select', id: 'child_category'}
-                .listing-select-wrapper__added#grandchildren_wrapper
-                  .listing-select-wrapper__box
-                    = f.select :category_id, @category_grandchildren_array, {selected:@item.category.id}, { class: 'listing-select-wrapper__box--select', id: 'grandchild_category'}
+              = f.label "カテゴリー" , class: 'listing-default__label' 
+              %span.listing-default--require 必須              
+              .listing-select-wrapper
+                .listing-select-wrapper__box
+                  = f.select :category_id, options_for_select(@category_parent_array.map{|b|[b[0], b[0]]}, @item.category.parent.parent.name),{}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
+              .listing-select-wrapper__added#children_wrapper
+                .listing-select-wrapper__box
+                  = f.select :category_id, options_for_select(@category_children_array.map{|b| [b[0], b[1], {data:{category: b[1]}}]}, @item.category.parent.id),{}, {class: 'listing-select-wrapper__box--select', id: 'child_category'}
+              .listing-select-wrapper__added#grandchildren_wrapper
+                .listing-select-wrapper__box
+                  = f.select :category_id, options_for_select(@category_grandchildren_array.map{|b| [b[0], b[1], {data:{category: b[1]}}]}, @item.category.id ),{}, {class: 'listing-select-wrapper__box--select', id: 'grandchild_category'}
           .item-main__box__pic-3__category 
             .item-main__box__pic-3__category__kategory ブランド 任意
             .selctbox 
