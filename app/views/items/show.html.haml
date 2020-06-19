@@ -1,15 +1,34 @@
 = render "layouts/header"
+
+- if @comment.errors.any?
+  - @comment.errors.full_messages.each do |message|
+    = message
+
 .items
   = render "items-main"
-%form.items-comment
-  %input.items-comment--text{type: "textarea"}
-  .realmessage
-    相手のことを考え丁寧なコメントを心がけましょう。
-    %br
-    不快な言葉遣いなどは利用制限や退会処分となる事があります。
-  %button.items-comment--btn{type: "submit"}
-    %i.fa.fa-comment
-    コメントする
+
+  = form_with(model: [@item, @comment], local: true) do |form|
+    -# = render "devise/shared/error_messages", resource: resource
+
+    = form.text_area :text ,class: "items-comment--text" 
+    .realmessage
+      相手のことを考え丁寧なコメントを心がけましょう。
+      %br
+      不快な言葉遣いなどは利用制限や退会処分となる事があります。
+    %button.items-comment--btn{type: "submit"}
+      %i.fa.fa-comment
+      コメントする
+
+    .comments
+    %h4 ＜コメント一覧＞
+    - if @comments
+      - @comments.each do |comment|
+        %p
+          %strong
+            = link_to comment.user.nickname, "/users/#{comment.user_id}", class: "user-name"
+            ：
+            = comment.text
+
 = render "items-social-media"
 .items-sub
   .items-sub--main
@@ -36,6 +55,3 @@
       = render "items-sub"
 = render "items-link"
 = render "layouts/footer"
-
-    
-  

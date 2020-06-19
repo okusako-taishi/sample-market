@@ -2,6 +2,9 @@ Rails.application.routes.draw do
   devise_for :users, controllers: {
     registrations: 'users/registrations',
   }
+    resources :items do
+      resources :comments, only: :create
+    end
 
   devise_scope :user do
     get 'destinations', to: 'users/registrations#new_destination'
