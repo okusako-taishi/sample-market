@@ -1,27 +1,30 @@
+# ルート
 crumb :root do
-  link "Home", root_path
+  link "トップページ", root_path
 end
 
-crumb :mypage do
-  link "マイページ", user_path
+# マイページ
+crumb :mypage do |user|
+  link "マイページ", user_path(user.id)
 end
 
-crumb :loginer do
-  link "ログインページ", new_user_session_path
+crumb :logout do |user|
+  link "ログアウト", logout_users_path
+  parent :mypage ,user
 end
 
-crumb :shower do
-  link "商品詳細ページ", item_path
+# カテゴリー
+crumb :categories do |category|
+  link "カテゴリー 一覧", categories_path
 end
 
-crumb :editer do
-  link "商品編集ページ", edit_item_path
-  parent :shower
+crumb :category do |category|
+  link "#{category.name}", category_path(category.id)
+  parent :categories ,category
+
 end
 
-crumb :logout do
-  link "ログアウトページ", logout_users_path
-end
+
 # crumb :projects do
 #   link "Projects", projects_path
 # end

@@ -53,7 +53,8 @@
             .kounyuusuru
               = link_to "登録クレジットカードで購入する", pay_item_purchase_path(item_id: @item.id), method: :post
     - else
-      .purchase_none_btn
-        = form_tag(action: :pay, method: :post) do
-          %script.payjp-button{src: "https://checkout.pay.jp", type: "text/javascript" ,"data-text": "購入する" ,"data-key": "pk_test_fd131483f6fd624848a9c8ef",}
+      =link_to "カード登録", card_path(current_user)
+      -# .purchase_none_btn
+      -#   = form_tag(action: :pay, method: :post) do
+      -#     %script.payjp-button{src: "https://checkout.pay.jp", type: "text/javascript" ,"data-text": "購入する" ,"data-key": "pk_test_fd131483f6fd624848a9c8ef",}
 .kounyu-footer 部分テンプレートかしてるので後に直します
