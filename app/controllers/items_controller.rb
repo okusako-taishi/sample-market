@@ -33,8 +33,11 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
     @items = Item.all
     @comment = Comment.new
-    @comments = @item.comments.includes(:user)
+    if @comment.save
+      render item_path(comment.item.id)
+    else
   end
+end
 
   def create
     @item = Item.new(item_params)
