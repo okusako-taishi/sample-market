@@ -13,7 +13,8 @@
     .header--inner__nav
       %ul.header--inner__nav__left
         %li.header--inner__nav__left--category
-          カテゴリー
+          =link_to categories_path do
+            カテゴリー
         %li.header--inner__nav__left--brand
           ブランド
       %ul.header--inner__nav__right
