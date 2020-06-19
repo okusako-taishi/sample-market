@@ -31,28 +31,23 @@ class ItemsController < ApplicationController
 
 
   def show
-    @item = Item.find(params[:id])
-    @items = Item.all
+    @items = Item.find(params[:id])
     @comment = Comment.new
+    @comments = @items.comments.includes(:user).order(created_at: :desc)
     if @comment.save
-      render item_path(comment.item.id)
+      redirect_to item_path(comment.item.id)
     else
       
   end
 end
 
+
   def create
     @item = Item.new(item_params)
-    if @item.valid?
-      @item.save
+    if @item.save
       redirect_to root_path
     else
-      #セレクトボックスの初期値設定
-    @category_parent_array = ["---"]
-    #データベースから、親カテゴリーのみ抽出し、配列化
-    Category.where(ancestry: nil).each do |parent|
-      @category_parent_array << parent.name
-    end
+      @item.item_imgs.build
       render :new
     end
   end
