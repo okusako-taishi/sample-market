@@ -1,5 +1,5 @@
 .kounyu-all
-  .kounyu-header ヘッダーは部分テンプレートにします。
+  = render "layouts/header"
   .kounyu-main
     .kounyu-main__box-1 商品購入の確認
     .kounyu-main__box-2
@@ -39,7 +39,7 @@
           .kounyu-main__box-v2__box-6__adress
             = "〒#{Destination.find_by(user: current_user).post_code}"
             %br
-            = Destination.find_by(user: current_user).prefecture_id
+            = Destination.find_by(user: current_user).prefecture.name
             = Destination.find_by(user: current_user).city
             = Destination.find_by(user: current_user).block
             - unless Destination.find_by(user: current_user).building_name == nil
@@ -57,4 +57,4 @@
       -# .purchase_none_btn
       -#   = form_tag(action: :pay, method: :post) do
       -#     %script.payjp-button{src: "https://checkout.pay.jp", type: "text/javascript" ,"data-text": "購入する" ,"data-key": "pk_test_fd131483f6fd624848a9c8ef",}
-.kounyu-footer 部分テンプレートかしてるので後に直します
+= render "layouts/footer"
