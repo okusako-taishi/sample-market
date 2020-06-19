@@ -16,10 +16,10 @@ Rails.application.routes.draw do
   root 'items#index'
   resources :users, only: :show do
     collection do
-      get 'card'
       get 'logout'
     end
   end
+
   resources :items, only: [:show, :new, :create, :edit, :update, :destroy] do
     post 'add' => 'favorites#create'
     delete '/add' => 'favorites#destroy'
@@ -27,11 +27,18 @@ Rails.application.routes.draw do
       get 'get_category_children', defaults: { format: 'json' }
       get 'get_category_grandchildren', defaults: { format: 'json' }
     end
-    member do
-      get 'buy'
-    end
-    member do
-      get 'buy'
+    resources :purchases, only: :index do
+      member do
+        get 'buy'
+        post 'pay'
+      end
     end
   end
+  
+  resources :cards, only: [:new, :create, :show, :destroy] do
+    collection do
+      post 'pay', to: 'cards#pay'
+    end
+  end
+  resources :categories ,only: [:show, :index]
 end

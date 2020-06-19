@@ -1,8 +1,9 @@
 class ItemsController < ApplicationController
+  before_action :item_params, only: :create
   before_action :set_item, except: [:index, :new, :create,:get_category_children,:get_category_grandchildren]
 
   def index
-    @items = Item.includes(:images)
+    @items = Item.all
   end
 
   def new
@@ -36,7 +37,8 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
-    if @item.save
+    if @item.valid?
+      @item.save
       redirect_to root_path
     else
       #セレクトボックスの初期値設定
@@ -49,15 +51,49 @@ class ItemsController < ApplicationController
     end
   end
 
+  def buy
+    if card.exists?
+      @card     = Card.find_by(user_id: current_user.id)
+      Payjp.api_key = Rails.application.credentials.dig(:payjp, :PAYJP_PRIVATE_KEY)
+      customer = Payjp::Customer.retrieve(@card.customer_id)
+      @default_card_information = Payjp::Customer.retrieve(@card.customer_id).cards.data[0]
+    end
+  end
+
+  def pay
+    @card = Card.find_by(user_id: current_user.id)
+    @item.save!
+    Payjp.api_key = Rails.application.credentials.dig(:payjp, :PAYJP_PRIVATE_KEY)
+    @charge = Payjp::Charge.create(
+    amount: @product.price,
+    customer: @card.customer_id,
+    currency: 'jpy'
+    )
+  end
+
   def edit
-    
+    if user_signed_in? && current_user.id == @item.saler_id
+      grandchild_category = @item.category
+      child_category = grandchild_category.parent
+
+      @category_parent_array = Category.where(ancestry: nil).pluck(:name)
+
+      @category_children_array = Category.where(ancestry: child_category.ancestry).pluck(:name)
+
+      @category_grandchildren_array = Category.where(ancestry: grandchild_category.ancestry).pluck(:name)
+    else 
+      @items = Item.all
+      render :index
+    end
   end
 
   def update
     if @item.update(item_params)
+      session.delete(:error)
       redirect_to root_path
     else
-      render :edit
+      session[:error] = @item.errors.full_messages
+      redirect_to action: :edit
     end
   end
 
