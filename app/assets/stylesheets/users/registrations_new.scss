@@ -42,6 +42,7 @@
       }
       .field_with_errors {
         display: contents;
+
       }
 
       .field {
@@ -144,5 +145,18 @@ ul{
     padding: 20px 60px;
     margin: 50px auto;
     text-decoration: none;
+  }
+}
+
+// 登録画面（会員・住所）のバリデーションエラーの装飾
+#error_explanation{
+  h2{
+    color: red;
+    font-weight: bold;
+  }
+  ul{
+    li{
+      display: block;
+    }
   }
 }
