@@ -1,3 +1,6 @@
+* {
+  box-sizing: border-box;
+}
 .card-wrapper{
   width: 700px;
   padding-bottom: 50px;
@@ -95,39 +98,40 @@
 }
 
 .show-card-wrapper{
-height: 400px;
-width: 700px;
-vertical-align: middle;
-position: relative;
-display: block;
-margin: 0 auto;
-.card-wrapper2{
   background-color: #fff;
-  height: 350px;
-  width: 500px;
-  text-align: center;
-  position: relative;
-  margin: 0 auto;
-  border-radius: 10px;
-  &__title{
-    font-size: 30px;
-    font-weight: bold;
-}
-  &__list{
-    font-size: 20px;
-}
-.expiration-date__title{
-  font-weight: bold;
-}
-.destroy__btn{
-  color: whitesmoke;
-  width: 90px;
-  height: auto;
-  margin-top: 30px;
-  background-color: #3ccace;
-}
-.payment-details__btn{
-  font-size: 8px;
-}
-}
+  display: flex;
+  justify-content: center;
+  margin: 20px auto 0;
+  width: 950px;
+  .card-wrapper2{
+    width: 700px;
+    background-color: #fff;
+    height: 350px;
+    text-align: center;
+    margin: 20px 10px;
+    padding: 20px 10px;
+
+    &__title{
+      font-size: 30px;
+      font-weight: bold;
+      border-bottom: 1px solid #eee;
+      margin-bottom: 20px;
+      }
+    &__list{
+      font-size: 20px;
+    }
+    .expiration-date__title{
+      font-weight: bold;
+    }
+    .destroy__btn{
+      color: whitesmoke;
+      width: 90px;
+      height: auto;
+      margin-top: 30px;
+      background-color: #3ccace;
+    }
+    .payment-details__btn{
+      font-size: 8px;
+    }
+  }
 }
