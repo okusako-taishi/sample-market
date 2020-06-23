@@ -1,6 +1,6 @@
-$(document).on('turbolinks:load', ()=> {
-
-  const buildFileField = (index)=> {
+// $(document).on('turbolinks:load', ()=> {
+$(function(){
+    const buildFileField = (index)=> {
     const html = `<div data-index="${index}" class="js-file_group">
                     <input class="js-file" type="file"
                     name="item[images_attributes][${index}][url]"
@@ -11,7 +11,7 @@ $(document).on('turbolinks:load', ()=> {
   }
 
   const buildImg = (index, url)=> {
-    const html = `<img data-index="${index}" src="${url}" width="100px" height="100px">`;
+    const html = `<img data-index="${index}" src="${url}" width="120px" height="120px">`;
     return html;
   }
 

@@ -1,0 +1,31 @@
+// 出品ページのフッター装飾
+
+footer.item-footer {
+  background-color: whitesmoke;
+  width: 456px;
+  height: 220px;
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 30px;
+
+  ul{ 
+    
+    font-size: 12px;
+      li {
+        display: inline;
+      }
+    }
+    
+    .footer-logo {
+      margin-top: 20px;
+      .furima-image {
+        width: 200px;
+        height: 60px;
+      }
+    }
+    .footer-name {
+      font-size: 15px;
+    }
+}
+
+
