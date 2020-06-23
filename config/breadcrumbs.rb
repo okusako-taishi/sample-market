@@ -13,6 +13,16 @@ crumb :logout do |user|
   parent :mypage ,user
 end
 
+crumb :favorite do |user|
+  link "いいね！ 一覧", favorite_user_path
+  parent :mypage ,user
+end
+
+crumb :user_card do |user|
+  link "支払い方法", card_path
+  parent :mypage ,user
+end
+
 # カテゴリー
 crumb :categories do |category|
   link "カテゴリー 一覧", categories_path

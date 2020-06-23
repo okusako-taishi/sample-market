@@ -1,8 +1,13 @@
 = render 'layouts/header'
+
+- breadcrumb :user_card, current_user
+= render "layouts/breadcrumbs"
+
 .show-card-wrapper
+  = render "layouts/content"
   .card-wrapper2
     .card-wrapper2__title
-      登録クレジットカード情報
+      支払い方法
     .card-wrapper2__list
       .card-wrapper2__list__title
         クレジットカード一覧

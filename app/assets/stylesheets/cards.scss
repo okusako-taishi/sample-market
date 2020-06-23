@@ -1,6 +1,15 @@
+.show-cards-wrapper{
+  background-color: rgb(245,245,245);
+  width: 100%;
+}
+* {
+  box-sizing: border-box;
+}
 .card-wrapper{
   width: 700px;
-  padding-bottom: 50px;
+  background-color: #FFF;
+  padding-top: 15px;
+  padding-bottom: 30px;
   margin: 0 auto;
   text-align: center;
   &__title{
@@ -102,51 +111,53 @@
 }
 
 .show-card-wrapper{
-height: 400px;
-width: 700px;
-vertical-align: middle;
-position: relative;
-display: block;
-margin: 0 auto;
-.card-wrapper2{
   background-color: #fff;
-  height: 370px;
-  width: 500px;
+  display: flex;
+  justify-content: center;
+  margin: 20px auto 0;
+  width: 950px;
+}
+.card-wrapper2{
+  width: 700px;
+  background-color: #fff;
+  height: 350px;
   text-align: center;
-  position: relative;
-  margin: 0 auto;
-  border-radius: 10px;
+  margin: 20px 10px;
+  padding: 20px 10px;
+
   &__title{
     font-size: 30px;
     font-weight: bold;
-}
+    border-bottom: 1px solid #eee;
+    margin-bottom: 20px;
+    }
   &__list{
     font-size: 20px;
-}
+  }
 .expiration-date__title{
-  font-weight: bold;
+font-weight: bold;
 }
 .destroy__btn{
-  display: inline-block;
-  padding: 0.5em 3.5em;
-  text-decoration: none;
-  background: #3ccace;/*ボタン色*/
-  color: #FFF;
-  margin-top: 20px;
-  border-bottom: solid 4px #2a8a8d;
-  border-radius: 3px;
+display: inline-block;
+padding: 0.5em 3.5em;
+text-decoration: none;
+background: #3ccace;/*ボタン色*/
+color: #FFF;
+margin-top: 20px;
+border-bottom: solid 4px #2a8a8d;
+border-radius: 3px;
 }
 .destroy__btn:active {
-  /*ボタンを押したとき*/
-  -webkit-transform: translateY(4px);
-  transform: translateY(4px);/*下に動く*/
-  border-bottom: none;/*線を消す*/
+/*ボタンを押したとき*/
+-webkit-transform: translateY(4px);
+transform: translateY(4px);/*下に動く*/
+border-bottom: none;/*線を消す*/
 }
 .payment-details__btn{
-  font-size: 8px;
-  text-decoration: none;
-  color: #3ccace;
-}}}
+font-size: 8px;
+text-decoration: none;
+color: #3ccace;
+}}
 .destoroy__frame{
   background-color: #fff;
   height: 370px;
@@ -158,32 +169,42 @@ margin: 0 auto;
   &__message{
     font-size: 28px;
     font-weight: bold;
+    margin-bottom: 50px;
   }
   .destoroy__frame__btns{
     position: relative;
     display: flex;
     flex-direction: column;
     .card_new_link{
-      display: inline-block;
+      position: relative;
       font-size: 20px;
-      padding: 0.5em 3.5em;
+      display: inline-block;
+      font-weight: bold;
+      padding: 1em 0.5em;
       text-decoration: none;
-      background: #3ccace;/*ボタン色*/
-      color: #FFF;
-      margin-top: 20px;
-      border-bottom: solid 4px #2a8a8d;
-      border-radius: 3px;
+      color: #00BCD4;
+      background: #ECECEC;
+      transition: .4s;
+    }
+    .card_new_link:hover {
+      background: #3ccace;
+      color: #fff;
     }
     .my_page_link{
-      display: inline-block;
+      position: relative;
+      margin-top: 85px;
       font-size: 20px;
-      padding: 0.5em 3.5em;
+      display: inline-block;
+      font-weight: bold;
+      padding: 1em 0.5em;
       text-decoration: none;
-      background: #3ccace;/*ボタン色*/
-      color: #FFF;
-      margin-top: 100px;
-      border-bottom: solid 4px #2a8a8d;
-      border-radius: 3px;
+      color: #00BCD4;
+      background: #ECECEC;
+      transition: .4s;
+    }
+    .my_page_link:hover {
+      background: #3ccace;
+      color: #fff;
     }
     .credit_card_new_link__btn{
       color: #FFF;
@@ -192,4 +213,39 @@ margin: 0 auto;
       color: #FFF;
     }
   }
+}
+.cg1{
+  position: relative;
+  display: inline-block;
+  font-weight: bold;
+  text-decoration: none;
+  color: #FFF;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.73);
+  padding: 0.8em 0.7em;
+  background: #3ccace;
+  border-top: solid 3px #2a8a8d;
+  border-bottom: solid 3px #2a8a8d;
+  transition: .4s;
+}
+.cg1:hover {
+  text-shadow: -6px 0px 15px rgba(255, 255, 240, 0.83),
+               6px 0px 15px rgba(255, 255, 240, 0.83);
+}
+.cg2{
+  display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  background: #3ccace;/*ボタン色*/
+  color: #FFF;
+  border-bottom: solid 4px #20696b;
+  border-radius: 3px;
+}
+.cg2:active{
+  /*ボタンを押したとき*/
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);/*下に動く*/
+  border-bottom: none;/*線を消す*/
+}
+.link-blue{
+  text-decoration: none;
 }
