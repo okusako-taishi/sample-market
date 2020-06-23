@@ -52,13 +52,20 @@
   }
   
   .submit-btn{
-    color: whitesmoke;
-    font-weight: bold;
-    width: 90px;
-    height: auto;
-    margin-top: 30px;
-    background-color: #3ccace;
-    border: 1px solid #000;
+    display: inline-block;
+    padding: 0.5em 5em;
+    text-decoration: none;
+    background: #3ccace;/*ボタン色*/
+    color: #FFF;
+    margin-top: 20px;
+    border-bottom: solid 4px #2a8a8d;
+    border-radius: 3px;
+  }
+  .submit-btn:active {
+    /*ボタンを押したとき*/
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);/*下に動く*/
+    border-bottom: none;/*線を消す*/
   }
   .disabled{
     background-color: #f0f0f0;
@@ -103,7 +110,7 @@ display: block;
 margin: 0 auto;
 .card-wrapper2{
   background-color: #fff;
-  height: 350px;
+  height: 370px;
   width: 500px;
   text-align: center;
   position: relative;
@@ -120,14 +127,69 @@ margin: 0 auto;
   font-weight: bold;
 }
 .destroy__btn{
-  color: whitesmoke;
-  width: 90px;
-  height: auto;
-  margin-top: 30px;
-  background-color: #3ccace;
+  display: inline-block;
+  padding: 0.5em 3.5em;
+  text-decoration: none;
+  background: #3ccace;/*ボタン色*/
+  color: #FFF;
+  margin-top: 20px;
+  border-bottom: solid 4px #2a8a8d;
+  border-radius: 3px;
+}
+.destroy__btn:active {
+  /*ボタンを押したとき*/
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);/*下に動く*/
+  border-bottom: none;/*線を消す*/
 }
 .payment-details__btn{
   font-size: 8px;
-}
-}
+  text-decoration: none;
+  color: #3ccace;
+}}}
+.destoroy__frame{
+  background-color: #fff;
+  height: 370px;
+  width: 500px;
+  text-align: center;
+  position: relative;
+  margin: 0 auto;
+  border-radius: 10px;
+  &__message{
+    font-size: 28px;
+    font-weight: bold;
+  }
+  .destoroy__frame__btns{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    .card_new_link{
+      display: inline-block;
+      font-size: 20px;
+      padding: 0.5em 3.5em;
+      text-decoration: none;
+      background: #3ccace;/*ボタン色*/
+      color: #FFF;
+      margin-top: 20px;
+      border-bottom: solid 4px #2a8a8d;
+      border-radius: 3px;
+    }
+    .my_page_link{
+      display: inline-block;
+      font-size: 20px;
+      padding: 0.5em 3.5em;
+      text-decoration: none;
+      background: #3ccace;/*ボタン色*/
+      color: #FFF;
+      margin-top: 100px;
+      border-bottom: solid 4px #2a8a8d;
+      border-radius: 3px;
+    }
+    .credit_card_new_link__btn{
+      color: #FFF;
+    }
+    .my_page_link__btn{
+      color: #FFF;
+    }
+  }
 }

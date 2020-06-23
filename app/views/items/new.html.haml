@@ -10,7 +10,9 @@
 
     .item-main__box__pic
       .item-main__box__pic__picture
-        %label.label 出品画像 必須
+        出品画像
+        %span{class: "required"}
+          必須
       .item-main__box__pic__picture__upload-text 最大10枚までアップロードできます。
       = form_for @item do |f|
         .item-main__box__pic__picture__upload-form 
@@ -40,24 +42,37 @@
                 削除
         .item-main__box__pic-2
           .item-main__box__pic-2__syouheimeinohako
-            .item-main__box__pic-2__syouheimeinohako__name 商品名 必須
+            .item-main__box__pic-2__syouheimeinohako__name
+              商品名
+              %span{class: "required"}
+                必須
             .item-main__box__pic-2__syouheimeinohako__text-box
               = f.text_field :name, class: "syouhinmei", placeholder: "40文字まで"
               .item-main__box__pic-2__setsumei
-                .item-main__box__pic-2__setsumei__bun 商品の説明 必須
+                .item-main__box__pic-2__setsumei__bun
+                  商品の説明
+                  %span{class: "required"}
+                    必須
                 .item-main__box__pic-2__setsumei__text
                   = f.text_area :description, class:"syouhinsetumei", placeholder: "商品の説明（必須 1,000文字以内）\n（色、素材、重さ、定価、注意点など）\n\n例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。\n          ", rows: "7"
         .item-main__box__pic-3
-          .item-main__box__pic-3__syouhinosyousai 商品詳細 必須
+          .item-main__box__pic-3__syouhinosyousai
+            商品詳細
+            %span{class: "required"}
+              必須
           .listing-form-box
             .listing-product-detail__category
               = f.label 'カテゴリー', class: 'listing-default__label'
-              %span.listing-default--require 必須
+              %span{class: "required"}
+                必須
               .listing-select-wrapper
                 .listing-select-wrapper__box
                   = f.select :category_id, @category_parent_array, {}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
           .item-main__box__pic-3__category 
-            .item-main__box__pic-3__category__kategory ブランド 任意
+            .item-main__box__pic-3__category__kategory
+              ブランド
+              %span{class: "required"}
+                任意
             .selctbox 
               = f.fields_for :brand do |brand|
                 = brand.text_field :name, placeholder: "例 （シャネル）"
@@ -72,17 +87,26 @@
             .selctbox 
               = f.select :cost,[["着払い(購入者負担)", 1],["送料込み(出品者負担)", 2]], { include_blank: "選択してください"}
           .item-main__box__pic-4__hutannnado  
-            .item-main__box__pic-4__hutan__bun 発送元の地域 必須
+            .item-main__box__pic-4__hutan__bun
+              発送元の地域
+              %span{class: "required"}
+                必須
             .selctbox 
               = f.collection_select :prefecture_id, Prefecture.all, :id, :name, {prompt:"選択してください"}, {class:""}
           .item-main__box__pic-4__hutannnado  
-            .item-main__box__pic-4__hutan__bun 発送までの日数 必須
+            .item-main__box__pic-4__hutan__bun
+              発送までの日数
+              %span{class: "required"}
+                必須
             .selctbox 
               = f.select :days,[["1~2日で発送", "1~2日で発送"],["2~3日で発送", "2~3日で発送"],["4~7日で発送", "4~7日で発送"]], { include_blank: "選択してください"}
         .item-main__box__pic-5
           .item-main__box__pic-5__kakaku 価格（¥300〜9,999,999）
           .item-main__box__pic-5__price
-            .item-main__box__pic-5__price__hanbaikakaku 販売価格 必須
+            .item-main__box__pic-5__price__hanbaikakaku
+              販売価格
+              %span{class: "required"}
+                必須
             .item-main__box__pic-5__price__nyuryoku 
               = f.number_field :price
               = f.submit
