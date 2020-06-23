@@ -7,7 +7,7 @@ class Item < ApplicationRecord
   has_many :images, dependent: :destroy
   accepts_nested_attributes_for :images, allow_destroy: true
   validates_associated :images
-  validates :images, presence: true , length: { maximum: 10 }
+  validates :images, presence: true , length: { maximum: 10 ,message: "は10枚以内にしてください"}
 
   belongs_to :category
 
