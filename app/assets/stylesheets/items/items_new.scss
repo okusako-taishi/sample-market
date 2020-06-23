@@ -234,11 +234,27 @@
 
 .bbw::placeholder {
   // position: relative;
-   text-align: right;
+  text-align: right;
  }
  
- .bbw {
-   height: 100%;
-   width: 100%;
-   text-align: right;
+.bbw {
+  height: 100%;
+  width: 100%;
+  text-align: right;
  }
+
+.syouheimeinohako {
+  display: flex;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  }
+
+.hakononakami {
+
+}
+.hissu {
+  background-color: red;
+  color: white;
+  margin-left: 8px;
+ }
+
