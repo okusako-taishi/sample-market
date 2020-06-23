@@ -2,7 +2,7 @@
 .items
   = render "items-main"
 
-%form.items-comment
+  %form.items-comment
 
   = form_with(model: [@item, @comment], local: true) do |form|
     = form.text_area :text ,class: "items-comment--text" 
@@ -10,23 +10,20 @@
       相手のことを考え丁寧なコメントを心がけましょう。
       %br
       不快な言葉遣いなどは利用制限や退会処分となる事があります。
-    %button.items-comment--btn{type: "submit"}
-      %i.fa.fa-comment
-      コメントする
-
-  -# - if @comment.errors.any?
-  -#   - @comment.errors.full_messages.each do |message|
-  -#     = message
+    .comment-button
+      %button.items-comment--btn{type: "submit"}
+        %i.fa.fa-comment
+        コメントする
 
   .comments
-    %h4 ＜コメント一覧＞
-    - if @comments
-      - @comments.each do |comment|
-        %p
-          .comments-list
-            = link_to comment.user.nickname, "/users/#{comment.user_id}", class: "user-name"
-            ：
-            = comment.text
+  %h4 ＜コメント一覧＞
+  - if @comments
+    - @comments.each do |comment|
+      %p
+        .comments-list
+          = link_to comment.user.nickname, "/users/#{comment.user_id}", class: "user-name"
+          ：
+          = comment.text
 
           
 = render "items-social-media"
