@@ -1,6 +1,7 @@
 .show-cards-wrapper{
   background-color: rgb(245,245,245);
   width: 100%;
+}
 * {
   box-sizing: border-box;
 }
@@ -115,47 +116,48 @@
   justify-content: center;
   margin: 20px auto 0;
   width: 950px;
-  .card-wrapper2{
-    width: 700px;
-    background-color: #fff;
-    height: 350px;
-    text-align: center;
-    margin: 20px 10px;
-    padding: 20px 10px;
+}
+.card-wrapper2{
+  width: 700px;
+  background-color: #fff;
+  height: 350px;
+  text-align: center;
+  margin: 20px 10px;
+  padding: 20px 10px;
 
-    &__title{
-      font-size: 30px;
-      font-weight: bold;
-      border-bottom: 1px solid #eee;
-      margin-bottom: 20px;
-      }
-    &__list{
-      font-size: 20px;
+  &__title{
+    font-size: 30px;
+    font-weight: bold;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 20px;
     }
+  &__list{
+    font-size: 20px;
+  }
 .expiration-date__title{
-  font-weight: bold;
+font-weight: bold;
 }
 .destroy__btn{
-  display: inline-block;
-  padding: 0.5em 3.5em;
-  text-decoration: none;
-  background: #3ccace;/*ボタン色*/
-  color: #FFF;
-  margin-top: 20px;
-  border-bottom: solid 4px #2a8a8d;
-  border-radius: 3px;
+display: inline-block;
+padding: 0.5em 3.5em;
+text-decoration: none;
+background: #3ccace;/*ボタン色*/
+color: #FFF;
+margin-top: 20px;
+border-bottom: solid 4px #2a8a8d;
+border-radius: 3px;
 }
 .destroy__btn:active {
-  /*ボタンを押したとき*/
-  -webkit-transform: translateY(4px);
-  transform: translateY(4px);/*下に動く*/
-  border-bottom: none;/*線を消す*/
+/*ボタンを押したとき*/
+-webkit-transform: translateY(4px);
+transform: translateY(4px);/*下に動く*/
+border-bottom: none;/*線を消す*/
 }
 .payment-details__btn{
-  font-size: 8px;
-  text-decoration: none;
-  color: #3ccace;
-}}}
+font-size: 8px;
+text-decoration: none;
+color: #3ccace;
+}}
 .destoroy__frame{
   background-color: #fff;
   height: 370px;
@@ -246,4 +248,4 @@
 }
 .link-blue{
   text-decoration: none;
-}}
+}
