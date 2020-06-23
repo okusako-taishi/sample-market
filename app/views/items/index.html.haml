@@ -111,17 +111,19 @@
                       %li
                         = item.price
                       %li
-                        - if user_signed_in?
-                          - if !Favorite.exists?(user_id:current_user.id,item_id:item.id)
-                            = link_to item_add_path(item),method: :post do 
-                              = icon('far', 'heart', class:'icon-edit')
-                          - else
-                            = link_to item_add_path(item),method: :delete do
-                              = icon('fas', 'heart', class:'icon-edit')
-                        - else 
-                          = link_to new_user_registration_path do
-                            = icon('fas', 'heart', class:'icon-edit')
-                        = item.favorites.count
+                        = render partial: 'favorites/favorite'
+                        -# - favorite = current_user.favorites.find_by(item_id: item.id)
+                        -# - if user_signed_in?
+                        -#   - if !Favorite.exists?(user_id:current_user.id,item_id:item.id)
+                        -#     = link_to item_add_path(item),method: :post ,remote: true do 
+                        -#       = icon('far', 'heart', class:'icon-edit')
+                        -#   - else
+                        -#     = link_to item_add_path(item),method: :delete, remote: true do
+                        -#       = icon('fas', 'heart', class:'icon-edit')
+                        -# - else 
+                        -#   = link_to new_user_registration_path do
+                        -#     = icon('fas', 'heart', class:'icon-edit')
+                        -# = item.favorites.count
                         
                     %p 
                       (税込)
