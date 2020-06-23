@@ -67,13 +67,13 @@
           .item-main__box__pic-3__category
             .item-main__box__pic-3__category__kategory 商品の状態 
             .selctbox 
-              = f.select :status,[["新品、未使用", 1],["未使用に近い", 2],["目立った傷や汚れなし", 3],["やや傷や汚れあり", 4],["傷や汚れあり", 5],["全体的に状態が悪い", 6]], { include_blank: "選択してください"}
+              = f.select :status,[["新品、未使用", "新品、未使用"],["未使用に近い", "未使用に近い"],["目立った傷や汚れなし", "目立った傷や汚れなし"],["やや傷や汚れあり", "やや傷や汚れあり"],["傷や汚れあり", "傷や汚れあり"],["全体的に状態が悪い", "全体的に状態が悪い"]], { include_blank: "選択してください"}
         .item-main__box__pic-4
           .item-main__box__pic-4__haisounituite 配送料について
           .item-main__box__pic-4__hutan  
             .item-main__box__pic-4__hutan__bun 配送料に負担  
             .selctbox 
-              = f.select :cost,[["着払い(購入者負担)", 1],["送料込み(出品者負担)", 2]], { include_blank: "選択してください"}
+              = f.select :cost,[["着払い(購入者負担)", "着払い(購入者負担)"],["送料込み(出品者負担)", "送料込み(出品者負担)"]], { include_blank: "選択してください"}
           .item-main__box__pic-4__hutannnado  
             .item-main__box__pic-4__hutan__bun 発送元の地域 必須
             .selctbox 
@@ -81,7 +81,7 @@
           .item-main__box__pic-4__hutannnado  
             .item-main__box__pic-4__hutan__bun 発送までの日数 必須
             .selctbox 
-              = f.select :days,[["1~2日で発送", 1],["2~3日で発送", 2],["4~7日で発送", 3]], { include_blank: "選択してください"}
+              = f.select :days,[["1~2日で発送", "1~2日で発送"],["2~3日で発送", "2~3日で発送"],["4~7日で発送", "4~7日で発送"]], { include_blank: "選択してください"}
         .item-main__box__pic-5
           .item-main__box__pic-5__kakaku 価格（¥300〜9,999,999）
           .item-main__box__pic-5__price
