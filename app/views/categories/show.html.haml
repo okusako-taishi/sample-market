@@ -11,19 +11,20 @@
         お探しの商品は出品されておりません
     -else
       - @items.each do |item|
-        .category__items__item
-          = link_to item_path(item.id) do
-            %figure.category__items__item__img
-              = image_tag item.images.first.url.url
-            .category__items__item__body
-              %h3.category__items__item__body__name
-                = item.name
-              .category__items__item__body__details
-                %ul
-                  %li
-                    = item.price
-                  %li
-                    ★0
-                %p 
+        -if item.buyer_id.nil? 
+          .category__items__item
+            = link_to item_path(item.id) do
+              %figure.category__items__item__img
+                = image_tag item.images.first.url.url
+              .category__items__item__body
+                %h3.category__items__item__body__name
+                  = item.name
+                .category__items__item__body__details
+                  %ul
+                    %li
+                      = item.price
+                    %li
+                      ★0
+                  %p 
                   (税込)
 = render "layouts/footer"
