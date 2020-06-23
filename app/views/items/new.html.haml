@@ -11,8 +11,7 @@
     .item-main__box__pic
       .item-main__box__pic__picture
         出品画像
-        %span{class: "required"}
-          必須
+        %span{class: "required"} 必須
       .item-main__box__pic__picture__upload-text 最大10枚までアップロードできます。
       = form_for @item do |f|
         .item-main__box__pic__picture__upload-form 
@@ -42,24 +41,22 @@
                 削除
         .item-main__box__pic-2
           .item-main__box__pic-2__syouheimeinohako
-            .item-main__box__pic-2__syouheimeinohako__name
-              商品名
-              %span{class: "required"}
-                必須
+            .textnohako
+              .textnohako_name 商品名
+              %span{class: "required2"} 必須
             .item-main__box__pic-2__syouheimeinohako__text-box
               = f.text_field :name, class: "syouhinmei", placeholder: "40文字まで"
               .item-main__box__pic-2__setsumei
-                .item-main__box__pic-2__setsumei__bun
-                  商品の説明
-                  %span{class: "required"}
+                .textnohako 
+                  .textnohako_name
+                    商品の説明
+                  %span{class: "required2"}
                     必須
                 .item-main__box__pic-2__setsumei__text
                   = f.text_area :description, class:"syouhinsetumei", placeholder: "商品の説明（必須 1,000文字以内）\n（色、素材、重さ、定価、注意点など）\n\n例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。\n          ", rows: "7"
         .item-main__box__pic-3
           .item-main__box__pic-3__syouhinosyousai
-            商品詳細
-            %span{class: "required"}
-              必須
+            商品詳細 
           .listing-form-box
             .listing-product-detail__category
               = f.label 'カテゴリー', class: 'listing-default__label'
