@@ -147,6 +147,12 @@ ul{
     text-decoration: none;
   }
 }
+.required{
+  padding: 3px;
+  color: white;
+  font-size: 12px;
+  border-radius: 4px;
+  background-color: #3ccace;
 
 // 登録画面（会員・住所）のバリデーションエラーの装飾
 #error_explanation{

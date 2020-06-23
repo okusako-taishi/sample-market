@@ -10,7 +10,8 @@
 
     .item-main__box__pic
       .item-main__box__pic__picture
-        %label.label 出品画像 必須
+        出品画像
+        %span{class: "required"} 必須
       .item-main__box__pic__picture__upload-text 最大10枚までアップロードできます。
       = form_for @item do |f|
         .item-main__box__pic__picture__upload-form 
@@ -18,7 +19,6 @@
           %svg.sc-hkbPbT.lodtkW{"aria-hidden" => "true", :fill => "#222222", "fill-rule" => "evenodd", :height => "24", :viewbox => "0 0 24 24", :width => "24"}
           %path{:d => "M19.3,5H16.73l-.8-1.61A.7.7,0,0,0,15.3,3H8.7a.7.7,0,0,0-.63.39L7.27,5H4.7A2.7,2.7,0,0,0,2,7.7V18.3A2.7,2.7,0,0,0,4.7,21H19.3A2.7,2.7,0,0,0,22,18.3V7.7A2.7,2.7,0,0,0,19.3,5ZM12,17.3A4.3,4.3,0,1,1,16.3,13,4.31,4.31,0,0,1,12,17.3Z"}
           %p.sc-hcnlBt.kuVoVA
-          ドラッグアンドドロップ
           %br>/
           またはクリックしてファイルをアップロード                 
         #image-box
@@ -40,50 +40,83 @@
                 削除
         .item-main__box__pic-2
           .item-main__box__pic-2__syouheimeinohako
-            .item-main__box__pic-2__syouheimeinohako__name 商品名 必須
+            .textnohako
+              .textnohako_name 商品名
+              %span{class: "required2"} 必須
             .item-main__box__pic-2__syouheimeinohako__text-box
               = f.text_field :name, class: "syouhinmei", placeholder: "40文字まで"
               .item-main__box__pic-2__setsumei
-                .item-main__box__pic-2__setsumei__bun 商品の説明 必須
+                .textnohako 
+                  .textnohako_name
+                    商品の説明
+                  %span{class: "required2"}
+                    必須
                 .item-main__box__pic-2__setsumei__text
                   = f.text_area :description, class:"syouhinsetumei", placeholder: "商品の説明（必須 1,000文字以内）\n（色、素材、重さ、定価、注意点など）\n\n例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。\n          ", rows: "7"
         .item-main__box__pic-3
-          .item-main__box__pic-3__syouhinosyousai 商品詳細 必須
+          .item-main__box__pic-3__syouhinosyousai
+            商品詳細 
           .listing-form-box
             .listing-product-detail__category
-              = f.label 'カテゴリー', class: 'listing-default__label'
-              %span.listing-default--require 必須
+              .listing-product-detail__category--name
+                = f.label 'カテゴリー', class: 'listing-default__label'
+                %span{class: "required"}
+                  必須
               .listing-select-wrapper
                 .listing-select-wrapper__box
                   = f.select :category_id, @category_parent_array, {}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
           .item-main__box__pic-3__category 
-            .item-main__box__pic-3__category__kategory ブランド 任意
+            .textnohako
+              .textnohako__name 
+              ブランド
+              %span{class: "required2"}
+                任意
             .selctbox 
-              = f.fields_for :brand do |brand|
-                = brand.text_field :name, placeholder: "例 （シャネル）"
+              = f.fields_for :brand do |brand| 
+                = brand.text_field :name, placeholder: "例 （シャネル）", class:"input"
           .item-main__box__pic-3__category
-            .item-main__box__pic-3__category__kategory 商品の状態 
+            .textnohako 
+              .textnohako__name 
+                商品の状態 
+              %span{class: "required2"}
+                必須
             .selctbox 
-              = f.select :status,[["新品、未使用", "新品、未使用"],["未使用に近い", "未使用に近い"],["目立った傷や汚れなし", "目立った傷や汚れなし"],["やや傷や汚れあり", "やや傷や汚れあり"],["傷や汚れあり", "傷や汚れあり"],["全体的に状態が悪い", "全体的に状態が悪い"]], { include_blank: "選択してください"}
+              = f.select :status,[["新品、未使用", "新品、未使用"],["未使用に近い", "未使用に近い"],["目立った傷や汚れなし", "目立った傷や汚れなし"],["やや傷や汚れあり", "やや傷や汚れあり"],["傷や汚れあり", "傷や汚れあり"],["全体的に状態が悪い", "全体的に状態が悪い"]], { include_blank: "選択してください"} , class:"input"
         .item-main__box__pic-4
           .item-main__box__pic-4__haisounituite 配送料について
-          .item-main__box__pic-4__hutan  
-            .item-main__box__pic-4__hutan__bun 配送料に負担  
+          .item-main__box__pic-4__hutan 
+            .textnohako 
+              .textnohako__name 
+                配送料に負担 
+              %span{class: "required2"}
+                必須
             .selctbox 
-              = f.select :cost,[["着払い(購入者負担)", 1],["送料込み(出品者負担)", 2]], { include_blank: "選択してください"}
+              = f.select :cost,[["着払い(購入者負担)", 1],["送料込み(出品者負担)", 2]], { include_blank: "選択してください"}, class:"input"
           .item-main__box__pic-4__hutannnado  
-            .item-main__box__pic-4__hutan__bun 発送元の地域 必須
+            .textnohako 
+              .textnohako__name 
+                発送元の地域
+              %span{class: "required2"}
+                必須
             .selctbox 
-              = f.collection_select :prefecture_id, Prefecture.all, :id, :name, {prompt:"選択してください"}, {class:""}
+              = f.collection_select :prefecture_id, Prefecture.all, :id, :name, {prompt:"選択してください"}, class:"input"
           .item-main__box__pic-4__hutannnado  
-            .item-main__box__pic-4__hutan__bun 発送までの日数 必須
+            .textnohako 
+              .textnohako__name 
+                発送までの日数
+              %span{class: "required2"}
+                必須
             .selctbox 
-              = f.select :days,[["1~2日で発送", "1~2日で発送"],["2~3日で発送", "2~3日で発送"],["4~7日で発送", "4~7日で発送"]], { include_blank: "選択してください"}
+              = f.select :days,[["1~2日で発送", "1~2日で発送"],["2~3日で発送", "2~3日で発送"],["4~7日で発送", "4~7日で発送"]], { include_blank: "選択してください"}, class:"input"
         .item-main__box__pic-5
           .item-main__box__pic-5__kakaku 価格（¥300〜9,999,999）
           .item-main__box__pic-5__price
-            .item-main__box__pic-5__price__hanbaikakaku 販売価格 必須
-            .item-main__box__pic-5__price__nyuryoku 
+            .item-main__box__pic-5__price__hanbaikakaku
+              .textnohako 
+                .textnohako__name 販売価格
+                %span{class: "required2"}
+                  必須
+              .item-main__box__pic-5__price__nyuryoku 
               = f.number_field :price
               = f.submit
         -#   .item-main__box__pic-5__tesuuryou 販売手数料 (10%)
