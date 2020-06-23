@@ -58,9 +58,10 @@
             商品詳細 
           .listing-form-box
             .listing-product-detail__category
-              = f.label 'カテゴリー', class: 'listing-default__label'
-              %span{class: "required"}
-                必須
+              .listing-product-detail__category--name
+                = f.label 'カテゴリー', class: 'listing-default__label'
+                %span{class: "required"}
+                  必須
               .listing-select-wrapper
                 .listing-select-wrapper__box
                   = f.select :category_id, @category_parent_array, {}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
