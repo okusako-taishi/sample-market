@@ -110,7 +110,7 @@
                       %li
                         = item.price
                       %li
-                        = render partial: 'favorites/favorite'
+                        = render partial: 'favorites/favorite', locals: { item: item }
                         -# - favorite = current_user.favorites.find_by(item_id: item.id)
                         -# - if user_signed_in?
                         -#   - if !Favorite.exists?(user_id:current_user.id,item_id:item.id)

@@ -12,7 +12,7 @@ class ItemsController < ApplicationController
     @item.build_brand
     @item.images.new
     #セレクトボックスの初期値設定
-    @category_parent_array = ["---"]
+    @category_parent_array = ["選択してください"]
     #データベースから、親カテゴリーのみ抽出し、配列化
     Category.where(ancestry: nil).each do |parent|
       @category_parent_array << parent.name
@@ -43,7 +43,7 @@ class ItemsController < ApplicationController
       redirect_to root_path
     else
       #セレクトボックスの初期値設定
-    @category_parent_array = ["---"]
+    @category_parent_array = ["選択してください"]
     #データベースから、親カテゴリーのみ抽出し、配列化
     Category.where(ancestry: nil).each do |parent|
       @category_parent_array << parent.name

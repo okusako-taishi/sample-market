@@ -1,12 +1,11 @@
-- @items.each do |item|
-  - if user_signed_in?
-    - if !Favorite.exists?(user_id:current_user.id,item_id:item.id)
-      = link_to item_add_path(item),method: :post ,class: "wassyoi"do
-        = icon('far', 'heart', class:'icon-edit')
-    - else
-      = link_to item_add_path(item),method: :delete ,class: "wassyoi" do
-        = icon('fas', 'heart', class:'icon-edit')
-  - else 
-    = link_to new_user_registration_path ,class: "wassyoi" do
+- if user_signed_in?
+  - if !Favorite.exists?(user_id:current_user.id,item_id:item.id)
+    = link_to item_add_path(item),method: :post ,class: "wassyoi", remote: true do
+      = icon('far', 'heart', class:'icon-edit')
+  - else
+    = link_to item_add_path(item),method: :delete ,class: "wassyoi" , remote: true do
       = icon('fas', 'heart', class:'icon-edit')
-  = item.favorites.count
+- else 
+  = link_to new_user_registration_path ,class: "wassyoi" do
+    = icon('fas', 'heart', class:'icon-edit')
+= item.favorites.count

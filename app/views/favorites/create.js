@@ -1,0 +1,1 @@
+$("#favorite_#{item.id}").html.haml("#{j(render partial: 'favorites/favorite', locals: { item: item })}");

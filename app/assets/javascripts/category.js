@@ -8,7 +8,7 @@ $(function(){
     childSelectHtml = `<div class='listing-select-wrapper__added' id= 'children_wrapper'>
                         <div class='listing-select-wrapper__box'>
                           <select class="listing-select-wrapper__box--select" id="child_category" name="item[category_id]">
-                            <option value="---" data-category="---">---</option>
+                            <option value="選択してください" data-category="選択してください">選択してください</option>
                             ${insertHTML}
                           <select>
                         </div>
@@ -20,7 +20,7 @@ $(function(){
     grandchildSelectHtml = `<div class='listing-select-wrapper__added' id= 'grandchildren_wrapper'>
                               <div class='listing-select-wrapper__box'>
                                 <select class="listing-select-wrapper__box--select" id="grandchild_category" name="item[category_id]">
-                                  <option value="---" data-category="---">---</option>
+                                  <option value="選択してください" data-category="選択してください">選択してください</option>
                                   ${insertHTML}
                                 </select>
                               </div>
@@ -29,7 +29,7 @@ $(function(){
   }
   $('#parent_category').on('change', function(){
     var parentCategory = document.getElementById('parent_category').value;
-    if (parentCategory != "---"){
+    if (parentCategory != "選択してください"){
       $.ajax({
         url: '/items/get_category_children',
         type: 'GET',
@@ -55,7 +55,7 @@ $(function(){
   });
   $('.listing-product-detail__category').on('change', '#child_category', function(){  
     var childId = $('#child_category option:selected').data('category');
-    if (childId != "---"){
+    if (childId != "選択してください"){
       $.ajax({
         url: '/items/get_category_grandchildren',
         type: 'GET',
