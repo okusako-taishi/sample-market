@@ -135,6 +135,24 @@ ul{
 
 // 登録完了画面
 
+.single-main-usercreate{
+  width: 100%;
+  &__box {
+    height: 500px;
+    width: 900px;
+    margin: 0 auto;
+    background-color: white;
+
+    &__header{
+      text-align: center;
+      font-size: 24px;
+      // font-weight: bold;
+      padding-top: 40px;
+      h2{
+        font-weight: bold;
+      }
+    }
+
 .toppage{
   text-align: center;
   // background-color: blue;
@@ -146,6 +164,8 @@ ul{
     margin: 50px auto;
     text-decoration: none;
   }
+}
+}
 }
 .required{
   padding: 3px;

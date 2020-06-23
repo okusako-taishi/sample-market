@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
   
   root 'items#index'
-  resources :users, only: :show do
+  resources :users, only: [:show , :index] do
     collection do
       get 'logout'
     end
