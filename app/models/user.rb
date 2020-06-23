@@ -20,25 +20,25 @@ class User < ApplicationRecord
   validates :family_name,presence: true,
                  format: {
                    with:  /\A[ ぁ-んァ-ヶー一-龠      ]+\z/,
-                   message: "全角で入力して下さい",
+                   message: "は全角で入力して下さい",
                    allow_blank: true
                    }
   validates :first_name, presence: true,
                  format: {
                    with:  /\A[ ぁ-んァ-ヶー一-龠      ]+\z/,
-                   message: "全角で入力して下さい",
+                   message: "は全角で入力して下さい",
                    allow_blank: true
                  }
   validates :family_name_kana, presence: true,
                  format: {
                    with: /\A[\p{katakana}　ー－&&[^ -~｡-ﾟ]]+\z/,
-                   message: "全角カタカナで入力して下さい",
+                   message: "は全角カタカナで入力して下さい",
                    allow_blank: true
                  } 
   validates :first_name_kana, presence: true,
                  format: {
                    with: /\A[\p{katakana}　ー－&&[^ -~｡-ﾟ]]+\z/,
-                   message: "全角カタカナで入力して下さい",
+                   message: "は全角カタカナで入力して下さい",
                    allow_blank: true
                  }
 

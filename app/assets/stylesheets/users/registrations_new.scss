@@ -42,6 +42,7 @@
       }
       .field_with_errors {
         display: contents;
+
       }
 
       .field {
@@ -146,3 +147,22 @@ ul{
     text-decoration: none;
   }
 }
+.required{
+  padding: 3px;
+  color: white;
+  font-size: 12px;
+  border-radius: 4px;
+  background-color: #3ccace;
+
+// 登録画面（会員・住所）のバリデーションエラーの装飾
+#error_explanation{
+  h2{
+    color: red;
+    font-weight: bold;
+  }
+  ul{
+    li{
+      display: block;
+    }
+  }
+}}

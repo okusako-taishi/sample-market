@@ -298,7 +298,7 @@ body {
   }
 }
 
-
+// メインのフッター
 .footer {
   padding: 60px 0;
   background-color: black;
@@ -319,6 +319,7 @@ body {
       }
       ul {
         li {
+          display: block;
           a{
             text-decoration: none;
             color: white;

@@ -1,3 +1,4 @@
+= render "layouts/header"
 .destoroy
   .destoroy__frame
     .destoroy__frame__message
@@ -7,3 +8,4 @@
         = link_to "クレジットカード新規登録", new_card_path, class: "credit_card_new_link__btn"
       %li.my_page_link
         = link_to "マイページに戻る", user_path(current_user.id), class: "my_page_link__btn"
+= render "layouts/footer"

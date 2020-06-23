@@ -18,6 +18,9 @@ Rails.application.routes.draw do
     collection do
       get 'logout'
     end
+    member do
+      get 'favorite'
+    end
   end
 
   resources :items, only: [:show, :new, :create, :edit, :update, :destroy] do
