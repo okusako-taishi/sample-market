@@ -5,13 +5,14 @@
   .show-users-wrapper__center
     = render "layouts/content"
     .show-users-wrapper__center__right-content
-      = image_tag "/material/pict/結構いい感じの背景.jpg", class:"show-users-wrapper__center__right-content__image"
-      = image_tag  "/material/icon/ユーザーアイコン.png", class:"show-users-wrapper__center__right-content__user-image"
-      .show-users-wrapper__center__right-content__user-name
-        = @user.nickname
-        %div
-          評価2
-          出品0
+      .show-users-wrapper__center__right-content__header
+        -# = image_tag "/material/pict/結構いい感じの背景.jpg", class:"show-users-wrapper__center__right-content__image"
+        = image_tag  "/material/icon/ユーザーアイコン.png", class:"show-users-wrapper__center__right-content__user-image"
+        .show-users-wrapper__center__right-content__header__user-name
+          %p 
+            = @user.nickname
+          %p 
+            評価 2 出品 0
       .show-users-wrapper__center__right-content__title-wrapper
         .show-users-wrapper__center__right-content__title-wrapper__title.active
           お知らせ

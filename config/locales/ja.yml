@@ -30,6 +30,8 @@ ja:
         post_code: 郵便番号
         prefecture_id: 都道府県
         city: 市町村
+        block: 番地
+        phone_number: 電話番号
       item:
         name: 商品名
         price: 価格

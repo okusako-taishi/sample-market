@@ -53,7 +53,7 @@ $(function(){
       $('#grandchildren_wrapper').remove();
     }
   });
-  $('.listing-product-detail__category').on('change', '#child_category', function(){
+  $('.listing-product-detail__category').on('change', '#child_category', function(){  
     var childId = $('#child_category option:selected').data('category');
     if (childId != "---"){
       $.ajax({

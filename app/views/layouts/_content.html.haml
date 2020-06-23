@@ -1,5 +1,5 @@
 - contents = ['マイページ', 'いいね！一覧', '出品する', '出品した商品-出品中', '出品した商品-売却済み', '購入した商品-過去の取引', 'プロフィール', '発送元・お届け先住所変更', '支払い方法', 'メール/パスワード', 'ログアウト']
-- mypagelinks = [user_path(current_user), '', '','', '', '', '', '', card_path(current_user), '', logout_users_path(current_user)]
+- mypagelinks = [user_path(current_user),favorite_user_path(current_user), new_item_path,'', '', '', '', '', card_path(current_user), '', logout_users_path(current_user)]
 
 .show-users-wrapper__center__left-content
   - contents.each.with_index(0) do |content, i|

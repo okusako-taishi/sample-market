@@ -39,6 +39,9 @@ class PurchasesController < ApplicationController
         end
         @exp_month = @customer_card.exp_month.to_s
         @exp_year = @customer_card.exp_year.to_s.slice(2,3)
+        @item_buyer = Item.find(params[:id])
+        @item_buyer.update( buyer_id: current_user.id)
+
       else
       end
     else
@@ -75,3 +78,4 @@ class PurchasesController < ApplicationController
     @item = Item.find(params[:item_id])
   end
 end
+
