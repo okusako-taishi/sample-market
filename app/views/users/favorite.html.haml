@@ -1,0 +1,12 @@
+= render "layouts/header"
+- breadcrumb :favorite, current_user
+
+= render "layouts/breadcrumbs"
+
+.show-users-wrapper
+  .show-users-wrapper__center
+    = render "layouts/content"
+    .show-users-wrapper__center__contain-content
+      .show-users-wrapper__center__contain-content__item-list
+        お気に入り商品一覧
+= render "layouts/footer"
