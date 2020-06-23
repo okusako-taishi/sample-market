@@ -102,7 +102,7 @@
             .pickup__box__lists__list
               = link_to item_path(item.id) do
                 %figure.pickup__box__lists__list__img
-                  = image_tag item.images.first.url.url
+                  = image_tag item.images.first.url.url , size: "220x150"
                 .pickup__box__lists__list__body
                   %h3.pickup__box__lists__list__body__name
                     = item.name

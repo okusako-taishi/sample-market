@@ -1,13 +1,12 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: {
     registrations: 'users/registrations',
-  }
+  }  
 
   devise_scope :user do
     get 'destinations', to: 'users/registrations#new_destination'
     post 'destinations', to: 'users/registrations#create_destination'
   end
-
   
   root 'items#index'
   resources :users, only: :show do
@@ -27,6 +26,7 @@ Rails.application.routes.draw do
         post 'pay'
       end
     end
+    resources :comments, only: :create
   end
   
   resources :cards, only: [:new, :create, :show, :destroy] do
