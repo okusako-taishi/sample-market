@@ -1,17 +1,13 @@
-%footer.single-footer
-  %nav
-    %ul.clearfix
-      %li 
-        = link_to 'プライバシーポリシー', "#"
-
-      %li 
-        = link_to 'フリマ利用規約', "#"
-
-      %li 
-        = link_to '特定商品取引に関する表記', "#"
-  
-        .footer-logo
-          = link_to root_path do
-            = image_tag "/material/logo/logo.png", class: "furima-image"   
-        .footer-name 
-          ©︎ FURIMA
+%footer.item-footer
+  %ul
+    %li 
+      = link_to 'プライバシーポリシー', "#"
+    %li 
+      = link_to 'フリマ利用規約', "#"
+    %li 
+      = link_to '特定商品取引に関する表記', "#"
+  .footer-logo
+    = link_to root_path do
+      = image_tag "/material/logo/logo.png", class: "furima-image" 
+  .footer-name 
+    ©︎ FURIMA

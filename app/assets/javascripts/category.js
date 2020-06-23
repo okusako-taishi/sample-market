@@ -11,9 +11,9 @@ $(function(){
                             <option value="---" data-category="---">---</option>
                             ${insertHTML}
                           <select>
-                        </div>
+                          </div>
                       </div>`;
-    $('.listing-product-detail__category').append(childSelectHtml);
+    $('.item-main__box__item-info__category').append(childSelectHtml);
   }
   function appendGrandchidrenBox(insertHTML){
     var grandchildSelectHtml = '';
@@ -23,9 +23,9 @@ $(function(){
                                   <option value="---" data-category="---">---</option>
                                   ${insertHTML}
                                 </select>
-                              </div>
+                                </div>
                             </div>`;
-    $('.listing-product-detail__category').append(grandchildSelectHtml);
+    $('.item-main__box__item-info__category').append(grandchildSelectHtml);
   }
   $('#parent_category').on('change', function(){
     var parentCategory = document.getElementById('parent_category').value;
@@ -53,7 +53,7 @@ $(function(){
       $('#grandchildren_wrapper').remove();
     }
   });
-  $('.listing-product-detail__category').on('change', '#child_category', function(){  
+  $('.item-main__box__item-info__category').on('change', '#child_category', function(){
     var childId = $('#child_category option:selected').data('category');
     if (childId != "---"){
       $.ajax({
