@@ -1,119 +1,108 @@
 = render partial: 'items/items-header'
+
 .item-main
   .item-main__box
+
     - if session[:error].present?
       %ul.item-errors
+        入力内容に誤りがあります
         - session[:error].each do |e|
           %li= e
-    .item-main__box__pic
-      .item-main__box__pic__picture
-        出品画像
-        %span{class: "required"}
-          必須
-      .item-main__box__pic__picture__upload-text 最大10枚までアップロードできます。
-      = form_for @item do |f|
-        .item-main__box__pic__picture__upload-form 
-          %input.gazoutoukou{:accept => "image/png,image/jpeg", :autocomplete => "off", :multiple => "multiple", :style => "display:none", :tabindex => "-1", :type => "file"}/
-          %svg.sc-hkbPbT.lodtkW{"aria-hidden" => "true", :fill => "#222222", "fill-rule" => "evenodd", :height => "24", :viewbox => "0 0 24 24", :width => "24"}
-          %path{:d => "M19.3,5H16.73l-.8-1.61A.7.7,0,0,0,15.3,3H8.7a.7.7,0,0,0-.63.39L7.27,5H4.7A2.7,2.7,0,0,0,2,7.7V18.3A2.7,2.7,0,0,0,4.7,21H19.3A2.7,2.7,0,0,0,22,18.3V7.7A2.7,2.7,0,0,0,19.3,5ZM12,17.3A4.3,4.3,0,1,1,16.3,13,4.31,4.31,0,0,1,12,17.3Z"}
-          %p.sc-hcnlBt.kuVoVA
-          ドラッグアンドドロップ
-          %br>/
-          またはクリックしてファイルをアップロード                 
-        #image-box
-          #previews
-            - if @item.persisted?
-              - @item.images.each_with_index do |image, i|
-                = image_tag image.url.url, data: { index: i }, width: "100", height: "100"
-          = f.fields_for :images do |image|
-            .js-file_group{"data-index": "#{image.index}"}
-              = image.file_field :url, class: 'js-file'
-              %span.js-remove
-                削除
-            - if @item.persisted?
-              = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
-          - if @item.persisted?
-            .js-file_group{"data-index": "#{@item.images.count}"}
-              = file_field_tag :url, name: "item[images_attributes][#{@item.images.count}][url]", class: 'js-file'
-              .js-remove
-                削除
-        .item-main__box__pic-2
-          .item-main__box__pic-2__syouheimeinohako
-            商品名
-            %span{class: "required"}
-              必須
-            .item-main__box__pic-2__syouheimeinohako__text-box
-              = f.text_field :name, class: "syouhinmei", placeholder: "40文字まで"
-              .item-main__box__pic-2__setsumei
-                商品の説明
-                %span{class: "required"}
-                  必須
-                .item-main__box__pic-2__setsumei__text
-                  = f.text_area :description, class:"syouhinsetumei", placeholder: "商品の説明（必須 1,000文字以内）\n（色、素材、重さ、定価、注意点など）\n\n例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。\n          ", rows: "7"
-        .item-main__box__pic-3
-          商品詳細
-          %span{class: "required"}
-            必須
-          .listing-form-box
-            .listing-product-detail__category
-              = f.label "カテゴリー" , class: 'listing-default__label' do
-                %span.listing-default--require
-                  %span{class: "required"}
-                    必須
-                .listing-select-wrapper
-                  .listing-select-wrapper__box
-                    = f.select :category_id, @category_parent_array, {selected:@item.category.parent.parent.name}, { class: 'listing-select-wrapper__box--select', id: 'parent_category'}
-                .listing-select-wrapper__added#children_wrapper
-                  .listing-select-wrapper__box
-                    = f.select :category_id, @category_children_array, {selected:@item.category.parent.id}, { class: 'listing-select-wrapper__box--select', id: 'child_category'}
-                .listing-select-wrapper__added#grandchildren_wrapper
-                  .listing-select-wrapper__box
-                    = f.select :category_id, @category_grandchildren_array, {selected:@item.category.id}, { class: 'listing-select-wrapper__box--select', id: 'grandchild_category'}
-          .item-main__box__pic-3__category 
-            ブランド
-            %span{class: "required"}
-              任意
-            .selctbox 
-              = f.fields_for :brand do |brand|
-                = brand.text_field :name, placeholder: "例 （シャネル）"
-          .item-main__box__pic-3__category
-            .item-main__box__pic-3__category__kategory 商品の状態 
-            .selctbox 
-              = f.select :status,[["新品、未使用", 1],["未使用に近い", 2],["目立った傷や汚れなし", 3],["やや傷や汚れあり", 4],["傷や汚れあり", 5],["全体的に状態が悪い", 6]], { include_blank: "選択してください"}
-        .item-main__box__pic-4
-          .item-main__box__pic-4__haisounituite 配送料について
-          .item-main__box__pic-4__hutan  
-            .item-main__box__pic-4__hutan__bun 配送料に負担  
-            .selctbox 
-              = f.select :cost,[["着払い(購入者負担)", 1],["送料込み(出品者負担)", 2]], { include_blank: "選択してください"}
-          .item-main__box__pic-4__hutannnado  
-            .item-main__box__pic-4__hutan__bun
-              発送元の地域
-              %span{class: "required"}
-                必須
-            .selctbox 
-              = f.collection_select :prefecture_id, Prefecture.all, :id, :name, { include_blank: "選択してください", prompt:"選択してください"}, {class:""}
-          .item-main__box__pic-4__hutannnado  
-            .item-main__box__pic-4__hutan__bun
-              発送までの日数
-              %span{class: "required"}
-                必須
-            .selctbox 
-              = f.select :days,[["1~2日で発送", 1],["2~3日で発送", 2],["4~7日で発送", 3]], { include_blank: "選択してください"}
-        .item-main__box__pic-5
-          .item-main__box__pic-5__kakaku 価格（¥300〜9,999,999）
-          .item-main__box__pic-5__price
-            .item-main__box__pic-5__price__hanbaikakaku
-              販売価格
-              %span{class: "required"}
-                必須
-            .item-main__box__pic-5__price__nyuryoku 
-              = f.number_field :price
-              = f.submit
 
-        -#   .item-main__box__pic-5__tesuuryou 販売手数料 (10%)
-        -#   .item-main__box__pic-5__tesuuryou 販売利益
-        -# .item-main__box__pic-6
-        -#   .item-main__box__pic-6__syuppin 出品する
-        -#   .item-main__box__pic-6__sitagaki 下書きに保存
-        -#   .item-main__box__pic-6__modoru 戻る
+    = form_for @item do |f|
+
+      .item-main__box__pic
+        .title
+          出品画像
+          %span.require 必須
+        .item-main__box__pic__picture__upload-text 
+          最大10枚までアップロードできます。
+          -# .item-main__box__pic__picture__upload-form 
+          -#   %input.gazoutoukou{:accept => "image/png,image/jpeg", :autocomplete => "off", :multiple => "multiple", :style => "display:none", :tabindex => "-1", :type => "file"}/
+          -#   %svg.sc-hkbPbT.lodtkW{"aria-hidden" => "true", :fill => "#222222", "fill-rule" => "evenodd", :height => "24", :viewbox => "0 0 24 24", :width => "24"}
+          -#   %path{:d => "M19.3,5H16.73l-.8-1.61A.7.7,0,0,0,15.3,3H8.7a.7.7,0,0,0-.63.39L7.27,5H4.7A2.7,2.7,0,0,0,2,7.7V18.3A2.7,2.7,0,0,0,4.7,21H19.3A2.7,2.7,0,0,0,22,18.3V7.7A2.7,2.7,0,0,0,19.3,5ZM12,17.3A4.3,4.3,0,1,1,16.3,13,4.31,4.31,0,0,1,12,17.3Z"}
+          -#   %p.sc-hcnlBt.kuVoVA
+          #image-box
+            #previews
+              - if @item.persisted?
+                - @item.images.each_with_index do |image, i|
+                  = image_tag image.url.url, data: { index: i }, width: "110px", height: "110px"
+            = f.fields_for :images do |image|
+              .js-file_group{"data-index": "#{image.index}"}
+                = image.file_field :url, class: 'js-file'
+                %span.js-remove
+                  削除
+              - if @item.persisted?
+                = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
+            - if @item.persisted?
+              .js-file_group{"data-index": "#{@item.images.count}"}
+                = file_field_tag :url, name: "item[images_attributes][#{@item.images.count}][url]", class: 'js-file'
+                %span.js-remove
+                  削除
+
+      .item-main__box__name
+        %span.title 商品名
+        %span.require 必須
+        = f.text_field :name, class: "input", placeholder: "40文字まで"
+
+      .item-main__box__description
+        %span.title 商品の説明
+        %span.require 必須
+        = f.text_area :description, class:"form-description", placeholder: "商品の説明（必須 1,000文字以内）\n（色、素材、重さ、定価、注意点など）\n\n例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。\n          ", rows: "7"
+
+      .item-main__box__item-info
+        商品の詳細
+
+        .item-main__box__item-info__category
+          %span.title カテゴリー
+          %span.require 必須
+          .listing-select-wrapper
+            .listing-select-wrapper__box
+              = f.select :category_id, @category_parent_array, {selected:@item.category.parent.parent.name}, { class: 'listing-select-wrapper__box--select', id: 'parent_category'}
+          .listing-select-wrapper__added#children_wrapper
+            .listing-select-wrapper__box
+              = f.select :category_id, @category_children_array, {selected:@item.category.parent.id}, { class: 'listing-select-wrapper__box--select', id: 'child_category'}
+          .listing-select-wrapper__added#grandchildren_wrapper
+            .listing-select-wrapper__box
+              = f.select :category_id, @category_grandchildren_array, {selected:@item.category.id}, { class: 'listing-select-wrapper__box--select', id: 'grandchild_category'}
+
+        .item-main__box__item-info__bland
+          %span.title ブランド
+          %span.any 任意
+          = f.fields_for :brand do |brand| 
+            = brand.text_field :name, placeholder: "例 （シャネル）", class:"input"
+
+        .item-main__box__item-info__status
+          %span.title 商品の状態
+          %span.require 必須
+          = f.select :status,[["新品、未使用", "新品、未使用"],["未使用に近い", "未使用に近い"],["目立った傷や汚れなし", "目立った傷や汚れなし"],["やや傷や汚れあり", "やや傷や汚れあり"],["傷や汚れあり", "傷や汚れあり"],["全体的に状態が悪い", "全体的に状態が悪い"]], { include_blank: "選択してください"} , class:"input"
+
+      .item-main__box__delivery
+        配送について
+
+        .item-main__box__delivery__cost
+          %span.title 配送料の負担
+          %span.require 必須
+          = f.select :cost,[["着払い(購入者負担)", 1],["送料込み(出品者負担)", 2]], { include_blank: "選択してください"}, class:"input"
+
+        .item-main__box__delivery__prefecture
+          %span.title 発送元の地域
+          %span.require 必須
+          = f.collection_select :prefecture_id, Prefecture.all, :id, :name, {prompt:"選択してください"}, class:"input"
+
+        .item-main__box__delivery__days
+          %span.title 発送までの日数
+          %span.require 必須
+          = f.select :days,[["1~2日で発送", "1~2日で発送"],["2~3日で発送", "2~3日で発送"],["4~7日で発送", "4~7日で発送"]], { include_blank: "選択してください"}, class:"input"
+
+      .item-main__box__price
+        .title-box
+          %span.title 販売価格（¥300〜9,999,999）
+          %span.require 必須
+        %span ¥
+        = f.number_field :price ,class:"input-price"
+
+      .item-main__box__submit
+        = f.submit :編集する, class:"submit-btn"
+
+= render partial: 'items/items-footer'
