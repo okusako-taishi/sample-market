@@ -1,15 +1,12 @@
-.items-link
-  -# = link_to '#', class: "items-link--page" do
-  -#   sample-marketをもっとみる
-
-%aside.appBanner
-  .inner
-    .inner__title
-      誰でも簡単、人生を変えるフリマアプリ
-    .inner__text
-      今すぐ無料ダウンロード
-    .inner__icon
-      = link_to 'https://www.apple.com/jp/ios/app-store/',class:'a-btn' do
-        = image_tag "/material/Download_on_the_App_Store_Badge.svg" 
-      = link_to 'https://play.google.com/store/apps',class:'g-btn' do
-        = image_tag "/material/Download_on_the_Google_Play_Badge.svg" 
+.item__index--main
+  %section.bottom-donwnload
+    .bottom-donwnload__inner
+      %h2.bottom-donwnload__inner__title
+        だれでもかんたん、人生を変えるフリマアプリ
+      %p.bottom-donwnload__inner__text
+        今すぐ無料ダウンロード！
+      .bottom-donwnload__inner__icon
+        = link_to 'https://www.apple.com/jp/ios/app-store/',class:'a-btn' do
+          = image_tag "/material/Download_on_the_App_Store_Badge.svg" 
+        = link_to 'https://play.google.com/store/apps',class:'g-btn' do
+          = image_tag "/material/Download_on_the_Google_Play_Badge.svg" 
