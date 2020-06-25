@@ -3,7 +3,7 @@
   .card-wrapper
     .card-wrapper__title 
       クレジットカード情報入力
-    = form_tag(cards_path, method: :post, id: "charge-form", class: "card-wrapper", name: "inputForm") do
+    = form_tag(cards_path, method: :post, id: "charge-form", name: "inputForm") do
       .card-wrapper__content-number
         カード番号
         %span{class: "required"}

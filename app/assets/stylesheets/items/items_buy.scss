@@ -3,27 +3,21 @@
 }
 
 .kounyu-all {
-  height: 1129px;
   width: 100vw;
-  // background-color: #b3d4fc;
 }
 
 .kounyu-header {
   height: 128px;
   width: 100%;
-  // background-color: darkkhaki;
 }
 
 .kounyu-main {
-  height: 1000px;
   width: 700px;
   margin: 0 auto;
   text-align: center;
-  // background-color: darkgrey;
+  background-color: white;
   &__box-1{
-    height: 100px;
     width: 100%;
-    // background-color: yellowgreen;
     font-size: 22px;
     font-weight: bold;
     padding: 32px;
@@ -31,40 +25,33 @@
     border-bottom: solid 1px #eee;
   }
   &__box-2{
-    height: 145px;
     width: 100%;
-    // background-color: white;
     padding: 32px 16px;
     &__item-box{
       height: 80px;
-      // background-color: #b3d4fc;
       display: flex;
       &__pic{
-        height: 80px;
-        width: 80px;
+        height: 100px;
+        width: 100px;
         margin-left: 200px;
-        // background-color: white;
       }
       &__text{
-        height: 80px;
+        // height: 80px;
         width: 195px;
-        // background-color: red;
         margin-left: 10px ;
         &__name {
-          font-size: 15px;
-          height:15px ;
+          font-size: 20px;
+          font-weight: bold;
         }
         &__price {
-          height: 20px;
           font-size: 15px;
           margin-top: 30px;
           display: flex;
+          justify-content: space-around;
           &__nedan {
-            height: 20px;
             font-size: 13px;
           }
           &__souryou {
-            height: 20px;
             font-size: 13px;
           }
         }
@@ -74,101 +61,86 @@
 }
 
 .kounyu-main__box-v2  {
-  height: 800px;
   width: 345px;
   margin: auto;
-  // background-color: #b3d4fc;
   &__box-3 {
-    height: 100px;
     width: 100%;
     display: flex;
-    // background-color: white;
+    justify-content: space-between;
     border-bottom: solid 1px #eee;
+    padding: 30px 0;
     &__kingaku {
-      height: 30px;
-      width: 175px;
-      font-size: 18px;
-      padding-top:10px;
-      // background-color: #eee;
+      font-size: 20px;
+      font-weight: bold;
     }
     &__price {
-      height: 38px;
-      width: 200px;
-      font-size: 25px;
+      font-size: 20px;
       text-align: right;
       padding-right: 5px;
-      // background-color: red;
     }
   }
   &__box-4 {
-    height: 20px;
     width: 100%;
     margin-top: 20px;
-    // background-color: red;
     display: flex;
     justify-content: space-between;
     &__siharaihouhou {
-      height: 20px;
       width: 100px;
-      font-size: 14px;
-      // background-color: rebeccapurple;
+      font-size: 20px;
+      font-weight: bold;
     }
     &__henkousuru {
-      height: 20px;
-      width: 100px;
+      display: inline-block;
+      text-decoration: none;
+      color: white;
+      background-color: #3ccace;
+      height: 25px;
       font-size: 15px;
-      // background-color: blue;
-      text-align: right;
+      padding: 3px;
+      text-align: center;
     }
   }
   &__box-5 {
-    height: 65px;
     width: 100%;
-    margin-top: 10px;
-    // background-color: chocolate;
+    padding: 20px 0;
     border-bottom: solid 1px #eee;
     &__kureka {
-      height: 18px;
-      font-size: 14px;
+      font-size: 15px;
     }
     &__number {
-      height: 18px;
       font-size: 12px;
     }
     &__yuukoukigen{
-      height: 18px;
+      font-size: 15px;
+    }
+    &__info{
       font-size: 15px;
     }
   }
   &__box-6 {
-    height: 200px;
     width: 100%;
-    padding: 40px 0;
-    // background-color: coral;
-    border-bottom: solid 1px #eee;
+    margin-top: 20px;
     &__haisou {
-      height: 20px;
+      // height: 20px;
       width: 100%;
       display: flex;
-      // background-color: cyan;
       justify-content: space-between;
       &__haisousaki {
-        height: 100%;
-        width: 100%;
+        font-size: 20px;
+        font-weight: bold;
       }
-      &__henkou {
-        height: 100%;
-        width: 100%;
-        text-align: right;
-      }
+
     }
+    &__adress{
+      padding: 30px 0;
+      font-size: 15px;
+      border-bottom: solid 1px #eee;
+
+}
   }
   &__box-7 {
-    height: 340px;
     width: 100%;
-    // background-color: white;
     &__tyuui {
-      height: 200px;
       width: 100%;
       padding-top: 60px;
       font-size: 13px;
@@ -177,8 +149,6 @@
       height: 100px;
       width: 100%;
       margin-top: 40px;
-      // background-color: darkblue;
-      padding-top: 50px;
     }
   }
 }

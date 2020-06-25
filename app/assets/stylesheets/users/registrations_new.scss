@@ -42,7 +42,6 @@
       }
       .field_with_errors {
         display: contents;
-
       }
 
       .field {
@@ -111,17 +110,9 @@
       }
     }
   }
-  // .single-footer {
-  //   width: 456px;
-    
-  //   margin: 0 auto;
-  //   line-height: 100px;
-  //   text-align: center;
-  //   background-color: gba(214, 214, 214, 0.712);
-  // }
 }
 
-ul{ 	
+ul{ 
   font-size: 12px;
   li {
     display: inline;
@@ -153,27 +144,28 @@ ul{
       }
     }
 
-.toppage{
-  text-align: center;
-  // background-color: blue;
-  .btm-to-toppage{
-    color: white;
-    background-color: #3CCACE;
-    display: inline-block;
-    padding: 20px 60px;
-    margin: 50px auto;
-    text-decoration: none;
+    .toppage{
+      text-align: center;
+
+      .btm-to-toppage{
+        color: white;
+        background-color: #3CCACE;
+        display: inline-block;
+        padding: 20px 60px;
+        margin: 50px auto;
+        text-decoration: none;
+      }
+    }
   }
 }
-}
-}
+
 .required{
   padding: 3px;
   color: white;
   font-size: 12px;
   border-radius: 4px;
   background-color: #3ccace;
-
+}
 // 登録画面（会員・住所）のバリデーションエラーの装飾
 #error_explanation{
   h2{
@@ -185,4 +177,4 @@ ul{
       display: block;
     }
   }
-}}
+}

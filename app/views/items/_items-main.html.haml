@@ -1,7 +1,7 @@
 .items-main
   .items-main__name
     = @item.name
-  .items-main__description
+  -# .items-main__description
 
   .items-main__image
     - @item.images.each do | image |
@@ -50,7 +50,7 @@
           発送日の目安
         %td
           = @item.days
-          日
+          
   .items-main__select                                    
   .items-main__price
     ¥
@@ -71,7 +71,7 @@
 .items-main__button
   .items-main__button--left
     .items-main__button--left--left
-      %i.fas.fa-heart
+      %i.far.fa-heart
       いいね！
     .items-main__button--left--right  
       不適切な商品報告
@@ -79,6 +79,7 @@
     安心・安全への取り組み
 
 - if user_signed_in? && current_user.id == @item.user_id
-  = link_to "編集", edit_item_path , class: "edit-box"
+  = link_to edit_item_path , class: "items-main__button__edit-btm" do 
+    編集する
   = link_to item_path , method: :delete , class:"items-main__button__destroy-btm" do
     削除する

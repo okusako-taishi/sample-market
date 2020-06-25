@@ -1,6 +1,7 @@
 .items-link
-  = link_to '#', class: "items-link--page" do
-    sample-marketをもっとみる
+  -# = link_to '#', class: "items-link--page" do
+  -#   sample-marketをもっとみる
+
 %aside.appBanner
   .inner
     .inner__title
@@ -8,7 +9,7 @@
     .inner__text
       今すぐ無料ダウンロード
     .inner__icon
-      = link_to 'https://www.apple.com/jp/ios/app-store/' do
-        = image_tag "/material/download-on-app-store-png-open-2000.png", class: "abtn"
-      = link_to 'https://play.google.com/store/apps' do
-        = image_tag "/material/google-play-badge.png", class: "gbtn"
+      = link_to 'https://www.apple.com/jp/ios/app-store/',class:'a-btn' do
+        = image_tag "/material/Download_on_the_App_Store_Badge.svg" 
+      = link_to 'https://play.google.com/store/apps',class:'g-btn' do
+        = image_tag "/material/Download_on_the_Google_Play_Badge.svg" 
