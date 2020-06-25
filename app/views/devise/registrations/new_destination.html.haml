@@ -1,7 +1,6 @@
 .single-container
-  %heder.single-header
-    
-    
+  = render partial: 'items/items-header'
+
   %main.single-main
     .single-main__box
       .single-main__header
@@ -60,3 +59,5 @@
             .actions.single-content
               = f.submit "新規登録する", class: 'single-inner'
         -# = render "devise/shared/links"
+  = render partial: 'items/items-footer'
+

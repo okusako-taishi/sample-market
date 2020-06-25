@@ -14,11 +14,7 @@
 .items-sub
   .items-sub--main
     .items-sub--main__header
-      sampleさんのその他の出品
-    .items-sub--main__production
-      = render "items-sub"
-      = render "items-sub"
-      = render "items-sub"
+      #{@item.user.nickname}さんのその他の出品
     .items-sub--main__production
       = render "items-sub"
       = render "items-sub"
@@ -30,10 +26,7 @@
       = render "items-sub"
       = render "items-sub"
       = render "items-sub"
-    .items-sub--main__production
-      = render "items-sub"
-      = render "items-sub"
-      = render "items-sub"
+    -#   = render "items-sub"
 = render "items-link"
 = render "layouts/footer"
 

@@ -21,7 +21,7 @@
             .expiration-date__title
               有効期限
             .expiration_date__info
-              = @exp_month + " / " + @exp_year
+              = @exp_month + "月 / " + @exp_year+ "年 " 
         .destroy__function
           .destroy__function__link
             = link_to card_path, method: :delete, class: "destroy__btn" do 

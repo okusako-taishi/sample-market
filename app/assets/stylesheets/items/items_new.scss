@@ -162,89 +162,16 @@
       background-color: #ddd;
     }
 
-// .selctbox {
-//   height: 48px;
-//   width: 100%;
-//   background-color: white;
-//   margin-top: 15px;
-// }
+    .title{
+      font-weight: bold;
+    }
+    .input {
+      height: 48px;
+      width: 100%;
+      padding-left: 15px;
+      margin-top: 10px;
+    }
 
-// .selection {
-//   height: 48px;
-//   width: 500px;
-//   margin: 0 12px;
-//   font-size: 16px;
-// }
 
-// .bbw::placeholder {
-//   // position: relative;
-//    text-align: right;
-//  }
- 
-//  .bbw {
-//    height: 100%;
-//    width: 100%;
-//    text-align: right;
-//  }
-
-//  .item-main__box__pic__picture {
-//    margin-top: 10px;
-//    margin-bottom: 10px;
-//  }
-
-//  .textnohako {
-//   margin-top: 10px;
-//   margin-bottom: 10px;
-//   height: 21px;
-//   display: flex;
-//  }
-
-//  .require{
-//   padding-left: 3px;
-//   padding-right: 3px;
-//   padding-top: 1.3px;
-//   color: white;
-//   font-size: 12px;
-//   border-radius: 4px;
-//   background-color: #3ccace;
-//   height: 21px;
-//   margin-left: 5px;
-// }
-.title{
-  font-weight: bold;
-}
-.input {
-  height: 48px;
-  width: 100%;
-  padding-left: 15px;
-  margin-top: 10px;
-}
-
-// .item-main__box__pic-5__price__hanbaikakaku {
-//   display: flex;
-//   justify-content: space-between;
-// }
-
-// .item-main__box__pic-5 {
-
-//   width: 100%;
-//   border-bottom: solid 1px #eee;
-// }
-
-// .listing-form-box {
-//   .listing-product-detail__category {
-//     &--name
-//     .listing-default__label {
-//       font-size: 14px;
-//       font-weight: 600;
-//       line-height: 1.4em;
-//     }
-//     .required {
-//       margin-left: 8px;
-//     }
-//   }
-
-//   .listing-select-wrapper__added {
-//     margin-top: 16px;
   }
 }
