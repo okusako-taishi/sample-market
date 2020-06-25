@@ -119,9 +119,5 @@ Things you may want to cover:
 ### Association
 - has_many :items
 
-
-
-
-後々、消す
-
+山本のフォーク
 
