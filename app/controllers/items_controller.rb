@@ -47,6 +47,7 @@ class ItemsController < ApplicationController
     Category.where(ancestry: nil).each do |parent|
       @category_parent_array << parent.name
     end
+      @item.images.new
       render :new
     end
   end
